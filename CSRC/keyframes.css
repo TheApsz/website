@@ -1,0 +1,18 @@
+@keyframes titlegradient {
+       from {
+              background-position: 0% 0%;
+       }
+       to {
+              background-position: 500% 100%;
+       }
+}
+
+@keyframes titlepopup {
+       from {
+              scale: 0;
+              rotate: -20deg;
+       }
+       to {
+              scale: 1;
+       }
+}

@@ -1,0 +1,80 @@
+.section {
+       position: relative;
+       background: transparent;
+       width: 100%;
+       height: 100svh;
+
+       .decor {
+              position: absolute;
+              background: var(--pri);
+              width: 15vmax;
+              border-radius: 50%;
+              aspect-ratio: 1;
+              filter: blur(10vmax);
+
+              left: 50%;
+              top: 50%;
+              translate: -50% -50%;
+              animation: titlepopup 1s ease 0s forwards;
+       }
+       .grid {
+              position: absolute;
+              background: transparent;
+              width: 40vmax;
+              height: 32vmax;
+
+              left: 50%;
+              top: 50%;
+              translate: -50% -50%;  
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 0px;
+              scale: 0;
+
+              animation: titlepopup 1.25s ease 0.25s forwards;
+
+              h1 {
+                     font-size: 8vmax;
+                     line-height: 7vmax;
+                     align-self: flex-end;
+
+                     &:nth-child(2) {
+                            align-self: flex-start;  
+                     }
+                     &:nth-child(3) {
+                            align-self: flex-end;  
+                     }
+              }
+              .decorgridsparkle {
+                     color: var(--pri);
+              }
+       }
+}
+
+.section2 {
+       position: relative;
+       background: transparent;
+       width: 100%;
+       height: 100svh;
+
+       .grid2 {
+              position: absolute;
+              background: black;
+
+              left: 50%;
+              top: 50%;
+              translate: -50% -50%;  
+
+              display: grid;
+              grid-template-columns: repeat(3, 24vmax);
+              grid-template-rows: repeat(3, 11vmax);
+              gap: 0.5vmax;
+
+              div {
+                     background: var(--bg2);
+              }
+       }
+}

@@ -1,0 +1,16 @@
+@font-face {
+font-family: 'gabarito';
+src: url('fonts/gabarito.ttf') format('truetype');
+}
+@font-face {
+font-family: 'poppins';
+src: url('fonts/poppins.ttf') format('truetype');
+}
+@font-face {
+font-family: 'visb';
+src: url('fonts/visbold.otf') format('truetype');
+}
+@font-face {
+font-family: 'visr';
+src: url('fonts/visregular.otf') format('truetype');
+}
