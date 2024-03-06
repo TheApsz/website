@@ -70,7 +70,7 @@
 
               display: grid;
               grid-template-columns: repeat(3, 24vmax);
-              grid-template-rows: repeat(3, 11vmax);
+              grid-template-rows: repeat(2, 11vmax);
               gap: 0.5vmax;
 
               div {
