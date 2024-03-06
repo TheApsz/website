@@ -127,6 +127,8 @@
               width: calc(100% - 5vmax);
               padding-top: 1vmax;
               padding-bottom: 1vmax;
+              opacity: 0;
+              pointer-events: none;
               
 
               display: column;
