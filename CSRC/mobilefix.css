@@ -12,3 +12,18 @@
               border-radius: 3vmax;
        }
 }
+
+@media screen and (min-width: 1001px) {
+       .header {
+              display: auto;
+       }
+       .mobileheader {
+              display: none;
+       }
+       body {
+              background: var(--bg);
+       }
+       * {
+              border-radius: 0.5vmax;
+       }
+}
