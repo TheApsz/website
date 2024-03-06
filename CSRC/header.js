@@ -30,6 +30,37 @@ $(document).ready(function() {
            if (animationFrameId !== null) {
              window.cancelAnimationFrame(animationFrameId);
            }
-         }
-       );
-     });
+        }
+    );
+});
+
+$(document).ready(function() {
+  var $mnavbar = $('.mobileheader');
+  var $mobileHeaderSwitch = $('.mobileheaderswitch');
+
+  $mnavbar.click(function() {
+    $mnavbar.css('height', '50vmax');
+    $mobileHeaderSwitch.css('opacity', '1');
+    $mobileHeaderSwitch.css('pointer-events', 'auto');
+    $('.mobileheader .items').css('opacity', '1');
+    $('.mobileheader .items').css('transition', 'opacity 0.3s ease 0.5s');
+
+    setTimeout(function() {
+      $('.mobileheader .items').css('pointer-events', 'auto');
+    }, 1000);
+
+  });
+  $mobileHeaderSwitch.click(function() {
+    $mnavbar.css('height', '10vmax');
+    $mobileHeaderSwitch.css('opacity', '0');
+    $mobileHeaderSwitch.css('pointer-events', 'none');
+
+    $('.mobileheader .items').css('opacity', '0');
+    $('.mobileheader .items').css('pointer-events', 'none');
+    $('.mobileheader .items').css('transition', 'opacity 0.1s ease 0s');
+
+    setTimeout(function() {
+      $('.mobileheader .items').css('pointer-events', 'none');
+    }, 0);
+  });
+});

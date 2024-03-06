@@ -1,0 +1,14 @@
+@media screen and (max-width: 1000px) {
+       .header {
+              display: none;
+       }
+       .mobileheader {
+              display: auto;
+       }
+       body {
+              background: var(--mbg);
+       }
+       * {
+              border-radius: 3vmax;
+       }
+}
