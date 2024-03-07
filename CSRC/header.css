@@ -95,7 +95,7 @@
        position: fixed;
        background: var(--mbg2);
        width: calc(100% - 100px);
-       box-shadow: 0px 1vmax 2vmax 0vmax rgba(0, 4, 19, 0.541);
+       box-shadow: 0px 1vmax 2vmax 0vmax rgba(0, 0, 0, 0.651);
        height: 10vmax;
        bottom: 50px;
        left: 50%;
@@ -113,6 +113,7 @@
               position: absolute;
               height: 10vmax;
               top: 0px;
+              left: 0vmax;
        }
 
        &:focus {
@@ -125,26 +126,35 @@
               left: 2.5vmax;
               bottom: 2.5vmax;
               width: calc(100% - 5vmax);
+              height: 35vmax;
               padding-top: 1vmax;
               padding-bottom: 1vmax;
               opacity: 0;
               pointer-events: none;
               
 
-              display: column;
-              flex-direction: row;
-              justify-content: center;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
               transition: pointer-events 0s linear 0.5s, opacity 0.3s ease 0.5s;
 
               h1 {
                      position: relative;
                      box-shadow: 0px 0px 0px -1px black;
-                     font-size: 3.7vmax;
-                     padding: 0.25vmax 0vmax 0.25vmax 3vmax;
-                     width: 100%;
+                     font-size: 3vmax;
+                     padding: 0.25vmax 0vmax 0.25vmax 6vmax;
+                     width: 85%;
                      cursor: pointer;
-                     margin-left: 0vmax;
+                     margin-left: 1.5vmax;
                      transition: all 0.2s ease;
+
+                     img {
+                            height: 100%;
+                            left: 0px;
+                            position: absolute;
+                            scale: 0.7;
+                            opacity: 0.5;
+                     }
               }
        }
        .items2 {
