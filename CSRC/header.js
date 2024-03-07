@@ -50,7 +50,7 @@ $(document).ready(function() {
 
       setTimeout(function() {
         $('.mobileheader .items').css('pointer-events', 'auto');
-        delayActive = false; // Reset the flag
+        delayActive = false; // i am going insane visual studio code is shit and microsoft should go bankrupt
       }, 500);
     }
   });
