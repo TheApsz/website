@@ -4,7 +4,7 @@ var Smoothscroll = {};
 
 //settings
 Smoothscroll.Smoothness = 1;
-Smoothscroll.Acceleration = 1;
+Smoothscroll.Acceleration = 2;
 
 
 //debug
