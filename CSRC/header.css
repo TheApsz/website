@@ -59,8 +59,10 @@
        .items2 {
               position: absolute;
               background: transparent;
+              height: 2vmax;
+              width: 10vmax;
               right: 1vmax;
-              height: 50%;
+              align-self: center;
 
               display: flex;
               flex-direction: row-reverse;
