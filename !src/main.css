@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Gabarito:400');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
        /* Backgrounds */
@@ -49,9 +48,13 @@ body {
 }
 
 h1, h2, h3 {
-       font-family: poppins,sans-serif;
+       font-family: fredoka,sans-serif;
        color: var(--txt);
        font-weight: 500;
+}
+h2 {
+       font-family: poppins,sans-serif;
+       font-weight: 400;
 }
 
 .trans {
@@ -76,6 +79,11 @@ body::-webkit-scrollbar {
      body::-webkit-scrollbar-thumb:hover {
        background: var(--pri); /* Customize thumb color */
        border-radius: 10px; /* Add rounded corners */
+     }
+
+     ::selection {
+       color: black; /* Change the text color */
+       background-color: var(--pri); /* Change the background color */
      }
 
 .button:hover {

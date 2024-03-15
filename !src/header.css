@@ -1,0 +1,241 @@
+.header {
+       position: fixed;
+       background: var(--bgtrans);
+       width: calc(100% - 20px);
+       min-height: 4vmax;
+       top: 10px;
+
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       overflow: hidden;
+       z-index: 10000;
+
+       img {
+              position: absolute;
+              height: 100%;
+       }
+
+       &:hover {
+              #headerdecoration {
+                     opacity: 0.75;
+              }
+       }
+
+       #headerdecoration {
+              position: absolute;
+              border-radius: 50%;
+              background: var(--pri);
+              height: 8vmax;
+              aspect-ratio: 1;
+              opacity: 0;
+              z-index: -1;
+              filter: blur(5vmax);
+
+              translate: -50% -50%;
+              transition: opacity 0.5s ease;
+       }
+
+       .items {
+              position: relative;
+              background: transparent;
+              left: 5vmax;
+              
+
+              display: flex;
+              flex-direction: row;
+              gap: 0.5vmax;
+
+              h1 {
+                     position: relative;
+                     background: var(--bgtrans);
+                     box-shadow: 0px 0px 0px -1px black;
+                     font-size: 1vmax;
+                     padding: 0.25vmax 0.75vmax 0.25vmax 0.75vmax;
+                     cursor: pointer;
+                     transition: all 0.2s ease;
+              }
+       }
+       .items2 {
+              position: absolute;
+              background: transparent;
+              height: 2vmax;
+              width: 10vmax;
+              right: 1vmax;
+              align-self: center;
+
+              display: flex;
+              flex-direction: row-reverse;
+              gap: 0.5vmax;
+
+              div {
+                     position: relative;
+                     background: var(--bgtrans);
+                     box-shadow: 0px 0px 0px -1px black;
+                     height: 100%;
+                     aspect-ratio: 1;
+                     cursor: pointer;
+                     transition: all 0.2s ease;
+
+                     img {
+                            scale: 0.7;
+                     }
+
+                     &:hover {
+                            background: var(--pri2);
+                            box-shadow: 0px 0.25vmax 0.75vmax 0px black;
+
+                            img {
+                                   filter: var(--imgfilter);
+                            }
+                     }
+              }
+       }
+}
+
+.mobileheader {
+       position: fixed;
+       background: var(--mbg2);
+       width: calc(100% - 100px);
+       box-shadow: 0px 1vmax 2vmax 0vmax rgba(0, 0, 0, 0.651);
+       height: 10vmax;
+       bottom: 50px;
+       left: 50%;
+       translate: -50% 0%;
+       display: none;
+
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       overflow: hidden;
+       z-index: 10000;
+       transition: height 0.5s ease-in-out;
+
+       img {
+              position: absolute;
+              height: 10vmax;
+              top: 0px;
+              left: 0vmax;
+       }
+
+       &:focus {
+              height: 30vmax;
+       }
+
+       .items {
+              position: absolute;
+              background: var(--bgtrans);
+              left: 2.5vmax;
+              bottom: 2.5vmax;
+              width: calc(100% - 5vmax);
+              height: 35vmax;
+              padding-top: 1vmax;
+              padding-bottom: 1vmax;
+              opacity: 0;
+              pointer-events: none;
+              
+
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              transition: pointer-events 0s linear 0.5s, opacity 0.3s ease 0.5s;
+
+              h1 {
+                     position: relative;
+                     box-shadow: 0px 0px 0px -1px black;
+                     font-size: 3vmax;
+                     padding: 0.25vmax 0vmax 0.25vmax 6vmax;
+                     width: 85%;
+                     cursor: pointer;
+                     margin-left: 1.5vmax;
+                     transition: all 0.2s ease;
+
+                     img {
+                            height: 100%;
+                            left: 0px;
+                            position: absolute;
+                            scale: 0.7;
+                            opacity: 0.5;
+                     }
+              }
+       }
+       .items2 {
+              position: absolute;
+              background: transparent;
+              right: 2.5vmax;
+              height: 5vmax;
+
+              display: flex;
+              flex-direction: row-reverse;
+              gap: 0.5vmax;
+              top: 2.5vmax;
+
+              div {
+                     position: relative;
+                     background: var(--bgtrans);
+                     box-shadow: 0px 0px 0px -1px black;
+                     height: 100%;
+                     aspect-ratio: 1;
+                     cursor: pointer;
+                     transition: all 0.2s ease;
+
+                     img {
+                            scale: 0.7;
+                            height: 100%;
+                     }
+
+                     &:hover {
+                            background: var(--pri2);
+                            box-shadow: 0px 0.25vmax 0.75vmax 0px black;
+
+                            img {
+                                   filter: var(--imgfilter);
+                            }
+                     }
+              }
+       }
+}
+
+.mobileheaderswitch {
+       position: fixed;
+       background: rgba(0,0,0,0.5);
+       height: 100%;
+       width: 100%;
+       top: 0px;
+       left: 0px;
+       pointer-events: none;
+       opacity: 0;
+
+       z-index: 9999;
+       transition: opacity 0.2s ease;
+}
+
+@media screen and (max-width: 1000px) {
+       .header {
+              display: none;
+       }
+       .mobileheader {
+              display: auto;
+       }
+       body {
+              background: var(--mbg);
+       }
+       * {
+              border-radius: 3vmax;
+       }
+}
+
+@media screen and (min-width: 1001px) {
+       .header {
+              display: auto;
+       }
+       .mobileheader {
+              display: none;
+       }
+       body {
+              background: var(--bg);
+       }
+       * {
+              border-radius: 0.5vmax;
+       }
+}
