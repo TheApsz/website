@@ -1,0 +1,159 @@
+body > img {
+       position: fixed;
+       left: 50%;
+       height: 100%;
+       translate: -50%;
+}
+
+.section1 {
+       position: absolute;
+       background: transparent;
+       height: 100%;
+       width: 100%;
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 0.25vmax;
+       flex-direction: column;
+
+       animation: section1 1s 5s ease forwards;
+
+       h1 {
+              font-size: 3vmax;
+              color: var(--pri);
+       }
+       div {
+              position: relative;
+              height: 1vmax;
+              width: 20vmax;
+              background: var(--pri2);
+              overflow: hidden;
+
+              .loading {
+                     position: absolute;
+                     background: var(--pri);
+                     height: 100%;
+                     width: 3vmax;
+                     left: -100%;
+                     animation: loading 3s ease infinite;
+              }
+       }
+}
+.section2 {
+       position: absolute;
+       background: transparent;
+       height: 100%;
+       width: 100%;
+       opacity: 0;
+       scale: 0;
+       pointer-events: none;
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 0.25vmax;
+       flex-direction: column;
+
+       animation: section2 1s 5s ease forwards;
+
+       .error {
+              position: absolute;
+              box-shadow: inset 0px 0vmax 0px 0.1vmax red;
+              translate: 0% 0%;
+              transition: all 0.3s ease;
+
+              h1 {
+                     color: var(--txt);
+                     font-size: 1.2vmax;
+              }
+       }
+
+       div {
+              position: relative;
+              background: var(--bg2);
+
+              width: 35vmax;
+              padding: 2vmax 0vmax;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 0.25vmax;
+              flex-direction: column;
+
+              h1 {
+                     font-size: 3vmax;
+                     color: var(--pri);
+              }
+              .sepe {
+                     height: 1vmax;
+                     width: 10px;
+                     padding: 0;
+                     position: relative;
+                     background: transparent;
+              }
+              input {
+                     width: 65%;
+                     height: 3vmax;
+                     font-size: 1vmax;
+                     color: var(--txt);
+                     font-family: poppins,sans-serif;
+                     padding: 0vmax 2vmax;
+                     background: var(--bgtrans);
+                     border: 0;
+
+                     transition: all 0.2s ease;
+
+                     &:focus {
+                            outline: 0;
+                            box-shadow: 0px 0.1vmax 0vmax 0px var(--pri);
+                     }
+              }
+              .login {
+                     font-size: 1.42vmax;
+                     background: var(--bgtrans);
+                     color: var(--txt);
+                     padding: 0.25vmax 1vmax;
+                     cursor: pointer;
+
+                     transition: all 0.3s ease;
+              }
+       }
+}
+
+.section3 {
+       position: absolute;
+       background: transparent;
+       height: 100%;
+       width: 100%;
+       opacity: 0;
+       scale: 0;
+       pointer-events: none;
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 0.25vmax;
+       flex-direction: column;
+
+       div {
+              position: relative;
+              background: var(--bg2);
+
+              width: 35vmax;
+              padding: 2vmax 0vmax;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 0.25vmax;
+              flex-direction: column;
+
+              h1 {
+                     color: var(--txt);
+                     font-size: 1.2vmax;
+              }
+       }
+}
+

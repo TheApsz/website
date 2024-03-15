@@ -13,6 +13,32 @@
               rotate: -20deg;
        }
        to {
-              scale: 1;
+              scale: 0.7;
        }
 }
+@keyframes wind {
+       from {
+              rotate: -2deg;
+       }
+       50% {
+              rotate: 5deg;
+       }
+       to {
+              rotate: -2deg;
+       }
+}
+@keyframes animate {
+
+       0%{
+           transform: translateY(0) rotate(0deg);
+           opacity: 0.75;
+           border-radius: 50%;
+       }
+   
+       100%{
+           transform: translateY(-1000px) rotate(720deg);
+           opacity: 0;
+           border-radius: 50%;
+       }
+   
+   }

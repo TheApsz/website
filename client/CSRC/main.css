@@ -1,0 +1,7 @@
+.h1sex {
+       padding: 0.25vmax 1vmax;
+       color: var(--pri);
+       cursor: pointer;
+       background: var(--bgtrans);
+       transition: all 0.3s ease;
+}
