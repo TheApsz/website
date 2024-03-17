@@ -1,0 +1,23 @@
+@media screen and (max-width: 1000px) {
+       .desktop {
+              display: none;
+       }
+       .mobile {
+              display: auto;
+       }
+       body {
+              background: var(--mbg);
+       }
+       * {
+              border-radius: 3vmax;
+       }
+}
+
+@media screen and (min-width: 1001px) {
+       .desktop {
+              display: auto;
+       }
+       .mobile {
+              display: none;
+       }
+}
