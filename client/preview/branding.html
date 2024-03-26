@@ -1,0 +1,94 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <meta content="Pentrum" property="og:title" />
+    <meta content="unfinished page" property="og:description" />
+    <meta content="og-banner.png" property="og:image">
+    <meta content="#FF2E2E" data-react-helmet="true" name="theme-color"/>
+    <title>Pentrum client</title>
+    <link rel="icon" href="../../og-image.png" type="image/x.icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="../../!src/main.css">
+    <script src="../../!src/java.js"></script>
+</head>
+
+<script src="CThemes/branding/menu.js"></script>
+<link rel="stylesheet" href="CThemes/branding/main.css">
+<link rel="stylesheet" href="CSRC/animations.css">
+
+<body>
+       <div id="mainmenu" class="trans">
+              <img src="../../CSRC/images/R.jpg">
+              <div class="scrmainmenu trans">
+                     <h1 class="title">Pentrum Client</h1>
+                     <div class="sep"></div>
+                     <div id="msingleplayer" class="item">
+                            <div></div>
+                            <h1>Singleplayer</h1>
+                     </div>
+                     <div id="mmultiplayer" class="item">
+                            <div></div>
+                            <h1>Multiplayer</h1>
+                     </div>
+                     <div id="mrealms" class="item">
+                            <div></div>
+                            <h1>Realms</h1>
+                     </div>
+
+                     <div class="sep"></div>
+
+                     <div id="msettings" class="item">
+                            <div></div>
+                            <h1>Settings</h1>
+                     </div>
+                     <div id="mcsettings" class="item">
+                            <div></div>
+                            <h1>Client settings</h1>
+                     </div>
+                     <div id="mprefer" class="item">
+                            <div></div>
+                            <h1>Preferances</h1>
+                     </div>
+
+                     <div class="sep"></div>
+
+                     <div id="logout" class="item">
+                            <div></div>
+                            <h1>Log out</h1>
+                     </div>
+                     <div id="restart" class="item">
+                            <div></div>
+                            <h1>Restart</h1>
+                     </div>
+                     <div id="exit" class="item">
+                            <div></div>
+                            <h1>Exit game</h1>
+                     </div>
+              </div>
+              <div class="msettings trans">
+                     <h1 class="title">Settings</h1>
+                     <div class="sep"></div>
+                     <div class="settingsbox">
+                            <h2>Graphics preset</h2>
+                            <div class="settingsgrid">
+                                   <div><h2>High</h2></div>
+                                   <div><h2>Medium</h2></div>
+                                   <div><h2>Low</h2></div>
+                                   <div><h2>Potato</h2></div>
+                            </div>
+                     </div>
+                     <div class="settingsbox">
+                            <h2>Render distance</h2>
+                            <input type="range" min="8" max="128" value="24" id="chunks">
+                            <h2 class="slidercalc">24 Chunks (Potato)</h2>
+                     </div>
+                     <div class="sep2">
+                            <h1>Advanced</h1>
+                            <div></div>
+                     </div>
+              </div>
+       </div>
+</body>
