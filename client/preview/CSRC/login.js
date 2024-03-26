@@ -13,4 +13,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                $('.error').css('translate', '0% -230%');
            }
        });
+
+       $(document).on('click', '#hacked', function() {
+            $('.section3').css('animation', 'section2off 2s ease');
+            $('.section4').css('animation', 'section2 1s ease 0s forwards');
+    });
 });
