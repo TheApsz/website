@@ -225,5 +225,53 @@
                             }
                      }
               }
+              .settingsbox2 {
+                     position: relative;
+                     background: transparent;
+                     box-shadow: inset 0px 0px 0px 0vmax rgba(255, 255, 255, 0.2);
+                     width: calc(90%);
+                     opacity: 1;
+                     max-height: calc(100% - 21.5vmax);
+                     align-self: center !important;
+
+                     display: flex;
+                     flex-direction: column;
+                     align-items: flex-start;
+                     gap: 0.5vmax;
+                     overflow: scroll;
+                     overflow-x: hidden;
+
+
+                     .settingsbox {
+                            position: relative;
+                            background: var(--bgtrans);
+                            width: calc(100%);
+                            opacity: 1;
+                            min-height: 6.5vmax;
+                            align-self: center !important;
+
+                            .settingsgrid {
+                                   position: absolute;
+                                   background: transparent;
+                                   left: 0.5vmax;
+                                   bottom: 0.5vmax;
+       
+                                   display: grid;
+                                   grid-template-columns: repeat(4, 7.1vmax);
+                                   grid-template-rows: repeat(1, 3.3vmax);
+                                   gap: 0.5vmax;
+                            }       
+                            .x2 {
+                                   grid-template-columns: repeat(2, 14.7vmax) !important;
+                                   grid-template-rows: repeat(1, 3.3vmax);
+                            }
+                     }       
+              }
        }
+}
+.active {
+       box-shadow: inset 0px 0px 0px 0.1vmax var(--pri) !important;
+}
+.inactive {
+       box-shadow: "";
 }
