@@ -63,21 +63,21 @@ h2 {
 }
 
 /* Target WebKit browsers (Chrome, Safari, etc.) */
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
        width: 10px; /* Adjust width as desired */
      }
      
-     body::-webkit-scrollbar-track {
+     *::-webkit-scrollbar-track {
        background: transparent; /* Customize track background color */
        border-radius: 10px; /* Add rounded corners */
      }
      
-     body::-webkit-scrollbar-thumb {
+     *::-webkit-scrollbar-thumb {
        background: var(--pri2); /* Customize thumb color */
        border-radius: 10px; /* Add rounded corners */
        transition: all 0.25s ease;
      }
-     body::-webkit-scrollbar-thumb:hover {
+     *::-webkit-scrollbar-thumb:hover {
        background: var(--pri); /* Customize thumb color */
        border-radius: 10px; /* Add rounded corners */
      }
