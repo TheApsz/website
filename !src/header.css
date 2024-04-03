@@ -2,14 +2,15 @@
        position: fixed;
        background: var(--bgtrans);
        width: calc(100% - 20px);
-       min-height: 4vmax;
+       height: 3.5vmax !important;
+       backdrop-filter: blur(5vmax);
        top: 10px;
 
        display: flex;
        flex-direction: row;
        align-items: center;
-       overflow: hidden;
        z-index: 10000;
+       overflow: hidden;
 
        img {
               position: absolute;
@@ -18,15 +19,16 @@
 
        &:hover {
               #headerdecoration {
-                     opacity: 0.75;
+                     opacity: 0.5;
               }
        }
+
 
        #headerdecoration {
               position: absolute;
               border-radius: 50%;
               background: var(--pri);
-              height: 8vmax;
+              height: 10vmax;
               aspect-ratio: 1;
               opacity: 0;
               z-index: -1;

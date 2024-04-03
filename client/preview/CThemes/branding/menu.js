@@ -1,22 +1,17 @@
 $(document).ready(function() {
-       // Variable to store toggle state (0 - hidden, 1 - visible)
-       var msettings = 0;
+      var msettings = 0;
      
-       // Set initial right margin for the settings box
-       $(".msettings").css("right", "-35vmax");
+      $(".msettings").css("right", "-35vmax");
      
-       $("#msettings").click(function() {
-         // Toggle visibility based on current state
-              msettings = (msettings === 0) ? 1 : 0;
-     
-         // Update right margin based on toggle state
-       if (msettings) {
-              $(".msettings").css("right", "1.5vmax");
-       } else {
-              $(".msettings").css("right", "-35vmax");
-       }});
+      $("#msettings").click(function() {
+        msettings = (msettings === 0) ? 1 : 0;
+          if (msettings) {
+            $(".msettings").css("right", "1.5vmax");
+          } else {
+            $(".msettings").css("right", "-35vmax");
+      }});
 
-       const slider = document.getElementById("chunks");
+const slider = document.getElementById("chunks");
 const sliderValueElement = document.querySelector(".slidercalc");
 
 const intervals = [ // Define interval ranges
