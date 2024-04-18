@@ -2,12 +2,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport">
-    <meta content="Pentrum" property="og:title" />
-    <meta content="unfinished page" property="og:description" />
-    <meta content="og-banner.png" property="og:image">
-    <meta content="#FF2E2E" data-react-helmet="true" name="theme-color"/>
-    <title>Pentrum client</title>
-    <link rel="icon" href="../og-image.png" type="image/x.icon">
+<!-- HTML Meta Tags -->
+    <title>Pentrum</title>
+    <meta content="#FF123A" data-react-helmet="true" name="theme-color">
+    <meta name="description" content="Site still under construction">
+
+<!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://pentrum.pages.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pentrum">
+    <meta property="og:description" content="Site still under construction">
+    <meta property="og:image" content="https://pentrum.pages.dev/og-banner.png">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="pentrum.pages.dev">
+    <meta property="twitter:url" content="https://pentrum.pages.dev">
+    <meta name="twitter:title" content="Pentrum">
+    <meta name="twitter:description" content="Site still under construction">
+    <meta name="twitter:image" content="https://pentrum.pages.dev/og-banner.png">
+
+
+    <link rel="icon" href="https://pentrum.pages.dev/og-image.png" type="image/x.icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
@@ -17,43 +34,57 @@
     <script src="../!src/header.js"></script>
 </head>
 
-<link rel="stylesheet" href="CSRC/main.css">
+<link rel="stylesheet" href="CSRC/elements/sections.css">
+
+<html lang="en">
 
 <body>
-       <div class="header trans">
-              <img src="../og-image.png">
-              <div class="items">
-                  <h1 class="button"><a href="server">Server</a></h1>
-                  <h1 class="button"><a href="">Client</a></h1>
-                  <h1 class="button"><a href="forum">Forum</a></h1>
-                  <h1 class="button"><a href="fun">Fun</a></h1>
-                  <h1 class="button"><a href="services">Services</a></h1>
-                  <h1 class="button"><a href="store">Store</a></h1>
-              </div>
-              <div class="items2">
-                  <div><img alt="Support" src="../CSRC/images/head.png"></div>
-                  <div><img alt="FAQ" src="../CSRC/images/what.png"></div>
-              </div>
-              <div id="headerdecoration"></div>
-          </div>
-          <div class="mobileheaderswitch trans"></div>
-          <div class="mobileheader">
-              <img src="../og-image.png">
-              <div class="items">
-                  <a href="server"><h1><img src="../CSRC/images/server.png">Server</h1></a>
-                  <a href="client"><h1><img src="../CSRC/images/client.png">Client</h1></a>
-                  <a href="forum"><h1><img src="../CSRC/images/forum.png">Forum</h1></a>
-                  <a href="fun"><h1><img src="../CSRC/images/fun.png">Fun</h1></a>
-                  <a href="services"><h1><img src="../CSRC/images/services.png">Service</h1></a>
-                  <a href="store"><h1><img src="../CSRC/images/store.png">Store</h1></a>
-              </div>
-              <div class="items2">
-                  <div><img alt="Support" src="../CSRC/images/head.png"></div>
-                  <div><img alt="FAQ" src="../CSRC/images/what.png"></div>
-              </div>
-       </div>
+    <div class="header trans desktop">
+        <div class="headerdec">
+            <div id="headerdecoration"></div>
+        </div>
+        <img alt="Logo" src="https://pentrum.pages.dev/og-image.png">
+        <div class="items">
+            <h1 class="button"><a href="https://pentrum.pages.dev/server">Server</a></h1>
+            <h1 class="button"><a href="https://pentrum.pages.dev/client">Client</a></h1>
+            <h1 class="button"><a href="https://pentrum.pages.dev/forum">Forum</a></h1>
+            <h1 class="button"><a href="https://pentrum.pages.dev/fun">Fun</a></h1>
+            <h1 class="button"><a href="https://pentrum.pages.dev/services">Services</a></h1>
+            <h1 class="button"><a href="https://pentrum.pages.dev/store">Store</a></h1>
+        </div>
+        <div class="items2">
+            <div><img alt="Support" src="https://pentrum.pages.dev/CSRC/images/head.png"></div>
+            <div><img alt="FAQ" src="https://pentrum.pages.dev/CSRC/images/what.png"></div>
+        </div>
+    </div>
+    <div class="mobileheaderswitch trans mobile"></div>
+    <div class="mobileheader mobile">
+        <img src="https://pentrum.pages.dev/og-image.png">
+        <div class="items">
+            <a href="https://pentrum.pages.dev/server"><h1><img alt="Server" src="https://pentrum.pages.dev/CSRC/images/server.png">Server</h1></a>
+            <a href="https://pentrum.pages.dev/client"><h1><img alt="client" src="https://pentrum.pages.dev/../../CSRC/images/client.png">Client</h1></a>
+            <a href="https://pentrum.pages.dev/forum"><h1><img alt="forum" src="https://pentrum.pages.dev/CSRC/images/forum.png">Forum</h1></a>
+            <a href="https://pentrum.pages.dev/fun"><h1><img alt="fun" src="https://pentrum.pages.dev/CSRC/images/fun.png">Fun</h1></a>
+            <a href="https://pentrum.pages.dev/services"><h1><img alt="Services" src="https://pentrum.pages.dev/CSRC/images/services.png">Service</h1></a>
+            <a href="https://pentrum.pages.dev/store"><h1><img alt="Store" src="https://pentrum.pages.dev/CSRC/images/store.png">Store</h1></a>
+        </div>
+        <div class="items2">
+            <div><img alt="Support" src="https://pentrum.pages.dev/CSRC/images/head.png"></div>
+            <div><img alt="FAQ" src="https://pentrum.pages.dev/CSRC/images/what.png"></div>
+        </div>
+    </div>
 
-       <h1>This page is not complete</h1>
-       <h1></h1>
-       <a href="preview"><h1 class="button h1sex">Preview</h1></a>
+    <div id="sec1" class="section">
+        <div id="sec1dec">
+            <img src="CSRC/images/Untitled-1.png">
+
+            <div class="trans sec1grid"></div>
+            <div class="trans sec1grid"></div>
+            <div class="trans sec1grid"></div>
+            <div class="trans sec1grid"></div>
+            <div class="trans sec1grid"></div>
+            <div class="trans sec1grid"></div>
+            <div class="trans sec1grid"></div>
+        </div>
+    </div>
 </body>

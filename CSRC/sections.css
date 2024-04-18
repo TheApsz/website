@@ -175,7 +175,7 @@
                      top: -18vmax;
                      left: 1vmax;
                      animation: 
-                            wind 3s ease-in-out infinite;
+                     wind 3s ease-in-out infinite;
               }
 
               .circles li{
