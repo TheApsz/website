@@ -47,12 +47,12 @@ body {
 }
 
 h1, h2, h3 {
-       font-family: "Silkscreen",sans-serif;
+       font-family: Fredoka,sans-serif;
        color: var(--txt);
        font-weight: 500;
 }
 h2 {
-       font-family: pixelify,sans-serif;
+       font-family: poppins,sans-serif;
        font-weight: 400;
 }
 
