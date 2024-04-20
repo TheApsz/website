@@ -48,6 +48,11 @@
                      align-items: center;
                      flex-direction: row;
                      gap: 15px;
+                     transition: all 0.3s ease;
+
+                     &:hover {
+                            box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.349);
+                     }
 
                      h1 {
                             font-size: 20px;
@@ -102,6 +107,158 @@
                      h1 {
                             color: var(--txt2);
                      }
+              }
+       }
+}
+#weatherboxexpand {
+       position: fixed;
+       background: var(--bgtrans);
+       opacity: 0;
+       padding: 10px 20px;
+       bottom: 80px;
+       width: 300px;
+       scale: 0.5;
+       
+       translate: 0% 25%;
+       transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap: 10px;
+
+       .basic {
+              background: transparent;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;  
+              gap: 20px;
+
+              span {
+                     color: var(--txt2);
+                     font-size: 25px;  
+              }
+              h1 {
+                     color: var(--txt2);
+                     font-size: 25px;
+
+                     span {
+                            opacity: 0.5;
+                     }
+              }
+       }
+       .advanced {
+              background: var(--bgtrans);
+              padding: 10px 10px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;  
+              gap: 10px;
+
+              h1 {
+                     color: var(--txt2);
+                     font-size: 15px;
+
+                     span {
+                            opacity: 0.5;
+                     }
+              }
+              #weathergrid {
+                     background: transparent;
+                     display: grid;
+                     grid-template-columns: repeat(2, 150px);
+                     grid-template-rows: repeat(2, 50px);
+                     gap: 5px;
+
+                     div {
+                            background: var(--bgtrans);
+                            border-radius: 10px;
+                            padding: 10px;
+                            display: flex;
+                            justify-content: left;
+                            align-items: center;
+
+                            span {
+                                   color: var(--txt2);
+                                   font-size: 30px;
+                                   opacity: 0.5;
+                            }
+                            h2 {
+                                   color: var(--txt2);
+                                   font-size: 10px;
+                                   line-height: 13px;
+                                   margin-left: 10px;
+
+                                   span {
+                                          font-size: 10px;
+                                          opacity: 0.5;
+                                   }
+                            }
+                     }
+              }
+       }
+}
+#timeboxexpand {
+       position: fixed;
+       background: var(--bgtrans);
+       opacity: 0;
+       padding: 10px 20px;
+       bottom: 80px;
+       width: 300px;
+       scale: 0.5;
+       
+       translate: 0% 25%;
+       transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+       display: flex;
+       flex-direction: column;
+       justify-content: left;
+       align-items: center;
+       gap: 10px;
+
+       h1 {
+              color: var(--txt2);
+              font-size: 25px;
+
+              span {
+                     opacity: 1;
+                     color: var(--pri)
+              }
+       }
+       h2 {
+              color: var(--txt2);
+              font-size: 20px;
+              background: var(--bgtrans);
+              padding: 5px 20px;
+              cursor: pointer;
+              transition: all 0.3s ease;
+       }
+       input[type="range"] {
+              position: relative;
+              width: 100%;
+              background-color: rgb(30, 30, 30);
+              outline: none;
+              overflow-y: hidden;
+              overflow-x: visible;
+              cursor: pointer;
+              appearance: none; /* Remove default appearance */
+
+              &::-webkit-slider-runnable-track {
+                     height: 10px;
+                     background-color: rgb(30, 30, 30); /* Set track color */
+                     border-radius: 50px;
+              }
+              &::-webkit-slider-thumb {
+                     appearance: none; /* Remove default appearance */
+                     border: none; /* Remove border */
+                     aspect-ratio: 1;
+                     width: 10px;
+                     background-color: white; /* Set handle color */
+                     translate: 0% -0%;
+                     top: 50%;
+                     box-shadow: -200px 0 0 195px var(--pri);
+                     border-radius: 50px;
               }
        }
 }

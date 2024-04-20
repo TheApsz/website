@@ -30,6 +30,7 @@
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="time.js"></script>
+    <script src="clickevents.js"></script>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="layout.css">
 </head>
@@ -48,10 +49,42 @@
 <div id="desktop">
        <img src="https://images.hdqwalls.com/download/8-bit-city-m2-2560x1440.jpg">
 
+       <div class="trans rounded" id="weatherboxexpand">
+              <div class="basic">
+                     <span class="material-symbols-rounded">cloud</span>
+                     <h1>Cloudy <span>|</span> 6°C</h1>
+              </div>
+              <div class="advanced rounded">
+                     <h1>today's suggestions</h1>
+                     <div id="weathergrid">
+                            <div>
+                                   <span class="material-symbols-rounded">beach_access</span>
+                                   <h2>Umbrella<br><span>No need</span></h2>
+                            </div>
+                            <div>
+                                   <span class="material-symbols-rounded">apparel</span>
+                                   <h2>Clothing<br><span>Heavy</span></h2>
+                            </div>
+                            <div>
+                                   <span class="material-symbols-rounded">airwave</span>
+                                   <h2>Polution<br><span>Very poor</span></h2>
+                            </div>
+                            <div>
+                                   <span class="material-symbols-rounded">thermometer</span>
+                                   <h2>Wind chill<br><span>Caution</span></h2>
+                            </div>
+                     </div>
+              </div>
+       </div>
+       <div class="trans rounded" id="timeboxexpand">
+              <h1 id="focustim">Focus for <span id="focustime">30mins</span></h1>
+              <input type="range" min="15" max="240" value="30" id="focusminutes">
+              <h2 class="button">Start</h2>
+       </div>
        <div class="trans" id="navbar">
               <div id="weatherbox" class="navitem">
                      <span class="material-symbols-rounded">cloud</span>
-                     <h1 id="weather">9°C</h1>
+                     <h1 id="weather">6°C</h1>
               </div>
 
               <div id="timebox" class="navitem">

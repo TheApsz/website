@@ -1,4 +1,4 @@
-// Function to update the time
+$(document).ready(function() {
 setInterval(function() {
        var currentTime = new Date();
        var hours = currentTime.getHours();
@@ -24,6 +24,32 @@ setInterval(function() {
        document.getElementById('date').classList.add('show'); // Add the 'show' class to start the animation
     }, 1000);
 
+    const slider = document.getElementById("focusminutes");
+const sliderValueElement = document.querySelector("#focustime");
+
+const intervals = [ // Define interval ranges
+  { min: 8, max: 24, text: "Potato" },
+  { min: 25, max: 56, text: "Low" },
+  { min: 57, max: 96, text: "Medium" },
+  { min: 97, max: 128, text: "High" }
+];
+
+slider.step = 15; // Adjust based on your intervals
+
+slider.addEventListener("input", function() {
+  const value = parseInt(slider.value); // Convert value to integer
+  let intervalText = ""; // Initialize text
+
+  for (const interval of intervals) {
+    if (value >= interval.min && value <= interval.max) {
+      intervalText = interval.text;
+      break; // Exit loop after finding the matching interval
+    }
+  }
+
+  sliderValueElement.textContent = value + "mins";
+});
+});
 
     
     
