@@ -1,0 +1,82 @@
+#sec1 {
+       position: relative;
+       background: transparent;
+
+       display: flex;
+       flex-direction: column;
+       margin-top: 5vmax;
+       gap: 1vmax;
+}
+#staff {
+       grid-template-columns: repeat(3, 30vmax);
+       grid-template-rows: repeat(1, 7vmax);
+}
+#members {
+       grid-template-columns: repeat(3, 30vmax);
+       grid-template-rows: repeat(0, 7vmax);
+}
+.section {
+       position: relative;
+       background: var(--bg2);
+       border-radius: 1vmax;
+       padding: 1vmax;
+       padding-top: 3vmax;
+
+       display: grid;
+       gap: 1vmax;
+
+       .title {
+              position: absolute;
+              color: var(--pri);
+              margin-left: 1vmax;
+              top: 0.5vmax;
+              font-size: 1.7vmax;
+       }
+       .profile {
+              position: relative;
+              background: var(--bgtrans);
+              display: flex;
+              justify-content: left;
+              align-items: center;
+              overflow: hidden;
+
+
+              h3 {
+                     position: absolute;
+                     background: var(--bgtrans);
+                     color: var(--pri);
+                     font-size: 0.8vmax;
+                     padding: 0.25vmax 0.5vmax;
+                     top: 0.5vmax;
+                     right: 0.5vmax;
+                     display: none;
+              }
+              div {
+                     margin-left: 1vmax;
+                     background: transparent;
+
+                     h1 {
+                            position: relative;
+                            font-size: 1.8vmax;
+                     }
+                     h2 {
+                            position: relative;
+                            color: var(--txt);
+                            opacity: 0.5;
+                            font-size: 1.2vmax;
+                     }
+              }
+              img {
+                     height: 100%;
+              }
+       }
+}
+#apsz {
+       border-radius: 1vmax;
+       h1, h3 {
+              color: var(--pri);
+       }
+       h3 {
+              display: block !important;
+       }
+}
