@@ -1,0 +1,191 @@
+#loading {
+       position: absolute;
+       background: var(--bg);
+       width: 150%;
+       height: 150%;
+
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       pointer-events: none;
+       z-index: 9999;
+
+       animation: loading 5s linear forwards;
+
+       h1 {
+              color: var(--pri);
+              padding: 1vmax;
+              text-align: center;
+              justify-self: center;
+              font-family: silkscreen,sans-serif;
+       }
+}
+
+#menu {
+       position: absolute;
+       background: var(--bg);
+       box-shadow: 0px 0px 0px 10px var(--bg2);
+       width: calc(100% - 100px);
+       height: calc(100% - 100px);
+
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+
+       .ral {
+              position: absolute;
+              color: var(--txt);
+              font-size: 20px;
+              bottom: 10px;
+              left: 10px;
+       }
+
+
+       .menuitems {
+              position: relative;
+              background: transparent;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-left: 30px;
+
+
+              h1 {
+                     font-size: 80px;
+                     padding: 0px 20px;
+                     color: var(--pri);
+              }
+              div {
+                     position: relative;
+                     background: var(--pri);
+                     height: 5px;
+                     width: 100%;
+              }
+              h2 {
+                     font-size: 30px;
+                     color: var(--txt2);
+                     cursor: pointer;
+                     padding: 0px 20px;
+                     transition: 0.05s linear;
+
+                     &:hover {
+                            color: var(--pri);
+                            background: var(--pri2)
+                     }
+              }
+       }
+       .startitems {
+              position: absolute;
+              background: transparent;
+              display: flex;
+              translate: 10% 0%;
+              right: 0px;
+              opacity: 0;
+              pointer-events: none;
+              flex-direction: column;
+              align-items: flex-end;
+              gap: 10px;
+              margin-right: 30px;
+              transition: 0.05s linear;
+
+
+              h1 {
+                     font-size: 50px;
+                     padding: 0px 20px;
+                     color: var(--pri);
+              }
+              div {
+                     position: relative;
+                     background: var(--pri);
+                     height: 5px;
+                     width: 100%;
+              }
+              h2 {
+                     font-size: 30px;
+                     color: var(--txt2);
+                     cursor: pointer;
+                     padding: 0px 20px;
+                     transition: 0.05s linear;
+
+                     &:hover {
+                            color: var(--pri);
+                            background: var(--pri2)
+                     }
+              }
+       }
+
+       .settingsitems {
+              position: absolute;
+              background: transparent;
+              display: flex;
+              translate: 10% 0%;
+              right: 0px;
+              opacity: 0;
+              pointer-events: none;
+              flex-direction: column;
+              align-items: flex-end;
+              gap: 10px;
+              margin-right: 30px;
+              transition: 0.05s linear;
+
+
+              h1 {
+                     font-size: 50px;
+                     padding: 0px 20px;
+                     color: var(--pri);
+              }
+              div {
+                     position: relative;
+                     background: var(--pri);
+                     height: 5px;
+                     width: 100%;
+              }
+              .int {
+                     font-size: 30px;
+                     color: var(--txt2);
+                     cursor: pointer;
+                     padding: 0px 20px;
+                     transition: 0.05s linear;
+
+                     &:hover {
+                            color: var(--pri);
+                            background: var(--pri2)
+                     }
+              }
+       }
+       .guideitems {
+              position: absolute;
+              background: transparent;
+              display: flex;
+              translate: 10% 0%;
+              right: 0px;
+              opacity: 0;
+              pointer-events: none;
+              flex-direction: column;
+              align-items: flex-end;
+              gap: 10px;
+              margin-right: 30px;
+              transition: 0.05s linear;
+
+
+              h1 {
+                     font-size: 50px;
+                     padding: 0px 20px;
+                     color: var(--pri);
+              }
+              div {
+                     position: relative;
+                     background: var(--pri);
+                     height: 5px;
+                     width: 100%;
+              }
+              h2 {
+                     font-size: 30px;
+                     text-align: right;
+                     color: var(--txt2);
+                     cursor: pointer;
+                     padding: 0px 20px;
+                     transition: 0.05s linear;
+              }
+       }
+}
