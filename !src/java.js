@@ -487,3 +487,15 @@ function Init()
   console.log("Smoothscroll: loaded");
 }
 Init();
+
+$(document).ready(function() {
+  $('a[href^="#"]').on('click', function(e) {
+      e.preventDefault();
+      var target = $(this).attr('href');
+      var offset = $(target).offset().top - 50; // Subtract 300 pixels from the target offset
+      $('html, body').animate({
+          scrollTop: offset
+      }, 2000, 'easeInOutExpo'); // Adjust duration and easing function as needed
+  });
+});
+
