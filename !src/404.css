@@ -1,7 +1,7 @@
-.center {
+.center.desktop {
        position: relative;
-       background: var(--bgtrans);
-       padding: 0vmax;
+       background: var(--bg2);
+       padding: 0px;
 
        display: flex;
        flex-direction: row;
@@ -11,7 +11,7 @@
        .image {
               position: relative;
               background: var(--bgtrans);
-              height: 20vmax;
+              height: 400px;
               aspect-ratio: 1;
 
               img {
@@ -23,12 +23,54 @@
        .text {
               position: relative;
               background: transparent;
-              max-width: 50vmax;
-              margin-left: 2vmax;
+              margin-left: 50px;
+              max-width: 1000px;
 
               h1 {
                      color: var(--pri);
-                     font-size: 3vmax;
+                     font-size: 60px;
+              }
+              h2 {
+                     margin-top: 10px;
+                     max-width: 90%;
+              }
+       }
+}
+.center.mobile {
+       position: relative;
+       background: var(--bg2);
+       padding: 0px;
+
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+
+       .image {
+              position: relative;
+              background: var(--bgtrans);
+              height: 400px;
+              aspect-ratio: 1;
+
+              img {
+                     height: 100%;
+                     opacity: 0.7;
+                     scale: 0.7;
+              }
+       }
+       .text {
+              position: relative;
+              background: transparent;
+              margin-left: 50px;
+              max-width: 1000px;
+
+              h1 {
+                     color: var(--pri);
+                     font-size: 60px;
+              }
+              h2 {
+                     margin-top: 10px;
+                     max-width: 90%;
               }
        }
 }

@@ -87,6 +87,95 @@
         left: 1vmax;
     }
 }
+#hero.mobile {
+    position: relative;
+    background: var(--bg2);
+    width: calc(100% - 30px);
+    height: calc(100svh - 150px);
+    margin-top: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .expand {
+        position: absolute;
+        background: var(--bgtrans);
+        border-radius: 50vmax;
+        padding: 10px;
+        bottom: 1vmax;
+        right: 1vmax;
+        cursor: pointer;
+        z-index: 2;
+        transition: 0.3s ease;
+
+        &:hover {
+            scale: 1.2;
+            span {
+                color: var(--pri);
+            }
+        }
+
+        span {
+            font-size: 50px;
+            translate: 0% 10%;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+    }
+
+    h1 {
+        position: relative;
+        padding: 50px;
+        line-height: 5vmax;
+        font-size: 5vmax;
+        width: 30vmax;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .pf {
+            align-self: flex-end;
+        }
+        .decorgridsparkle {
+            color: var(--pri)
+        }
+    }
+    .herobackground {
+        position: absolute;
+        height: 150%;
+        width: 150%;
+        opacity: 0.4;
+        object-fit: cover;
+        z-index: 1;
+
+        animation: heroimg 15s infinite ease-in-out;
+
+        &.one {
+           opacity: 0.4; 
+           animation: heroimg1 15s infinite ease-in-out;
+           filter: blur(0.25vmax);
+        }
+        &.two {
+            opacity: 0.2; 
+            animation: heroimg2 15s infinite ease-in-out;
+            filter: blur(1vmax);
+         }
+    }
+    .char {
+        position: absolute;
+        height: 15vmax;
+        aspect-ratio: 1;
+        opacity: 0.6;
+        z-index: 2;
+        bottom: 1vmax;
+        left: 1vmax;
+    }
+}
 #sec2.desktop {
     .sigma {
         position: relative;
@@ -139,6 +228,77 @@
                 }
                 h2 {
                     font-size: 15px;
+                    text-align: left;
+                }
+                h3 {
+                    position: absolute;
+                    top: 0%;
+                    background: var(--pri);
+                    color: black;
+                    right: 20px;
+                    padding: 2px 10px;
+                    translate: 0% -50%;
+                }
+                h1,h2 {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+#sec2.mobile {
+    .sigma {
+        position: relative;
+        background: transparent;
+        margin-top: 50px;
+
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(1, 750px);
+        grid-template-rows: repeat(2, 400px);
+
+        .item {
+            position: relative;
+            background: var(--bg2);
+            cursor: pointer;
+            overflow: hidden;
+
+            &:hover {
+                img {
+                    opacity: 1;
+                    scale: 1;
+                }
+            }
+            img {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                opacity: 0.5;
+                scale: 1.05;
+                object-fit: fill;
+                transition: 0.3s ease;
+            }
+            div {
+                position: absolute;
+                background: var(--bg2);
+                padding: 15px 0px;
+                width: calc(100% - 20px);
+                left: 50%;
+                translate: -50% 0%;
+                bottom: 10px;
+                overflow: active;
+
+                .nodisplay {
+                    display: none;
+                }
+                h1 {
+                    padding: 0;
+                    font-size: 35px;
+                    color: var(--pri);
+                }
+                h2 {
+                    font-size: 15px;
+                    text-align: left;
                 }
                 h3 {
                     position: absolute;
@@ -329,7 +489,7 @@
 .section {
     position: relative;
     background: transparent;
-    width: calc(100% - 100px);
+    width: calc(100% - 25px);
     padding: 100px 0px;
     margin-top: 0px;
 
@@ -349,7 +509,7 @@
         z-index: 2;
     }
     h2 {
-
+        text-align: center;
     }
 }
 

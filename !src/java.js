@@ -1,3 +1,24 @@
+$(document).ready(function() {
+  $('a[href^="#"]').on('click', function(e) {
+      e.preventDefault();
+      var target = $(this).attr('href');
+      var offset = $(target).offset().top - 50; // Subtract 300 pixels from the target offset
+      $('html, body').animate({
+          scrollTop: offset
+      }, 2000, 'easeInOutExpo'); // Adjust duration and easing function as needed
+  });
+  function updateClasses() {
+    if ($(window).width() < 1100) {
+      $('.desktop').removeClass('desktop').addClass('mobile');
+    } else {
+      $('.mobile').removeClass('mobile').addClass('desktop');
+    }
+  }
+
+  updateClasses();
+  
+  $(window).resize(updateClasses);
+});
 
 var Smoothscroll = {};
 
@@ -488,28 +509,4 @@ function Init()
 }
 Init();
 
-$(document).ready(function() {
-  $('a[href^="#"]').on('click', function(e) {
-      e.preventDefault();
-      var target = $(this).attr('href');
-      var offset = $(target).offset().top - 50; // Subtract 300 pixels from the target offset
-      $('html, body').animate({
-          scrollTop: offset
-      }, 2000, 'easeInOutExpo'); // Adjust duration and easing function as needed
-  });
-});
-
-$(document).ready(function() {
-  function updateClasses() {
-    if ($(window).width() < 1100) {
-      $('.desktop').removeClass('desktop').addClass('mobile');
-    } else {
-      $('.mobile').removeClass('mobile').addClass('desktop');
-    }
-  }
-
-  updateClasses();
-  
-  $(window).resize(updateClasses);
-});
 

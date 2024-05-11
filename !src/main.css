@@ -23,7 +23,7 @@
 }
 html {
        touch-action: manipulation;
-
+       background: var(--bg);
 }
 * {
        margin: 0;

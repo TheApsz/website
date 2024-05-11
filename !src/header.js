@@ -33,3 +33,19 @@ $(document).ready(function() {
         }
     );
 });
+$(document).ready(function() {
+  var $mnavbar = $('.header.mobile');
+  var toggle = false;
+
+  $mnavbar.click(function() {
+    if (!toggle) {
+      toggle = true;
+      $mnavbar.css('height', '340px');
+      $("#nav.mobile > h1").css('opacity', '1');
+    } else {
+      toggle = false;
+      $mnavbar.css('height', '');
+      $("#nav.mobile > h1").css('opacity', '');
+    }
+  });  
+});
