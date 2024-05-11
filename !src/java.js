@@ -499,3 +499,17 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  function updateClasses() {
+    if ($(window).width() < 1100) {
+      $('.desktop').removeClass('desktop').addClass('mobile');
+    } else {
+      $('.mobile').removeClass('mobile').addClass('desktop');
+    }
+  }
+
+  updateClasses();
+  
+  $(window).resize(updateClasses);
+});
+

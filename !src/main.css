@@ -5,9 +5,7 @@
        /* Backgrounds */
        --bg: rgba(30, 30, 30, 1);
        --bg2: rgba(15, 15, 15, 1);
-       --mbg: rgba(45, 45, 45, 1);
-       --mbg2: rgba(30, 30, 30, 1);
-       --bgtrans: rgba(0,0,0, 0.3);
+       --bgtrans: rgba(0,0,0, 0.2);
 
        /* Text */
        --txt: rgb(236, 241, 233);
@@ -45,6 +43,7 @@ body {
        justify-content: center;
        align-items: center;
        flex-direction: column;
+       gap: 30px;
        min-height: 100svh;
 }
 
