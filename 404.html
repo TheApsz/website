@@ -1,22 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 <head>
     <meta charset="utf-8">
-    <meta content="Pentrum" property="og:title" />
-    <meta content="This page does not exist, cry about it" property="og:description" />
-    <meta content="og-image.png" property="og:image" />
-    <meta content="#FF2E2E" data-react-helmet="true" name="theme-color"/>
-    <title>404 - Pentrum</title>
-    <link rel="icon" href="og-image.png" type="image/x.icon">
+    <meta name="viewport">
+<!-- HTML Meta Tags -->
+    <title>404 · Pentrum</title>
+    <meta content="#FF123A" data-react-helmet="true" name="theme-color">
+    <meta name="description" content="Site still under construction">
 
+<!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://pentrum.pages.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pentrum">
+    <meta property="og:description" content="Site still under construction">
+    <meta property="og:image" content="https://pentrum.pages.dev/og-banner.png">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="pentrum.pages.dev">
+    <meta property="twitter:url" content="https://pentrum.pages.dev">
+    <meta name="twitter:title" content="Pentrum">
+    <meta name="twitter:description" content="Site still under construction">
+    <meta name="twitter:image" content="https://pentrum.pages.dev/og-banner.png">
+
+
+    <link rel="icon" href="og-image.png" type="image/x.icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="stylesheet" href="!src/main.css">
     <script src="!src/java.js"></script>
     <link rel="stylesheet" href="!src/header.css">
     <script src="!src/header.js"></script>
+
     <link rel="stylesheet" href="!src/404.css">
 </head>
 <body>
-<div class="center desktop">
+<div id="center" class="desktop">
     <div class="image">
         <img src="https://pentrum.pages.dev/!src/character/dead.webp">
     </div>
@@ -29,5 +49,18 @@
 </body>
 </html>
 
+<script>
+      function updateClasses() {
+    if ($(window).width() < 1100) {
+      $('.desktop').removeClass('desktop').addClass('mobile');
+    } else {
+      $('.mobile').removeClass('mobile').addClass('desktop');
+    }
+  }
+
+  updateClasses();
+  
+  $(window).resize(updateClasses);
+</script>
 <style>
 </style>

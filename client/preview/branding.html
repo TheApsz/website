@@ -20,123 +20,72 @@
 <link rel="stylesheet" href="CSRC/animations.css">
 
 <body>
-       <div id="mainmenu" class="trans">
-              <img src="../../CSRC/images/R.jpg">
-              <div class="scrmainmenu trans">
-                     <h1 class="title">Pentrum Client</h1>
-                     <div class="sep"></div>
-                     <div id="msingleplayer" class="item">
-                            <div></div>
-                            <h1>Singleplayer</h1>
-                     </div>
-                     <div id="mmultiplayer" class="item">
-                            <div></div>
-                            <h1>Multiplayer</h1>
-                     </div>
-                     <div id="mrealms" class="item">
-                            <div></div>
-                            <h1>Realms</h1>
-                     </div>
+<img class="background" src="CThemes/branding/Meteor.svg">
 
-                     <div class="sep"></div>
+<h2 id="changelog" class="trans mbutton"><div></div>Changelog</h2>
 
-                     <div id="msettings" class="item">
-                            <div></div>
-                            <h1>Settings</h1>
-                     </div>
-                     <div id="mcsettings" class="item">
-                            <div></div>
-                            <h1>Client settings</h1>
-                     </div>
-                     <div id="mprefer" class="item">
-                            <div></div>
-                            <h1>Preferances</h1>
-                     </div>
-
-                     <div class="sep"></div>
-
-                     <div id="logout" class="item">
-                            <div></div>
-                            <h1>Log out</h1>
-                     </div>
-                     <div id="restart" class="item">
-                            <div></div>
-                            <h1>Restart</h1>
-                     </div>
-                     <div id="exit" class="item">
-                            <div></div>
-                            <h1>Exit game</h1>
-                     </div>
-              </div>
-              <div class="msettings trans">
-                     <h1 class="title">Settings</h1>
-                     <div class="sep"></div>
-                     <div class="settingsbox">
-                            <h2>Graphics preset</h2>
-                            <div class="settingsgrid">
-                                   <div id="mpotato"><h2>Potato</h2></div>
-                                   <div id="mlow"><h2>Low</h2></div>
-                                   <div id="mmedium"><h2>Medium</h2></div>
-                                   <div id="mhigh"><h2>High</h2></div>
-                            </div>
-                     </div>
-                     <div class="settingsbox">
-                            <h2>Render distance</h2>
-                            <input type="range" min="8" max="128" value="24" id="chunks">
-                            <h2 class="slidercalc">24 Chunks (Potato)</h2>
-                     </div>
-                     <div class="sep2">
-                            <h1>Advanced</h1>
-                            <div></div>
-                     </div>
-                     <div class="settingsbox2">
-                            <div class="settingsbox">
-                                   <h2>Antialiasing method</h2>
-                                   <div class="settingsgrid">
-                                          <div class="aaoff"><h2>Off</h2></div>
-                                          <div class="aasmaa"><h2>SMAA</h2></div>
-                                          <div class="aataa"><h2>TAA</h2></div>
-                                          <div class="aatxaa"><h2>TXAA</h2></div>
-                                   </div>
-                            </div>
-                            <div class="settingsbox">
-                                   <h2>Shadow quality</h2>
-                                   <div class="settingsgrid">
-                                          <div class="soff"><h2>Off</h2></div>
-                                          <div class="smed"><h2>Medium</h2></div>
-                                          <div class="smhi"><h2>High</h2></div>
-                                          <div class="smrt"><h2>Raytraced</h2></div>
-                                   </div>
-                            </div>
-                            <div class="settingsbox">
-                                   <h2>Voxel quality</h2>
-                                   <div class="settingsgrid x2">
-                                          <div class="vlow"><h2>Low</h2></div>
-                                          <div class="vhi"><h2>High</h2></div>
-                                   </div>
-                            </div>
-                            <div class="settingsbox">
-                                   <h2>Terrain generation</h2>
-                                   <div class="settingsgrid x2">
-                                          <div class="tlow"><h2>Vanilla</h2></div>
-                                          <div class="thigh"><h2>Destroy my PC</h2></div>
-                                   </div>
-                            </div>
-                            <div class="settingsbox">
-                                   <h2>Some shit idk</h2>
-                                   <div class="settingsgrid x2">
-                                          <div class="shex"><h2>exactly</h2></div>
-                                          <div class="shok"><h2>okk</h2></div>
-                                   </div>
-                            </div>
-                            <div class="settingsbox">
-                                   <h2>There are not a lot of settings in the actual client</h2>
-                                   <div class="settingsgrid x2">
-                                          <div class="thgr"><h2>great to hear</h2></div>
-                                          <div class="thyu"><h2>yup</h2></div>
-                                   </div>
-                            </div>
+<div id="singleplayer" class="trans off">
+       <div class="title"><h1>Singleplayer</h1><h2 class="mbutton"><div></div>Refresh</h2></div>
+       <div class="sep"></div>
+       <div class="selector">
+              <div class="world">
+                     <div class="selicon"><img src="CSRC/images/icon.jpg"></div>
+                     <div class="info">
+                            <h1>New world</h1>
+                            <h2>Created 2024-05-15 · Creative mode · 1.8.9[Custom]</h2>
                      </div>
               </div>
        </div>
+       <div class="sep"></div>
+       <div class="title2">
+              <div class="mbutton"><div></div><h1>Create a new world</h1></div>
+              <div class="mbutton"><div></div><h1>Load a preset</h1></div>
+       </div>
+</div>
+<div id="multiplayer" class="trans off">
+       <div class="title"><h1>Multiplayer</h1><h2 class="mbutton"><div></div>Refresh</h2></div>
+       <div class="sep"></div>
+       <div class="selector">
+              <div class="world">
+                     <div class="selicon"><img src="https://th.bing.com/th?id=OIP.ZETIZQA4wZkqf6h9JZRIVQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></div>
+                     <div class="info">
+                            <h1>Hypixel.net</h1>
+                            <h2>Skyblock · Skywars · Bedwars · minigame server | Premium</h2>
+                     </div>
+              </div>
+              <div class="world">
+                     <div class="selicon"><img src="https://th.bing.com/th/id/OIP.5T-9p_sfVkB-w9PV2DSyugHaHa?w=180&h=180&c=7&r=0&o=5&pid=1.7"></div>
+                     <div class="info">
+                            <h1>Mineplex.com | Dead</h1>
+                            <h2>Minigame Server | Premium</h2>
+                     </div>
+              </div>
+       </div>
+       <div class="sep"></div>
+       <div class="title2">
+              <div class="mbutton"><div></div><h1>Enter address</h1></div>
+              <div class="mbutton"><div></div><h1>Add a new server</h1></div>
+       </div>
+</div>
+<div id="mainmenu" class="trans not-skibidi">
+       <h1 class="title">Pentrum Client</h1>
+       <div class="sep"></div>
+       <h2 class="mbutton singleplayer"><div></div>Singleplayer</h2>
+       <h2 class="mbutton multiplayer"><div></div>Multiplayer</h2>
+       <h2 class="mbutton realm"><div></div>Realms</h2>
+       <div class="sep"></div>
+       <h2 class="mbutton"><div></div>Settings</h2>
+       <h2 class="mbutton"><div></div>Alt accounts</h2>
+       <div class="sep"></div>
+       <h2 class="mbutton"><div></div>Log out</h2>
+       <h2 class="mbutton"><div></div>Exit game</h2>
+
+       <h2 id="watermark">Made by Apsz and UncutError</h2>
+</div>
+
+<div id="notification" class="trans">
+       <div></div>
+       <h1>Error</h1>
+       <h2>Realms are not supported on this version</h2>
+</div>
 </body>
