@@ -272,13 +272,15 @@ body {
               justify-content: flex-start;
               gap: 10px;
               margin-top: 10px;
+              overflow-x: hidden;
 
               .world {
                      position: relative;
                      box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.05);
                      background: var(--bgtrans);
-                     height: 150px;
+                     min-height: 150px;
                      width: 100%;
+                     opacity: 0.8;
                      display: flex;
                      align-items: center;
                      cursor: pointer;
@@ -286,6 +288,7 @@ body {
 
                      &:hover {
                             scale: 1.02;
+                            opacity: 1;
                             box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.05),
                                    0px 10px 15px 2px rgba(0,0,0,0.5);
                             .info {
@@ -320,6 +323,164 @@ body {
                                    scale: 1;
                             }
                      }
+              }
+       }
+}
+#settings {
+       box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.05);
+       background: var(--bgtrans);
+       width: 1200px;
+       height: 675px;
+       display: auto;
+
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: center;
+       gap: 5px;
+
+       .title {
+              position: relative;
+              background: transparent;
+              padding: 10px;
+              width: 95%;
+
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              margin-top: 10px;
+
+              h1 {
+                     color: var(--pri);  
+              }
+              h2 {
+                     translate: 0% 10%;
+                     background: var(--bgtrans);
+                     padding: 10px 20px;
+              }
+       }
+       .selector {
+              position: relative;
+              background: transparent;
+              width: 95%;
+              height: 550px;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 10px;
+              overflow-x: hidden;
+
+              .category {
+                     position: relative;
+                     box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.05);
+                     background: var(--bgtrans);
+                     padding: 20px 0px;
+                     width: 100%;
+                     display: flex;
+                     justify-content: center;
+                     flex-direction: column;
+                     align-items: center;
+                     gap: 10px;
+
+                     .option {
+                            position: relative;
+                            background: var(--bgtrans);
+                            width: calc(100% - 80px);
+                            padding: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            h2 {
+                                   padding-right: 20px;
+                            }
+                            h3 {
+                                   padding-left: 20px;  
+                            }
+                            input[type="range"] {
+                                   position: relative;
+                                   flex-grow: 1;
+                                   background-color: transparent;
+                                   outline: none;
+                                   overflow: hidden;
+                                   cursor: pointer;
+                                   appearance: none; /* Remove default appearance */
+                     
+                                   &::-webkit-slider-runnable-track {
+                                          overflow: hidden;
+                                          height: 10px; /* Adjust track height */
+                                          background-color: rgb(30, 30, 30); /* Set track color */
+                                          border-radius: 1vmax;
+                                   }
+                                   &::-webkit-slider-thumb {
+                                          appearance: none; /* Remove default appearance */
+                                          border: none; /* Remove border */
+                                          aspect-ratio: 1;
+                                          translate: 0% -25%;
+                                          width: 25px; /* Adjust handle width */
+                                          background-color: var(--pri); /* Set handle color */
+                                          box-shadow: -500px 0 0 500px var(--pri2);
+                                          border-radius: 1vmax;
+                                   }
+                            }
+                     }
+
+                     .cattitle {
+                            background: transparent;
+                            width: calc(100% - 50px);
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            h1 {
+                                   opacity: 0.5;
+                                   font-size: 20px;
+                                   padding-right: 30px;
+                            }
+                            hr {
+                                   flex-grow: 1;
+                                   opacity: 0.1;
+                                   border-style: dashed;
+                            }
+                     }
+              }
+       }
+}
+#accounts {
+       box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.05);
+       background: var(--bgtrans);
+       width: 1200px;
+       height: 675px;
+       display: auto;
+
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: center;
+       gap: 5px;
+
+       .title {
+              position: relative;
+              background: transparent;
+              padding: 10px;
+              width: 95%;
+
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              margin-top: 10px;
+
+              h1 {
+                     color: var(--pri);  
+              }
+              h2 {
+                     translate: 0% 10%;
+                     background: var(--bgtrans);
+                     padding: 10px 20px;
               }
        }
 }
