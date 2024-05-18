@@ -59,3 +59,19 @@ $(document).ready(function() {
     $('#notification').css('animation', 'notification 5s');
   });
 });
+
+$(document).ready(function() {
+  // Cache the slider and text element for performance
+  var fovSlider = $('#fov');
+  var fovText = $('.fov');
+  var fpsSlider = $('#fps');
+  var fpsText = $('.fps');
+
+  // Update text on slider change
+  fovSlider.on('input', function() {
+    fovText.text($(this).val()); // Set text to slider value
+  });
+  fpsSlider.on('input', function() {
+    fpsText.text($(this).val()); // Set text to slider value
+  });
+});

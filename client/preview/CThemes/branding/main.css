@@ -396,6 +396,10 @@ body {
 
                             h2 {
                                    padding-right: 20px;
+
+                                   span {
+                                          color: var(--pri)
+                                   }
                             }
                             h3 {
                                    padding-left: 20px;  
@@ -423,7 +427,6 @@ body {
                                           width: 25px; /* Adjust handle width */
                                           background-color: var(--pri); /* Set handle color */
                                           box-shadow: -500px 0 0 500px var(--pri2);
-                                          border-radius: 1vmax;
                                    }
                             }
                      }
@@ -481,6 +484,113 @@ body {
                      translate: 0% 10%;
                      background: var(--bgtrans);
                      padding: 10px 20px;
+              }
+       }
+       .selector {
+              position: relative;
+              background: transparent;
+              height: 65%;
+
+              display: grid;
+              grid-template-columns: repeat(6, 175px);
+              grid-template-rows: repeat(2, 240px);
+              gap: 10px;
+
+              div {
+                     background: var(--bgtrans);
+                     position: relative;
+                     transition: 0.3s ease;
+                     cursor: pointer;
+
+                     &:hover {
+                            scale: 1.02;
+                            opacity: 1;
+                            box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.05),
+                                   0px 10px 15px 2px rgba(0,0,0,0.5);
+                            img {
+                                   opacity: 0.8;
+                            }
+                            h2 {
+                                   color: var(--pri);
+                            }
+                     }
+
+                     img {
+                            width: 100%;
+                            opacity: 0.5;
+                            transition: 0.3s ease;
+                     }
+                     h2 {
+                            text-align: center;
+                            transition: 0.3s ease;
+                     }
+                     h3 {
+                            text-align: center;
+                            opacity: 0.5;
+                     }
+              }
+       }
+       .title2 {
+              position: absolute;
+              background: transparent;
+              padding: 10px;
+
+              display: grid;
+              grid-template-columns: repeat(3, 380px);
+              grid-template-rows: repeat(1, 75px);
+              gap: 10px;
+              bottom: 10px;
+
+              input {
+                     background: var(--bgtrans);
+                     padding: 0px 20px;
+                     border: 0;
+                     font-size: 25px;
+                     font-family: comfortaa,sans-serif;
+                     color: var(--pri);
+
+                     &:focus {
+                            outline: 0;
+                     }
+              }
+
+              div {
+                     position: relative;
+                     text-align: center;
+                     background: var(--bgtrans);
+                     cursor: pointer;
+                     color: var(--txt);
+                     transition: 0.2s ease;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+
+                     div {
+                            position: absolute;
+                            background: var(--pri);
+                            height: 2px;
+                            opacity: 0;
+                            width: 25%;
+                            bottom: 0px;
+                            left: 50%;
+                            translate: -50% 0%;
+                            transition: 0.3s ease;
+                     }
+                     &:hover {
+                            color: var(--pri);
+              
+                            div {
+                                   opacity: 1;
+                                   width: 50%;
+                            }
+                            h1 {
+                                   color: var(--pri)
+                            }
+                     }
+                     h1 {
+                            background: transparent;
+                            transition: 0.2s ease;
+                     }
               }
        }
 }
