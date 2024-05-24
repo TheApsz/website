@@ -99,7 +99,22 @@ $(document).ready(function() {
                   $(".guideitems").css("pointer-events", "none");
                   $(".guideitems").css("translate", "10% 0%");
        }});
-       
+});
+$(document).ready(function() {
+       $('.start').on('click', function() {
+           $('#black-screen').css('opacity', '1');
+           
+           let redirectUrl;
+           if ($(this).hasClass('easy')) {
+               redirectUrl = 'easy.html';
+           } else if ($(this).hasClass('hard')) {
+               redirectUrl = 'hard.html';
+           }
+
+           setTimeout(function() {
+               window.location.href = redirectUrl;
+           }, 3000); // 3000 milliseconds = 3 seconds
+       });
 });
    
 
