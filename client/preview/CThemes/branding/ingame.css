@@ -1,0 +1,380 @@
+.video {
+       position: fixed;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       scale: 1.2;
+       border-radius: 0px !important;
+}
+* {
+       border-radius: 10px !important;
+}
+.border {
+       box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.1);
+}
+#desktop {
+       z-index: 5;
+       position: fixed;
+       width: 100%;
+       height: 100%;
+
+       #title {
+              position: absolute;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              top: 10px;
+              left: 10px;
+
+              .title {
+                     overflow: hidden;
+                     position: relative;
+                     background: var(--bgtrans);
+                     padding: 5px 15px;
+       
+                     div {
+                            position: absolute;
+                            background: var(--pri);
+                            top: 0px;
+                            left: 0px;
+                            height: 100%;
+                            width: 5px;
+                     }
+                     h1 {
+                            color: var(--pri);
+                     }
+              }
+              .title2 {
+                     overflow: hidden;
+                     position: relative;
+                     background: var(--bgtrans);
+                     padding: 5px 15px;
+                     justify-self: flex-start;
+       
+                     div {
+                            position: absolute;
+                            background: var(--pri);
+                            top: 0px;
+                            left: 0px;
+                            height: 100%;
+                            width: 5px;
+                     }
+                     h1 {
+                            color: var(--pri);
+                            font-size: 25px;
+                     }
+                     h3 {
+                            span {
+                                   opacity: 0.7;
+                            }
+                     }
+              }
+       }
+       #effects {
+              overflow: hidden;
+              position: absolute;
+              background: transparent;
+              top: 50%;
+              left: 10px;
+              translate: 0% -50%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: left;
+              gap: 10px;
+
+              .trans {
+                     overflow: hidden;
+                     background: var(--bgtrans);
+                     padding: 5px 15px;
+
+                     div {
+                            position: absolute;
+                            background: var(--pri);
+                            top: 0px;
+                            left: 0px;
+                            height: 100%;
+                            width: 5px;
+                     }
+                     h1 {
+                            color: var(--pri);
+                            font-size: 25px;
+                     }
+                     h3 {
+                            span {
+                                   opacity: 0.7;
+                            }
+                     }
+              }
+       }
+       #chat {
+              overflow: hidden;
+              position: absolute;
+              background: transparent;
+              bottom: 10px;
+              left: 10px;
+              max-width: 700px;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-items: left;
+              gap: 10px;
+
+              .trans {
+                     overflow: hidden;
+                     background: var(--bgtrans);
+                     padding: 5px 15px;
+
+                     div {
+                            position: absolute;
+                            background: var(--pri);
+                            top: 0px;
+                            left: 0px;
+                            height: 100%;
+                            width: 5px;
+                     }
+                     h1, h2 {
+                            color: var(--txt);
+                            font-size: 18px;
+                     }
+                     h2 {
+                            .red {
+                                   color: rgb(255, 0, 0);
+                            }
+                            .orange {
+                                   color: rgb(255, 123, 0);
+                            }
+                            .yellow {
+                                   color: rgb(255, 208, 0);
+                            }
+                            .green {
+                                   color: rgb(0, 255, 21);
+                            }
+                            .blue {
+                                   color: rgb(0, 110, 255);
+                            }
+                            .purple {
+                                   color: rgb(119, 0, 255);
+                            }
+                            .dark {
+                                   color: rgb(36, 36, 36);
+                            }
+                            .client {
+                                   color: var(--pri);
+                                   font-weight: 900;
+                            }
+                            .username {
+                                   opacity: 0.7;
+                                   font-weight: 600;
+                            }
+                     }
+                     h3 {
+                            span {
+                                   opacity: 0.7;
+                            }
+                     }
+              }
+       }
+       #hotbar {
+              position: absolute;
+              background: transparent;
+              bottom: 10px;
+              left: 50%;
+              translate: -50% 0%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 5px;
+
+              .items {
+                     display: grid;
+                     grid-template-columns: repeat(9, 75px);
+                     grid-template-rows: repeat(1, 75px);
+                     padding: 0px 0px !important;
+
+                     div {
+                            img {
+                                   position: absolute;
+                                   height: 100%;
+                                   aspect-ratio: 1;
+                                   scale: 0.9;
+                            }
+                     }
+
+                     .active {
+                            background: var(--bgtrans);
+                     }
+              }
+              .healthbar {
+                     position: relative;
+                     width: 100%;
+                     padding: 0px;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: center;
+                     align-items: center;
+                     gap: 5px;
+
+                     .health {
+                            background: var(--pri2);
+                            width: 100%;
+                            height: 5px;
+
+                            div {
+                                   background: var(--pri);
+                                   width: 83%;
+                            }
+                     }
+                     .armor {
+                            background: rgb(129, 129, 129, 0.2);
+                            height: 5px;
+                            width: 100%;
+
+                            div {
+                                   background: rgb(129, 129, 129);
+                                   width: 12%;
+                            }
+                     }
+                     .health, .armor {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            div {
+                                   height: 100%;
+                            }
+                     }
+              }
+              .trans {
+                     overflow: auto;
+                     background: var(--bgtrans);
+              }
+       }
+       #arraylist {
+              overflow: hidden;
+              position: absolute;
+              background: var(--bgtrans);
+              top: 10px;
+              right: 10px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: right;
+              gap: 2px;
+              padding: 5px 15px;
+
+              .combat {
+                     width: 23%;
+              }
+              .movement {
+                     width: 46%;
+              }
+              .trans {
+                     overflow: hidden;
+                     background: var(--bgtrans) !important;
+              }
+              .item {
+                     display: flex;
+                     flex-direction: row;
+                     align-items: center;
+                     justify-content: right;
+                     gap: 10px;
+
+                     h3 {
+                            color: var(--pri);
+                     }
+                     div {
+                            position: relative;
+                            background: var(--pri2);
+                            width: 150px;
+                            height: 5px;
+
+                            div {
+                                   background: var(--pri);
+                            }
+                            .combat {
+                                   width: 23%;
+                            }
+                            .movement {
+                                   width: 46%;
+                            }
+                            .render {
+                                   width: 79%;
+                            }
+                            .player {
+                                   width: 23%;
+                            }
+                            .exploit {
+                                   width: 25%;
+                            }
+                     }
+              }
+       }
+       #clickgui {
+              overflow: hidden;
+              position: absolute;
+              background: transparent;
+              height: 100%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              .certain {
+                     position: absolute;
+                     background: var(--bgtrans);
+                     height: 100%;
+                     width: 100%;
+              }
+              .menu {
+                     position: relative;
+                     background: var(--bg2);
+                     padding: 10px;
+
+                     .sidebar {
+                            background: transparent;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: left;
+                            gap: 5px;
+
+                            hr {
+                                   opacity: 0.25;
+                                   width: 100%;
+                            }
+                            .title {
+                                   color: var(--pri);
+                                   font-size: 32px;
+                            }  
+                            h2 {
+                                   position: relative;
+                                   margin-top: 10px;
+                                   padding-left: 10px;
+                                   font-size: 20px;
+                                   cursor: pointer;
+                                   transition: 0.3s ease;
+
+                                   &:hover {
+                                          color: var(--pri);
+
+                                          div {
+                                                 opacity: 1; 
+                                          }
+                                   }
+
+                                   div {
+                                          position: absolute;
+                                          background: var(--pri);
+                                          opacity: 0;
+                                          height: 100%;
+                                          width: 5px;
+                                          left: 0px;
+                                          transition: 0.3s ease;
+                                   }
+                            }
+                     }
+              }
+       }
+}

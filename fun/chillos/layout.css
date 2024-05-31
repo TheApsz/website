@@ -19,8 +19,8 @@
 
        #navbar {
               position: relative;
-              height: 30px;
-              width: 75%;
+              height: 20px;
+              width: calc(100% - 30px);
               background: transparent;
               padding: 15px 5px;
               top: 0px;
@@ -47,7 +47,7 @@
                      justify-content: center;
                      align-items: center;
                      flex-direction: row;
-                     gap: 15px;
+                     gap: 10px;
                      transition: all 0.3s ease;
 
                      &:hover {
@@ -55,7 +55,7 @@
                      }
 
                      h1 {
-                            font-size: 20px;
+                            font-size: 15px;
                      }
                      h2 {
                             font-size: 12px;
@@ -64,8 +64,7 @@
                      .program {
                             position: relative;
                             background: transparent;
-                            height: 35px;
-                            aspect-ratio: 1;
+                            padding: 5px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
