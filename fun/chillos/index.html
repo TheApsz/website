@@ -47,55 +47,40 @@
 
 <body>
 <div id="desktop">
-       <img src="https://images.hdqwalls.com/download/8-bit-city-m2-2560x1440.jpg">
+       <img src="https://images.hdqwalls.com/download/red-inside-grey-design-8k-w2-3840x2160.jpg">
 
-       <div class="trans rounded" id="weatherboxexpand">
-              <div class="basic">
-                     <span class="material-symbols-rounded">cloud</span>
-                     <h1>Cloudy <span>·</span> 6°C</h1>
-              </div>
-              <div class="advanced rounded">
-                     <h1>today's suggestions</h1>
-                     <div id="weathergrid">
-                            <div>
-                                   <span class="material-symbols-rounded">beach_access</span>
-                                   <h2>Umbrella<br><span>No need</span></h2>
-                            </div>
-                            <div>
-                                   <span class="material-symbols-rounded">apparel</span>
-                                   <h2>Clothing<br><span>Heavy</span></h2>
-                            </div>
-                            <div>
-                                   <span class="material-symbols-rounded">airwave</span>
-                                   <h2>Polution<br><span>Very poor</span></h2>
-                            </div>
-                            <div>
-                                   <span class="material-symbols-rounded">thermometer</span>
-                                   <h2>Wind chill<br><span>Caution</span></h2>
-                            </div>
+       <div id="menu" class="trans">
+              <input placeholder="Search for programs, documents and even the internet" spellcheck="false"></input>
+              <div class="profile">
+                     <h3>Guest</h3>
+                     <div class="items">
+                            <div class="other"><div class="indicator"></div><span class="material-symbols-rounded">settings</span></div>
+                            <div class="other"><div class="indicator"></div><span class="material-symbols-rounded">power_settings_new</span></div>
                      </div>
               </div>
        </div>
-       <div class="trans rounded" id="timeboxexpand">
-              <h1 id="focustim">Focus for <span id="focustime">30mins</span></h1>
-              <input type="range" min="15" max="240" value="30" id="focusminutes">
-              <h2 class="button">Start</h2>
-       </div>
-       <div class="trans" id="navbar">
-              <div id="weatherbox" class="navitem">
-                     <span class="material-symbols-rounded">cloud</span>
-                     <h1 id="weather">6°C</h1>
-              </div>
 
-              <div id="timebox" class="navitem">
-                     <span class="material-symbols-rounded">schedule</span>
-                     <h1 id="time" class="fade-in">Null:Null</h1>
-                     <h1 id="date" class="fade-in">Null (Month)</h1>
-              </div>
 
-              <div id="programs" class="navitem">
-                     <div class="program"><span class="material-symbols-rounded">search</span></div>
-                     <div class="program"><span class="material-symbols-rounded">folder</span></div>
+       <div id="navbar" class="trans">
+              <div class="apps">
+                     <div><div class="indicator"></div><img src="https://pentrum.pages.dev/og-image.png"></div>
+                     <hr>
+                     <div><div class="indicator"></div><span class="material-symbols-rounded">folder</span></div>
+                     <div><div class="indicator"></div><span class="material-symbols-rounded">search</span></div>
+                     <hr>
+              </div>
+              <div class="essentials">
+                     <div class="other"><span class="material-symbols-rounded">arrow_drop_up</span></div>
+                     <div class="other"><h3>ENG</h3></div>
+                     <div class="other"><span class="material-symbols-rounded">battery_charging_full</span></div>
+                     <div class="other"><span class="material-symbols-rounded">volume_down</span></div>
+                     <hr>
+                     <div class="time">
+                            <h2 id="time">12:30 PM</h2>
+                            <h2 id="date">23th of june</h2>
+                     </div>
+                     <div class="other"><span class="material-symbols-rounded">notifications</span></div>
+                     
               </div>
        </div>
 </div>

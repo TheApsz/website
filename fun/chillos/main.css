@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap');
-
 :root {
        /* Backgrounds */
        --bg: rgb(10, 10, 10);
@@ -11,12 +9,12 @@
        --bgtrans: rgba(0,0,0, 0.3);
 
        /* Text */
-       --txt: rgb(29, 29, 29);
-       --txt2: rgb(202, 202, 202);
+       --txt: rgb(202, 202, 202);
+       --txti: rgb(120, 120, 120);
 
        /* Colors */
-       --pri: rgb(122, 133, 233);
-       --pri2: rgba(104, 117, 240, 0.2);
+       --pri: rgb(255, 18, 58);
+       --pri2: rgba(255, 18, 58, 0.2);
 
        /* Filters */
        --imgfilter: brightness(0) saturate(100%) invert(22%) sepia(53%) saturate(6354%) hue-rotate(340deg) brightness(98%) contrast(108%);
@@ -84,8 +82,8 @@ h2 {
      }
 
      ::selection {
-       color: black; /* Change the text color */
-       background-color: var(--pri); /* Change the background color */
+       color: inherit; /* Change the text color */
+       background-color: transparent; /* Change the background color */
      }
 
 .button:hover {
