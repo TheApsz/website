@@ -55,6 +55,7 @@
                      .indicator {
                             position: absolute;
                             background: var(--pri);
+                            pointer-events: none;
                             height: 5px;
                             width: 0%;
                             bottom: 0px;
@@ -143,30 +144,109 @@
 #menu {
        position: absolute;
        background: var(--bgtrans);
-       padding: 5px;
+       padding: 10px;
        border-radius: 10px;
        left: 5px;
+       scale: 0.9;
+       opacity: 0;
        bottom: 70px;
        display: flex;
        flex-direction: column;
-       justify-content: center;
-       align-items: flex-start;
+       justify-content: flex-start;
+       align-items: center;
        gap: 5px;
+       transition: 0.5s cubic-bezier(0,1.66,.58,.88);
 
-       input {
+       .sep {
+              width: 100%;
+              opacity: 0.1;
+
+       }
+       .pinned {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 5px;
+
+              h3 {
+                     color: var(--pri);
+              }
+              .grid {
+                     background: transparent;
+                     display: grid;
+                     grid-template-columns: repeat(6, 80px);
+                     grid-template-rows: repeat(1, 80px);
+                     gap: 5px;
+
+                     .other.add {
+                            opacity: 0.5;
+                            span {
+                                   font-size: 30px;
+                            }
+                     }
+                     .other {
+                            position: relative;
+                            background: transparent;
+                            height: 100%;
+                            border-radius: 10px;
+                            aspect-ratio: 1;
+                            transition: 0.1s ease;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+       
+                            &:hover {
+                                   background: rgba(255,255,255,0.05);
+                            }
+                            img {
+                                   height: 100%;
+                                   aspect-ratio: 1;;
+                            }
+                            span {
+                                   color: var(--txt);
+                                   font-size: 50px;
+                            }
+                            h3 {
+                                   opacity: 1;
+                            }
+                     }
+              }
+       }
+       .search {
               position: relative;
               background: var(--bgtrans);
-              font-size: 15px;
+              padding: 5px 10px;
               border-radius: 10px;
-              color: var(--txt);
-              font-family: comfortaa,sans-serif;
-              border: 0;
-              padding-left: 10px;
-              width: 450px;
-              height: 35px;
+              width: calc(100% - 20px);
+              height: 30px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: row;
+              gap: 5px;
 
-              &:focus {
-                     outline: 0;
+              hr {
+                     height: 50%;
+                     opacity: 0.2;
+              }
+
+              input {
+                     position: relative;
+                     background: transparent;
+                     font-size: 15px;
+                     border-radius: 10px;
+                     color: var(--txt);
+                     font-family: comfortaa,sans-serif;
+                     border: 0;
+                     margin-left: 5px;
+                     flex-grow: 1;
+                     height: 100%;
+       
+                     &:focus {
+                            outline: 0;
+                     }
               }
        }
 
@@ -217,4 +297,13 @@
                      }
               }
        }
+}
+
+#folder {
+       position: absolute;
+       background: var(--bg);
+       border-radius: 10px;
+       padding: 10px;
+       height: 750px;
+       width: 1500px;
 }

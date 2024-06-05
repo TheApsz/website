@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+/* paste google fonts here */
+
+:root {
+       /* Backgrounds */
+       --bg: rgba(30, 30, 30, 1);
+       --bg2: rgba(15, 15, 15, 1);
+       --bgtrans: rgba(0,0,0, 0.2);
+
+       /* Text */
+       --txt: rgb(236, 241, 233);
+
+       /* Colors */
+       --pri: rgb(255, 18, 58);
+       --pri2: rgba(255, 18, 58, 0.2);
+       --sec: rgb(255, 61, 61);
+       --sec2: rgba(255, 61, 61, 0.5);
+       --acc: rgb(255, 208, 0);
+       --acc2: rgba(255, 208, 0, 0.5);
+
+       --text-primary: Fredoka,sans-serif;
+       --text-secondary: Comfortaa,sans-serif;
+}
+
+
+
+/* Scroll bar on the right */
+*::-webkit-scrollbar {
+       width: 10px; /* Adjust width as desired */
+}
+     
+*::-webkit-scrollbar-track {
+  background: transparent; /* Customize track background color */
+}
+     
+*::-webkit-scrollbar-thumb {
+  background: var(--pri2); /* Customize thumb color */
+  transition: all 0.25s ease;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--pri); /* Customize thumb color */
+}
+
+/* Things that you select */
+::selection {
+  color: black; /* Change the text color */
+  background-color: var(--pri); /* Change the background color */
+}
+
+
+
+/* how the button should be styled when hovered */
+.button {
+       transition: 0.3s ease;
+
+       &:hover {
+              background: var(--pri2) !important;
+              color: var(--pri) !important;
+              scale: 1.0;
+       }
+}
+/* Your preferred padding */
+.padding {
+       padding: 20px 20px;
+}
+.flex-gap {
+       gap: 10px;
+}
+* {
+       border-radius: 20px;
+}
+
+.blur {
+       filter: blur(3vmax);
+}
+.blur-background {
+       backdrop-filter: blur(3vmax);
+}

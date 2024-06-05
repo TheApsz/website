@@ -60,6 +60,9 @@ h2 {
 .rounded {
        border-radius: 20px;
 }
+.border {
+       box-shadow: 0px 0px 0px 1px white;
+}
 
 /* Target WebKit browsers (Chrome, Safari, etc.) */
 *::-webkit-scrollbar {

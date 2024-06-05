@@ -65,14 +65,14 @@
        .text {
               position: relative;
               background: transparent;
-              margin-top: 40px;
-              max-width: 1000px;
+              margin-top: 0px;
+              max-width: 90%;
 
               h1 {
                      text-align: center;
                      color: var(--pri);
-                     font-size: 50px;
-                     line-height: 50px;
+                     font-size: 30px;
+                     line-height: 30px;
               }
               h2 {
                      text-align: center;

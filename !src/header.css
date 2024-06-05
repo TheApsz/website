@@ -158,11 +158,15 @@
                      box-shadow: 0px 0px 0px -1px black;
                      font-size: 23px;
                      padding: 5px 20px;
+                     padding-left: 50px;
                      cursor: pointer;
                      transition: all 0.2s ease;
 
                      span {
+                            position: absolute;
                             opacity: 0.5;
+                            translate: 0% 10%;
+                            left: 20px;
                      }
               }
        }
@@ -185,6 +189,7 @@
                      cursor: pointer;
                      transition: all 0.2s ease;
 
+
                      img {
                             scale: 0.7;
                             height: 100%;
@@ -199,19 +204,4 @@
                      }
               }
        }
-}
-
-
-.mobileheaderswitch {
-       position: fixed;
-       background: rgba(0,0,0,0.5);
-       height: 100%;
-       width: 100%;
-       top: 0px;
-       left: 0px;
-       pointer-events: none;
-       opacity: 0;
-
-       z-index: 9999;
-       transition: opacity 0.2s ease;
 }

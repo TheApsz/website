@@ -17,9 +17,6 @@
        --sec2: rgba(255, 61, 61, 0.5);
        --acc: rgb(255, 208, 0);
        --acc2: rgba(255, 208, 0, 0.5);
-
-       /* Filters */
-       --imgfilter: brightness(0) saturate(100%) invert(22%) sepia(53%) saturate(6354%) hue-rotate(340deg) brightness(98%) contrast(108%);
 }
 html {
        touch-action: manipulation;
@@ -64,7 +61,7 @@ h2 {
 /* Target WebKit browsers (Chrome, Safari, etc.) */
 *::-webkit-scrollbar {
        width: 10px; /* Adjust width as desired */
-     }
+}
      
      *::-webkit-scrollbar-track {
        background: transparent; /* Customize track background color */
