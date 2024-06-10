@@ -29,6 +29,7 @@
        display: flex;
        justify-content: space-between;
        align-items: center;
+       z-index: 10000;
 
        .apps {
               position: relative;
@@ -156,6 +157,7 @@
        align-items: center;
        gap: 5px;
        transition: 0.5s cubic-bezier(0,1.66,.58,.88);
+       z-index: 9999;
 
        .sep {
               width: 100%;
@@ -303,6 +305,8 @@
        position: absolute;
        background: var(--bgtrans);
        border-radius: 10px;
+       scale: 0.9;
+       opacity: 0;
        height: 750px;
        width: 1500px;
        overflow: hidden;
@@ -388,5 +392,57 @@
               width: 100%;
               height: 700px;
               bottom: 0px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              .control {
+                     position: relative;
+                     border-radius: 10px;
+                     background: transparent;
+                     width: calc(100% - 10px);
+                     height: 50px;
+                     display: flex;
+                     flex-direction: row;
+                     justify-content: center;
+                     align-items: center;
+                     gap: 5px;
+
+                     .button {
+                            padding: 7px;
+                            background: transparent;
+                            cursor: pointer;
+
+                            &:hover {
+                                   background: rgba(255,255,255,0.1);
+                            }
+                     }
+                     input {
+                            position: relative;
+                            padding: 10px 10px;
+                            background: rgba(255,255,255,0.05);
+                            font-family: comfortaa,sans-serif;
+                            font-size: 16px;
+                            color: var(--txt);
+                            border: 0;
+                            flex-grow: 1;
+
+                            &:focus {
+                                   outline: 0;
+                            }
+                     }
+              }
        }
+}
+
+
+.visible {
+       opacity: 1 !important;
+       scale: 1 !important;
+}
+.expanded {
+       width: 25% !important;
+}
+.popup {
+       transition: opacity 0.5s cubic-bezier(0,1.66,.58,.88), scale 0.5s cubic-bezier(0,1.66,.58,.88);
 }
