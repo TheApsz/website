@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="time.js"></script>
     <script src="clickevents.js"></script>
+    <script src="terminal.js"></script>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="layout.css">
 </head>
@@ -49,7 +50,28 @@
 <div id="desktop">
        <img src="https://images.hdqwalls.com/download/red-inside-grey-design-8k-w2-3840x2160.jpg">
 
-       <div id="menu" class="trans">
+       <div class="context-menu trans border" id="contextmenu">
+              <h2 id="refresh">Refresh</h2>
+              <hr>
+              <h2 id="copy">Copy</h2>
+              <h2 id="paste">Paste</h2>
+              <hr>
+              <h2>New txt</h2>
+              <h2>New folder</h2>
+              <h2>New Zip</h2>
+              <hr>
+              <h2 class="terminalsh">Open terminal</h2>
+              <hr>
+              <h2>Settings</h2>
+       </div>
+
+       <div id="search" class="trans border">
+              <span class="material-symbols-rounded">search</span>
+              <hr>
+              <input placeholder="Search for programs, documents and even the internet" spellcheck="false"></input>
+       </div>
+
+       <div id="menu" class="trans border">
               <div class="search">
                      <span class="material-symbols-rounded">search</span>
                      <hr>
@@ -83,8 +105,9 @@
                      <div id="menush" class="ind"><div class="indicator"></div><img src="https://pentrum.pages.dev/og-image.png"></div>
                      <hr>
                      <div id="foldersh" class="ind"><div class="indicator"></div><span class="material-symbols-rounded">folder</span></div>
-                     <div class="ind"><div class="indicator"></div><span class="material-symbols-rounded">search</span></div>
+                     <div id="searchsh" class="ind"><div class="indicator"></div><span class="material-symbols-rounded">search</span></div>
                      <hr>
+                     <div class="ind terminalsh otherind"><div class="indicator"></div><span class="material-symbols-rounded">terminal</span></div>
               </div>
               <div class="essentials">
                      <div class="other"><span class="material-symbols-rounded">arrow_drop_up</span></div>
@@ -101,8 +124,8 @@
               </div>
        </div>
 
-       <div id="folder" class="trans border popup draggable">
-              <div class="title">
+       <div id="folder" class="trans border popup draggable-parent">
+              <div class="title draggable">
                      <div class="truetitle">
                             <h2>This PC</h2>
                             <span class="material-symbols-rounded">add</span>
@@ -128,13 +151,62 @@
                                    <h2>Downloads</h2>
                                    <h2>Desktop</h2>
                                    <h2>Pictures</h2>
+                                   <h2>Music</h2>
+                                   <h2>Videos</h2>
                                    <hr>
                                    <h2>System-SSD</h2>
                                    <h2>Local disk</h2>
                             </div>
                             <hr class="sep">
-                            <div class="items"></div>
+                            <div class="items">
+                                   <div class="disk">
+                                          <h1>System-SSD</h1>
+                                          <h2>423GB free of 500GB</h2>
+                                          <div class="healthbar">
+                                                 <div class="ssd"></div>
+                                          </div>
+                                   </div>
+                                   <div class="disk">
+                                          <h1>Local disk</h1>
+                                          <h2>1.9TB free of 2TB</h2>
+                                          <div class="healthbar">
+                                                 <div class="local"></div>
+                                          </div>
+                                   </div>
+                            </div>
                      </div>
+              </div>
+       </div>
+
+       <div id="terminal" class="trans border popup draggable-parent">
+              <div class="title draggable">
+                     <div class="truetitle">
+                            <h2>Terminal</h2>
+                     </div>
+                     <div class="control">
+                            <span class="material-symbols-rounded minus">remove</span>
+                            <span class="material-symbols-rounded windowed">web_asset</span>
+                            <span class="material-symbols-rounded close">close</span>
+                     </div>
+              </div>
+              <div class="main" id="mainoutput">
+                     <h2><span>TheApsz</span>@<span>proton.me</span><br>
+                     <hr>
+                     <span>OS</span>: MysticOS 0.1A LTS 24.06<br>
+                     <span>HOST</span>: 127.0.0.1<br>
+                     <span>KERNEL</span>: 6.8.12 Generic<br>
+                     <span>PACKAGES</span>: 1686 (dpkg), 26 (snap)<br>
+                     <span>SHELL</span>: MysticBASH 12b<br>
+                     <span>RESOLUTION</span>: 1080p<br>
+                     <span>DE</span>: Arch linux latest<br>
+                     <span>WM</span>: Mutter<br>
+                     <span>THEME</span>: Default red<br>
+                     <span>TERMINAL</span>: MysticBASH<br><br>
+                     To get started write /help
+              
+              
+                     </h2>
+                     <input id="textInput" placeholder="Type a command here" autocomplete="off">
               </div>
        </div>
 </div>
