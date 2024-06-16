@@ -254,12 +254,12 @@
 
         display: grid;
         gap: 30px;
-        grid-template-columns: repeat(1, 450px);
+        grid-template-columns: repeat(1, 350px);
         grid-template-rows: repeat(2, 250px);
 
         .item {
             position: relative;
-            background: var(--bg2);
+            background: var(--bgtrans);
             cursor: pointer;
             overflow: hidden;
 

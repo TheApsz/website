@@ -1,0 +1,22 @@
+@keyframes visualizer {
+ from {
+       background: rgba(var(--priviz), 10%);
+       height: 10%;
+ }
+ 25% {
+       background: rgba(var(--priviz), 48%);
+       height: 90%;
+ }
+ 50% {
+       background: rgba(var(--priviz), 24%);
+       height: 40%;
+ }
+ 75% {
+       background: rgba(var(--priviz), 37%);
+       height: 72%;
+ }
+ to {
+       background: rgba(var(--priviz), 10%);
+       height: 10%;
+ }
+}
