@@ -1,16 +1,14 @@
 $(document).ready(function() {
 
-  // Click handler for singleplayer button
   $('.singleplayer').click(function() {
-    $('#singleplayer').toggleClass('off on'); // Toggle classes on clicked element (singleplayer)
-    $('#multiplayer').addClass('off').removeClass('on'); // Set multiplayer to off
-    $('#settings').addClass('off').removeClass('on');  // Set settings to off (new)
-    $('#accounts').addClass('off').removeClass('on');  // Set accounts to off (new)
-    $('#mainmenu').addClass('skibidi').removeClass('not-skibidi'); // Show main menu
+    $('#singleplayer').toggleClass('off on');
+    $('#multiplayer').addClass('off').removeClass('on');
+    $('#settings').addClass('off').removeClass('on');
+    $('#accounts').addClass('off').removeClass('on');
+    $('#mainmenu').addClass('skibidi').removeClass('not-skibidi');
     
-    // Check if all menu buttons are off (singleplayer, multiplayer, settings, accounts)
-    if ($('#singleplayer').hasClass('off')) {  // Use class for all buttons
-      $('#mainmenu').removeClass('skibidi').addClass('not-skibidi'); // Hide main menu
+    if ($('#singleplayer').hasClass('off')) {
+      $('#mainmenu').removeClass('skibidi').addClass('not-skibidi');
     }
   });
 
@@ -61,17 +59,18 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  // Cache the slider and text element for performance
   var fovSlider = $('#fov');
   var fovText = $('.fov');
   var fpsSlider = $('#fps');
   var fpsText = $('.fps');
+  // all of this caches the sliders
 
-  // Update text on slider change
   fovSlider.on('input', function() {
-    fovText.text($(this).val()); // Set text to slider value
+    fovText.text($(this).val());
   });
   fpsSlider.on('input', function() {
-    fpsText.text($(this).val()); // Set text to slider value
+    fpsText.text($(this).val());
   });
+  // may 31 not the most efficient way but it works
+  // june 14 doesnt work on windows 10*
 });
