@@ -72,5 +72,5 @@ $(document).ready(function() {
     fpsText.text($(this).val());
   });
   // may 31 not the most efficient way but it works
-  // june 14 doesnt work on windows 10*
+  // june 14 doesnt work firefox*
 });

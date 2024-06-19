@@ -17,6 +17,7 @@
 </head>
 
 <script src="CThemes/branding/menu.js"></script>
+<script src="CThemes/branding/clickgui.js"></script>
 <link rel="stylesheet" href="CThemes/branding/main.css">
 <link rel="stylesheet" href="CThemes/branding/ingame.css">
 <link rel="stylesheet" href="CThemes/branding/animations.css">
@@ -57,8 +58,8 @@
                      <h2>My balls are really itchy</h2>
                      <h2><span class="dark">---</span> <span class="green">Some server message or something</span> <span class="dark">---</span></h2>
                      <h2><span class="client">Apsz</span> · wow this chat is really cool</h2>
-                     <h2><span class="username">Player1</span> · truly</h2>
-                     <h2><span class="username">Player2</span> · Yakuza is the best game</h2>
+                     <h2><span class="username">RizzLeer</span> · truly</h2>
+                     <h2><span class="username">IHaveSexWithPringleCans</span> · Yakuza is the best game</h2>
               </div>
        </div>
        <div id="hotbar">
@@ -100,20 +101,21 @@
               </div>
        </div>
 
-       <div id="clickgui">
+       <div id="clickgui" class="inactive">
               <div class="certain trans"></div>
               <div class="menu border">
                      <div class="sidebar">
                             <h1 class="title">Pentrum Client</h1>
                             <hr>
-                            <h2><div></div>Home</h2>
-                            <h2><div></div>Modules</h2>
-                            <h2><div></div>AzeraiGPT</h2>
-                            <h2><div></div>DSFB</h2>
-                            <h2><div></div>Settings</h2>
+                            <h2 id="homesh"><div></div>Home</h2>
+                            <h2 id="modulessh"><div></div>Modules</h2>
+                            <h2 id="marketplacesh"><div></div>Marketplace</h2>
+                            <h2 id="azeraigptsh"><div></div>AzeraiGPT</h2>
+                            <h2 id="dsfbsh"><div></div>DSFB</h2>
+                            <h2 id="settingssh"><div></div>Settings</h2>
                      </div>
                      <div class="features">
-                            <div class="home">
+                            <div id="homesb" class="home on">
                                    <div class="item">
                                           <h1>Stats</h1>
                                           <h2>Server: Hypixel.net</h2>
@@ -147,15 +149,80 @@
                                           <h2>Sharing data with 127.0.0.1</h2>
                                    </div>
                             </div>
-                            <div class="modules">
+                            <div id="modulessb" class="modules off">
                                    <div class="category">
-                                          <h2>Combat</h2>
-                                          <h2>Movement</h2>
-                                          <h2>Render</h2>
-                                          <h2>Player</h2>
-                                          <h2>Exploit</h2>
+                                          <h2>Combat<div></div></h2>
+                                          <h2>Movement<div></div></h2>
+                                          <h2>Render<div></div></h2>
+                                          <h2>Player<div></div></h2>
+                                          <h2>Exploit<div></div></h2>
                                    </div>
-                                   <h1>Too much work</h1>
+                                   <div class="car">
+                                          <div class="item">
+                                                 <div class="decor switchdasisoff"></div>
+                                                 <div class="title">
+                                                        <h1 class="switchtitle switchisoff">Killaura</h1>
+                                                        <hr>
+                                                        <div><h2 class="switch switchoff">off</h2><h3>Bind: N/A</h3></div>
+                                                 </div>
+                                                 <div class="content">
+                                                        <h3>Mode:</h3>
+                                                        <div>
+                                                               <h2>Single</h2>
+                                                               <h2>Multi</h2>
+                                                               <h2>Packet</h2>
+                                                               <h2>HVH</h2>
+                                                        </div>
+                                                        <h3>Sort:</h3>
+                                                        <div>
+                                                               <h2>Health</h2>
+                                                               <h2>Random</h2>
+                                                        </div>
+                                                        <h3>Autoblock:</h3>
+                                                        <div>
+                                                               <h2>Fake</h2>
+                                                               <h2>Packet</h2>
+                                                               <h2>Vanilla</h2>
+                                                               <h2>911</h2>
+                                                        </div>
+                                                        <h3>Avarage range: <span id="reachtxt">4.0</span></h3>
+                                                        <div>
+                                                               <input type="range" min="3.0" max="12.0" value="4.0" id="reach" step="0.2">
+                                                        </div>
+                                                        <h3>Avarage clicks per second: <span id="cpstxt">10</span></h3>
+                                                        <div>
+                                                               <input type="range" min="2" max="20" value="10" id="cps" step="1">
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                          <div class="item">
+                                                 <div class="decor switchdasisoff"></div>
+                                                 <div class="title">
+                                                        <h1 class="switchtitle switchisoff">Antibot</h1>
+                                                        <hr>
+                                                        <div><h2 class="switch switchoff">off</h2><h3>Bind: N/A</h3></div>
+                                                 </div>
+                                                 <div class="content">
+                                                        <h3>Mode:</h3>
+                                                        <div>
+                                                               <h2>Normal</h2>
+                                                               <h2>Adaptive</h2>
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                   </div>
+                            </div>
+                            <div id="marketplacesb" class="modules off">
+
+                            </div>
+                            <div id="azeraigptsb" class="modules off">
+                                   
+                            </div>
+                            <div id="dsfbsb" class="modules off">
+                                   
+                            </div>
+                            <div id="settingssb" class="modules off">
+                                   
                             </div>
                      </div>
                      <div class="profile border">
@@ -173,8 +240,8 @@
                                                  <div></div>
                                                  <div></div>
                                           </div>
-                                          <h1>SexyBack</h1>
-                                          <h2>Justin Timberlake</h2>
+                                          <h1>Example song</h1>
+                                          <h2>And a very cool artist you absolutely love</h2>
                                    </div>
                                    <div class="controls">
                                           <span class="material-symbols-rounded">shuffle</span>
@@ -201,7 +268,7 @@
           /* Backgrounds */
           --bg: rgba(30, 30, 30, 1);
           --bg2: rgba(15, 15, 15, 1);
-          --bgtrans: rgba(0,0,0, 0.2);
+          --bgtrans: rgba(0,0,0, 0.3);
    
           /* Text */
           --txt: rgb(236, 241, 233);

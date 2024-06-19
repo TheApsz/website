@@ -20,3 +20,20 @@
        height: 10%;
  }
 }
+
+@keyframes caton {
+      from {
+             translate: -5% 0%;
+      }
+      to {
+             translate: 0% 0%;
+      }
+}
+@keyframes catoff {
+      from {
+             translate: 0% 0%;
+      }
+      to {
+             translate: 5% 0%;
+      }
+}

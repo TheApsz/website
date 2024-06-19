@@ -320,6 +320,33 @@ body {
 }
 
 
+#clickgui.inactive {
+       scale: 1;
+       pointer-events: none;
+
+       .menu {
+              opacity: 0;
+              scale: 0.9;
+              transition: 0.2s ease;
+       }
+       .certain {
+              opacity: 0;
+              scale: 1;
+       }
+}
+#clickgui.active {
+       scale: 1;
+       pointer-events: auto;
+
+       .menu {
+              opacity: 1;
+              scale: 1;
+              transition: 0.5s cubic-bezier(.13,1.62,.59,.8);
+       }
+       .certain {
+              opacity: 1;
+       }
+}
 #clickgui {
        overflow: hidden;
        position: absolute;
@@ -329,26 +356,31 @@ body {
        display: flex;
        justify-content: center;
        align-items: center;
+       transition: 0.2s;
 
        .certain {
               position: absolute;
               background: var(--bgtrans);
               height: 100%;
               width: 100%;
+              transition: 0s;
        }
        .menu {
               position: relative;
               background: var(--bg2);
+              width: 1150px;
+              height: 465px;
               padding: 20px;
               display: flex;
               gap: 30px;
+              transition: 0.2s cubic-bezier(.13,1.62,.59,.8);
 
               .sidebar {
-                     background: transparent;
+                     background: var(--bgtrans);
                      height: 100%;
                      display: flex;
                      flex-direction: column;
-                     justify-content: center;
+                     justify-content: flex-start;
                      align-items: left;
                      gap: 5px;
 
@@ -357,6 +389,9 @@ body {
                             width: 100%;
                      }
                      .title {
+                            margin-top: 10px;
+                            margin-left: 10px;
+                            margin-right: 10px;
                             color: var(--pri);
                             font-size: 32px;
                      }  
@@ -364,6 +399,7 @@ body {
                             position: relative;
                             margin-top: 0px;
                             padding: 5px 10px;
+                            margin-left: 10px;
                             font-size: 20px;
                             cursor: pointer;
                             transition: 0.3s ease;
@@ -391,7 +427,8 @@ body {
                      }
               }
               .features {
-                     background: transparent;
+                     background: black;
+                     top: 0px;
                      height: 100%;
                      display: flex;
                      flex-direction: column;
@@ -399,13 +436,29 @@ body {
                      align-items: center;
                      gap: 5px;
 
+                     .on {
+                            position: absolute;
+                            opacity: 1;
+                            scale: 1;
+                            left: 265px;
+                            transition: 0.3s ease;
+                            animation: caton 0.3s ease forwards;
+                     }
+                     .off {
+                            position: absolute;
+                            opacity: 0;
+                            scale: 1;
+                            left: 265px;
+                            transition: 0.3s ease;
+                            animation: catoff 0.3s ease forwards;
+                     }
+
                      .home {
                             background: transparent;
                             display: grid;
                             grid-template-columns: repeat(3, 300px);
-                            grid-template-rows: repeat(3, 150px);
+                            grid-template-rows: repeat(3, 152px);
                             gap: 5px;
-                            display: none;
 
                             .item {
                                    position: relative;
@@ -457,7 +510,7 @@ body {
 
                      .modules {
                             background: transparent;
-                            display: grid;
+                            display: flex;
                             width: 915px;
                             height: 465px;
                             gap: 5px;
@@ -470,25 +523,211 @@ body {
                             .category {
                                    position: relative;
                                    background: var(--bgtrans);
-                                   padding: 10px 20px;
                                    display: flex;
                                    justify-content: center;
                                    align-items: center;
-                                   gap: 30px;
+                                   gap: 5px;
+                                   cursor: pointer;
 
                                    h2 {
-                                          opacity: 1;
-                                          transition: 0.1s ease;
-                                          cursor: pointer;
+                                          position: relative;
+                                          padding: 10px 20px;
+                                          transition: 0.2s ease;
 
+                                          div {
+                                                 position: absolute;
+                                                 background: var(--pri);
+                                                 opacity: 0;
+                                                 bottom: 0px;
+                                                 height: 5px;
+                                                 width: 25%;
+                                                 left: 50%;
+                                                 translate: -50% 0%;
+                                                 transition: 0.2s ease;
+                                          }
                                           &:hover {
-                                                 opacity: 1;
                                                  color: var(--pri);
+
+                                                 div {
+                                                        opacity: 1;
+                                                        width: 50%;
+                                                 }
                                           }
                                    }
                             }
-                            h1 {
-                                   color: var(--pri);
+                            .car {
+                                   position: relative;
+                                   background: transparent;
+                                   width: 100%;
+                                   flex-grow: 1; 
+                                   display: flex;
+                                   justify-content: left;
+                                   align-items: center;
+                                   overflow: hidden;
+                                   gap: 15px;
+
+                                   .item {
+                                          position: relative;
+                                          background: var(--bgtrans); 
+                                          height: 100%;  
+                                          padding: 0px 20px;
+                                          gap: 10px;
+                                          overflow: hidden;
+
+                                          .switchdasisoff {
+                                                 height: 0px;
+                                          }
+                                          .switchdasison {
+                                                 height: 40px;
+                                          }
+                                          .decor {
+                                                 position: absolute;
+                                                 background: var(--pri);
+                                                 width: 100%;
+                                                 top: 0px;
+                                                 left: 0px;
+                                                 filter: blur(2vmax);
+                                                 z-index: 0;
+                                                 transition: 0.3s ease;
+                                          }
+                                          
+                                          .title {
+                                                 position: relative;
+                                                 display: flex;
+                                                 align-items: center;
+                                                 gap: 10px;
+                                                 margin-top: 10px;
+                                                 z-index: 1;
+
+                                                 .switchisoff {
+                                                        color: var(--txt);
+                                                 }
+                                                 .switchison {
+                                                        color: var(--pri);
+                                                 }
+                                                 h1 {
+                                                        transition: 0.2s ease;
+                                                 }
+                                                 hr {
+                                                        flex-grow: 1;
+                                                        border-style: dashed;
+                                                        opacity: 0.3;
+                                                 }
+                                                 div {
+                                                        font-family: comfortaa,sans-serif;
+                                                        background: var(--bgtrans);
+                                                        color: var(--bg2);
+                                                        padding-right: 10px;
+                                                        display: flex;
+                                                        flex-direction: row;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        gap: 5px;
+
+                                                        .switchoff {
+                                                               background: var(--txt);
+                                                        }
+                                                        .switchon {
+                                                               background: var(--pri);
+                                                        }
+                                                        h2 {
+                                                               font-size: 20px;
+                                                               text-align: center;
+                                                               color: var(--bg2);
+                                                               height: 100%;
+                                                               width: 40px;
+                                                               padding: 5px 10px;
+                                                               cursor: pointer;
+                                                               transition: 0.2s ease;
+
+                                                               &:hover {
+                                                                      background: var(--pri);
+                                                               }
+                                                        }
+                                                        h3 {
+                                                               font-size: 15px;
+                                                               opacity: 0.7;
+                                                               transition: 0.3s ease;
+                                                               cursor: pointer;
+
+                                                               &:hover {
+                                                                      opacity: 1;
+                                                               }
+                                                        }
+                                                 }
+                                          }
+                                          .content {
+                                                 position: relative;
+                                                 background: transparent;
+                                                 margin-top: 15px;
+                                                 margin-bottom: 10px;
+                                                 max-width: 600px;
+                                                 display: flex;
+                                                 flex-direction: column;
+                                                 justify-content: left;
+                                                 align-items: flex-start;
+                                                 gap: 5px;
+                                                 overflow-x: hidden;
+                                                 z-index: 1;
+
+                                                 h3 {
+                                                        margin-top: 5px;
+                                                        font-weight: 400;
+                                                        opacity: 0.6;
+
+                                                        span {
+                                                               color: var(--pri);
+                                                               opacity: 1;
+                                                        }
+                                                 }
+
+                                                 div {
+                                                        min-width: 100%;
+                                                        display: flex;
+                                                        justify-content: left;
+                                                        align-items: center;
+                                                        flex-wrap: wrap;
+                                                        gap: 5px;
+
+                                                        h2 {
+                                                               padding: 5px 10px;
+                                                               font-size: 20px;
+                                                               background: var(--bgtrans);
+                                                               cursor: pointer;
+                                                               transition: 0.2s ease;
+
+                                                               &:hover {
+                                                                      color: var(--pri);
+                                                               }
+                                                        }
+                                                        input[type="range"] {
+                                                               position: relative;
+                                                               width: 100%;
+                                                               background-color: transparent;
+                                                               outline: none;
+                                                               overflow: hidden;
+                                                               cursor: pointer;
+                                                               appearance: none; /* Remove default appearance */
+                                                 
+                                                               &::-webkit-slider-runnable-track {
+                                                                      overflow: hidden;
+                                                                      height: 10px; /* Adjust track height */
+                                                                      background-color: rgb(30, 30, 30); /* Set track color */
+                                                                      border-radius: 1vmax;
+                                                               }
+                                                               &::-webkit-slider-thumb {
+                                                                      appearance: none; /* Remove default appearance */
+                                                                      border: none; /* Remove border */
+                                                                      aspect-ratio: 1;
+                                                                      translate: 0% -25%;
+                                                                      width: 25px; /* Adjust handle width */
+                                                                      background-color: var(--pri); /* Set handle color */
+                                                                      box-shadow: -500px 0 0 500px var(--pri2);
+                                                               }
+                                                        }
+                                                 }
+                                          }
+                                   }
                             }
                      }
               }
@@ -634,7 +873,7 @@ body {
                             .name {
                                    position: relative;
                                    display: flex;
-                                   background: var(--bgtrans);
+                                   background: transparent;
                                    height: 100%;
                                    flex-direction: column;
                                    justify-content: center;
