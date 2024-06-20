@@ -31,6 +31,32 @@ $(document).ready(function() {
               $('#homesb, #modulessb, #marketplacesb, #azeraigptsb, #dsfbsb').addClass('off').removeClass('on');
        });
 
+
+       $('#combatsh').click(function() {
+              $('.combat').addClass('mon').removeClass('moff');
+              $('.movement, .render, .player, .exploit').addClass('moff').removeClass('mon');
+          });
+      
+          $('#movementsh').click(function() {
+              $('.movement').addClass('mon').removeClass('moff');
+              $('.combat, .render, .player, .exploit').addClass('moff').removeClass('mon');
+          });
+      
+          $('#rendersh').click(function() {
+              $('.render').addClass('mon').removeClass('moff');
+              $('.combat, .movement, .player, .exploit').addClass('moff').removeClass('mon');
+          });
+      
+          $('#playersh').click(function() {
+              $('.player').addClass('mon').removeClass('moff');
+              $('.combat, .movement, .render, .exploit').addClass('moff').removeClass('mon');
+          });
+      
+          $('#exploitsh').click(function() {
+              $('.exploit').addClass('mon').removeClass('moff');
+              $('.combat, .movement, .render, .player').addClass('moff').removeClass('mon');
+          });
+
        $('.switch').click(function() {
               var $item = $(this).closest('.item');
       
@@ -52,6 +78,12 @@ $(document).ready(function() {
        var reachText = $('#reachtxt');
        var cpsSlider = $('#cps');
        var cpsText = $('#cpstxt');
+       var critSlider = $('#crit');
+       var critText = $('#crittxt');
+       var veloSlider = $('#velo');
+       var veloText = $('#velotxt');
+       var scafSlider = $('#scaf');
+       var scafText = $('#scaftxt');
        // all of this caches the sliders
      
        reachSlider.on('input', function() {
@@ -60,7 +92,24 @@ $(document).ready(function() {
        cpsSlider.on('input', function() {
          cpsText.text($(this).val());
        });
+       critSlider.on('input', function() {
+         critText.text($(this).val());
+       });
+       veloSlider.on('input', function() {
+              veloText.text($(this).val());
+       });
+       scafSlider.on('input', function() {
+              scafText.text($(this).val());
+       });
        // may 31 not the most efficient way but it works
        // june 14 doesnt work firefox*
 });
-     
+
+$(document).ready(function() {
+       $('#car').on('wheel', function(event) {
+           if (event.originalEvent.deltaY !== 0) {
+               event.preventDefault();
+               this.scrollLeft += event.originalEvent.deltaY;
+           }
+       });
+});

@@ -5,6 +5,33 @@ html {
        color: inherit; /* Change the text color */
        background-color: transparent; /* Change the background color */
 }
+
+
+*::-webkit-scrollbar {
+       width: 0px; /* Adjust width as desired */
+       display: none;
+}
+     
+     *::-webkit-scrollbar-track {
+       background: transparent; /* Customize track background color */
+       border-radius: 0px; /* Add rounded corners */
+     }
+     
+     *::-webkit-scrollbar-thumb {
+       background: var(--pri2); /* Customize thumb color */
+       border-radius: 0px; /* Add rounded corners */
+       transition: all 0.25s ease;
+     }
+     *::-webkit-scrollbar-thumb:hover {
+       background: var(--pri); /* Customize thumb color */
+       border-radius: 0px; /* Add rounded corners */
+     }
+
+     ::selection {
+       color: black; /* Change the text color */
+       background-color: var(--pri); /* Change the background color */
+     }
+
 body {
        display: flex;
        flex-direction: row;

@@ -376,7 +376,7 @@ body {
               transition: 0.2s cubic-bezier(.13,1.62,.59,.8);
 
               .sidebar {
-                     background: var(--bgtrans);
+                     background: transparent;
                      height: 100%;
                      display: flex;
                      flex-direction: column;
@@ -389,8 +389,8 @@ body {
                             width: 100%;
                      }
                      .title {
-                            margin-top: 10px;
-                            margin-left: 10px;
+                            margin-top: 0px;
+                            margin-left: 0px;
                             margin-right: 10px;
                             color: var(--pri);
                             font-size: 32px;
@@ -399,7 +399,7 @@ body {
                             position: relative;
                             margin-top: 0px;
                             padding: 5px 10px;
-                            margin-left: 10px;
+                            margin-left: 0px;
                             font-size: 20px;
                             cursor: pointer;
                             transition: 0.3s ease;
@@ -501,9 +501,10 @@ body {
                                    img {
                                           position: absolute;
                                           transform: scaleX(-1);
-                                          opacity: 0.2;
-                                          height: 100%;
+                                          opacity: 0.5;
+                                          height: 80%;
                                           right: 0px;
+                                          bottom: 0px;
                                    }
                             }
                      }
@@ -533,6 +534,7 @@ body {
                                           position: relative;
                                           padding: 10px 20px;
                                           transition: 0.2s ease;
+                                          opacity: 0.3;
 
                                           div {
                                                  position: absolute;
@@ -547,6 +549,7 @@ body {
                                           }
                                           &:hover {
                                                  color: var(--pri);
+                                                 opacity: 1;
 
                                                  div {
                                                         opacity: 1;
@@ -555,21 +558,41 @@ body {
                                           }
                                    }
                             }
-                            .car {
+                            #car {
                                    position: relative;
                                    background: transparent;
                                    width: 100%;
+                                   height: 100%;
                                    flex-grow: 1; 
                                    display: flex;
+                                   flex-wrap: nowrap;
                                    justify-content: left;
                                    align-items: center;
                                    overflow: hidden;
+                                   overflow-x: scroll;
                                    gap: 15px;
+
+                                   .mon {
+                                          position: relative !important;
+                                          opacity: 1;
+                                          scale: 1;
+                                          pointer-events: auto;
+                                          transition: 0.3s ease;
+                                   }
+                                   .moff {
+                                          position: absolute !important;
+                                          opacity: 0;
+                                          scale: 0.95;
+                                          pointer-events: none;
+                                          transition: 0.3s ease, opacity 0s ease;
+                                   }
 
                                    .item {
                                           position: relative;
                                           background: var(--bgtrans); 
-                                          height: 100%;  
+                                          height: 100%; 
+                                          flex-shrink: 0;
+                                          max-width: 700px;
                                           padding: 0px 20px;
                                           gap: 10px;
                                           overflow: hidden;
@@ -586,6 +609,7 @@ body {
                                                  width: 100%;
                                                  top: 0px;
                                                  left: 0px;
+                                                 opacity: 0.5;
                                                  filter: blur(2vmax);
                                                  z-index: 0;
                                                  transition: 0.3s ease;
@@ -684,6 +708,7 @@ body {
                                                  div {
                                                         min-width: 100%;
                                                         display: flex;
+                                                        flex-direction: row;
                                                         justify-content: left;
                                                         align-items: center;
                                                         flex-wrap: wrap;
@@ -700,6 +725,26 @@ body {
                                                                       color: var(--pri);
                                                                }
                                                         }
+                                                        h4 {
+                                                               display: flex;
+                                                               align-items: center;
+                                                               gap: 10px;
+                                                               padding: 5px 10px;
+                                                               margin-top: 10px;
+                                                               font-size: 15px;
+                                                               color: var(--txt);
+                                                               background: var(--bg);
+                                                               font-family: comfortaa,sans-serif;
+                                                               opacity: 0.5;
+                                                               transition: 0.2s ease;
+                                                        }
+                                                        .radio {
+                                                               padding: 10px;
+                                                               display: block;
+                                                               background: black;
+                                                               min-width: 0;
+                                                        }
+
                                                         input[type="range"] {
                                                                position: relative;
                                                                width: 100%;
