@@ -1,0 +1,74 @@
+#hero {
+       position: relative;
+       background: var(--bg2);
+       width: calc(100% - 20px);
+       padding: 100px 0px;
+       margin-top: 100px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       overflow: hidden;
+
+       h1 {
+              color: var(--pri);
+              font-size: 60px;
+       }
+
+       .image, .image2 {
+              position: absolute;
+              border-radius: 25px;
+              aspect-ratio: 1;
+              height: 150px;
+              opacity: 0.5;
+       }
+       .image {
+              z-index: 2;
+
+              &:nth-child(2) {
+                     bottom: -20px;
+                     left: -30px;
+                     rotate: 30deg;
+              }
+       }
+       .image2 {
+              filter: blur(1vmax);
+              z-index: 1;
+
+              &:nth-child(3) {
+                     bottom: -20px;
+                     left: 10px;
+                     rotate: 10deg;
+              }
+       }
+}
+
+.headfooter {
+       position: fixed;
+       background: var(--bgtrans);
+       bottom: 10px;
+       right: 10px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 10px;
+       padding: 15px 20px;
+       cursor: pointer;
+       transition: 0.2s ease;
+
+       &:hover {
+              background: var(--pri2);
+
+              h2 {
+                     color: var(--pri);
+              }
+       }
+
+       span {
+              font-weight: 600;
+              color: var(--pri);
+       }
+       h2 {
+              font-size: 20px;
+              transition: 0.2s ease;
+       }
+}
