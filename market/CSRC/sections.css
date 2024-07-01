@@ -72,3 +72,98 @@
               transition: 0.2s ease;
        }
 }
+
+.createpost {
+       position: fixed;
+       background: var(--bgtrans);
+       width: 100%;
+       height: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       justify-self: center;
+       align-self: center;
+       backdrop-filter: blur(1vmax);
+       gap: 10px;
+       z-index: 100;
+       
+       form {
+              position: absolute;
+              background: var(--bg2);
+              padding: 10px 10px;
+              max-width: 90%;
+              max-height: 500px;
+              display: flex;
+              flex-direction: column;
+              justify-content: left;
+              align-items: center;
+              gap: 10px;
+              overflow-y: scroll;
+              overflow-x: hidden;
+
+              h1 {
+                     color: var(--pri);
+                     font-size: 30px;
+              }
+              h2 {
+                     font-size: 12px;
+                     opacity: 0.8;
+                     width: 90%;
+              }
+              button {
+                     background: var(--bgtrans);
+                     width: 100%;
+                     padding: 10px 0px;
+                     color: white;
+                     outline: 0;
+                     border: 0;
+                     font-family: comfortaa,sans-serif;
+                     font-size: 20px;
+                     cursor: pointer;
+                     transition: 0.3s ease;
+
+                     &:hover {
+                            background: var(--pri2);
+                            color: var(--pri);
+                     }
+
+              }
+
+              .item {
+                     position: relative;
+                     background: var(--bgtrans);
+                     padding: 20px 20px;
+                     width: calc(100% - 20px);
+                     min-width: 300px;
+                     display: flex;
+                     flex-direction: column;
+                     gap: 3px;
+
+                     h2 {
+                            font-size: 15px;
+                            opacity: 0.6;
+                     }
+                     input[type="radio"] {
+                            opacity: 1;
+                            cursor: pointer;
+                            height: 25px;
+                            width: 25px;
+                            background-color: #a35d5d;
+                            border-radius: 50%;
+                     }
+                     input[type="text"] {
+                            background: var(--bg);
+                            border-radius: 10px !important;
+                            outline: 0;
+                            border: 0;
+                            padding: 10px 20px;
+                            color: var(--txt);
+                            font-family: comfortaa,sans-serif;
+                     }
+                     .gap {
+                            margin-bottom: 15px;
+                     }
+              }
+       }
+
+}

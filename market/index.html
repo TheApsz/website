@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <link rel="stylesheet" href="https://pentrum.pages.dev/!src/main.css">
     <script src="https://pentrum.pages.dev/!src/java.js"></script>
     <link rel="stylesheet" href="https://pentrum.pages.dev/!src/header.css">
@@ -63,6 +63,43 @@
 
     <div class="headfooter trans desktop">
        <span class="material-symbols-rounded">add</span><h2>Create a Post</h2>
+    </div>
+
+    <div class="createpost desktop">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSecqq9U1y2kVY_8XOv57D1UxVn3lDhr-Q4kjhPJ2_INP9Kj5w/formResponse">
+            <h1>Create a Post</h1>
+            <div class="item">
+                <h2>Username</h2>
+                <input class="gap" id="username" name="entry.1988849463" type="text" spellcheck="false">
+                <h2>Password</h2>
+                <input id="password" name="entry.3217361" type="text" spellcheck="false">
+            </div>
+            <div class="item">
+                <h2>What are you offering</h2>
+                <div class="radio">
+                    <input id="entry.399485573" name="entry.399485573" type="radio" value="Product">
+                    <label for="Product">Product</label>
+                </div>
+                <div class="radio gap">
+                    <input id="entry.399485573" name="entry.399485573" type="radio" value="Comissions">
+                    <label for="Comissions">Commissions</label>
+                </div>
+                <h2>Post title</h2>
+                <input class="gap" id="postname" name="entry.264304891" type="text" spellcheck="false">
+                <h2>Short description</h2>
+                <input class="gap" id="description" name="entry.1587794232" type="text" spellcheck="false">
+                <h2>Long description</h2>
+                <input class="gap" id="description2" name="entry.286182687" type="text" spellcheck="false">
+                <h2>Thumbnail | link</h2>
+                <input class="gap" id="thumbnail" name="entry.333906981" type="text" spellcheck="false">
+                <h2>Banner | link</h2>
+                <input class="gap" id="banner" name="entry.1068566456" type="text" spellcheck="false">
+                <h2>How should people contact you | social media links</h2>
+                <input id="contact" name="entry.883817980" type="text" spellcheck="false">
+            </div>
+            <h2>You will recieve an email where youre going to chat with a staff of pentrum to get your commission page working</h2>
+            <button type="submit">Submit request</button>
+        </form>
     </div>
 </body>
 
