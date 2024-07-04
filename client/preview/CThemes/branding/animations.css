@@ -37,3 +37,20 @@
              translate: 5% 0%;
       }
 }
+
+@keyframes download {
+      from {
+            height: 0px;
+      }
+      22% {
+            height: 220%;
+      }
+      70% {
+            height: 1000%;
+            background: var(--pri2);
+      }
+      to {
+            height: 1000%;
+            background: transparent;
+      }
+}

@@ -70,6 +70,13 @@ $(document).ready(function() {
                   $(this).text('off');
               }
        });
+
+       $('.download').click(function() {
+              var $item = $(this).closest('.item');
+      
+              $item.find('.margin').addClass('downloaded');
+              $item.find(this).addClass('download2');
+       });
 });
 
 
