@@ -54,3 +54,20 @@
             background: transparent;
       }
 }
+@keyframes clickgptstatus {
+      from {
+            scale: 0.5;
+            opacity: 0;
+      }
+      10% {
+            opacity: 1;
+      }
+      90% {
+            opacity: 0;
+            scale: 2;
+      }
+      to {
+            opacity: 0;
+            scale: 2;
+      }
+}
