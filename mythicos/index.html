@@ -39,8 +39,8 @@
 <link rel="stylesheet" href="CSRC/main.css">
 
 <html lang="en">
-<img id="background" class="" src="images/wallpaper.jpg">
-<div id="login" class="pass">
+<img id="background" class="login" src="images/wallpaper.jpg">
+<div id="login" class="">
        <img class="pfp" src="https://minotar.net/helm/Apsz/600.png">
        <h1>Apsz</h1>
        <div class="inputtext">
@@ -48,23 +48,31 @@
               <span id="loginconfirm" class="material-symbols-rounded">arrow_forward_ios</span>
        </div>
 </div>
-<div id="taskbar" class="border trans loginpass">
+
+
+<div id="taskbar" class="border trans loginwait">
        <div>
               <img src="https://pentrum.pages.dev/og-image.png">
               <span class="material-symbols-rounded">home</span>
        </div>
 </div>
-<div id="taskbar2" class="border trans loginpass inactive">
-       <span class="material-symbols-rounded item">keyboard_arrow_down</span>
-       <span class="material-symbols-rounded item">abc</span>
-       <span class="material-symbols-rounded item">wifi</span>
-       <span class="material-symbols-rounded item">volume_up</span>
-       <div class="item">
-              <h3 id="time">1:04pm</h3>
+<div id="taskbar2" class="loginpass inactive">
+       <span class="material-symbols-rounded item trans border">keyboard_arrow_down</span>
+       <span class="material-symbols-rounded item trans border">abc</span>
+       <span class="material-symbols-rounded item trans border">terminal</span>
+       <span class="material-symbols-rounded item trans border">wifi</span>
+       <span class="material-symbols-rounded item trans border">volume_up</span>
+       <div class="item trans border">
               <h3 id="date">Jan 24 2024</h3>
+              <h3 class="time">1:04pm</h3>
        </div>
-       <span class="material-symbols-rounded item">notifications</span>
+       <span class="material-symbols-rounded item trans border">notifications</span>
 </div>
+<div id="start" class="border trans loginwait inactive">
+       <input>
+</div>
+
+
 <style>
 :root {
        /* Backgrounds */
