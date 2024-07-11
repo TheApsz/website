@@ -57,6 +57,9 @@ h2 {
 .trans {
        backdrop-filter: blur(1vmax);
 }
+.border {
+       box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.1);
+}
 
 /* Target WebKit browsers (Chrome, Safari, etc.) */
 *::-webkit-scrollbar {

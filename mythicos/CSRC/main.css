@@ -1,0 +1,196 @@
+#background {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       border-radius: 0px !important;
+       filter: var(--filter);
+       scale: 1;
+       transition: 0.3s ease;
+
+       &.login {
+              scale: 1.2;
+              filter: blur(1vmax) var(--filter);
+       }
+}
+#login {
+       position: relative;
+       background: transparent;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap: 10px;
+       transition: 0.2s ease;
+
+       &.pass {
+              opacity: 0;
+              scale: 0.9;
+              pointer-events: none;
+       }
+
+       .pfp {
+              border-radius: 50% !important;
+              aspect-ratio: 1;
+              height: 200px;
+       }
+       .inputtext {
+              position: relative;
+              display: flex;
+              width: 300px;
+              justify-content: center;
+              align-items: center;
+              gap: 5px;
+              background: transparent;
+
+              input {
+                     outline: 0;
+                     border: 0;
+                     height: 100%;
+                     flex-grow: 1;
+                     background: var(--bgtrans);
+                     padding: 10px 20px;
+                     font-size: 20px;
+                     color: var(--txt);
+                     font-family: comfortaa,sans-serif;
+              }
+              span {
+                     color: var(--txt);
+                     background: var(--bgtrans);
+                     padding: 10px 12px;
+                     aspect-ratio: 1;
+                     cursor: pointer;
+                     transition: 0.1s ease;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+
+                     &:hover {
+                            background: var(--txt);
+                            color: black;
+                     }
+              }
+       }
+}
+.loginwait {
+       display: none;
+}
+.loginpass {
+       display: auto;
+}
+#taskbar {
+       position: absolute;
+       background: var(--bgtrans);
+       bottom: 5px;
+       width: calc(100% - 10px);
+       height: 50px;
+       z-index: 9999;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
+       div {
+              height: 100%;
+              position: relative;
+              background: transparent;
+              display: flex;
+              justify-content: left;
+              align-items: center;
+              gap: 2px;
+
+              img {
+                     height: 100%;
+                     transition: 0.2s ease 0.05s;
+                     cursor: pointer;
+
+                     &:hover {
+                            transition: 0.2s ease;
+                            background: var(--bgtrans);
+                     }
+              }
+              hr {
+                     height: 50%;
+              }
+              span {
+                     height: 100%;
+                     aspect-ratio: 0.75/1;
+                     display: flex;
+                     color: var(--txt);
+                     justify-content: center;
+                     align-items: center;
+                     transition: 0.2s ease 0.05s;
+                     font-size: 25px;
+                     cursor: pointer;
+
+                     &:hover {
+                            transition: 0.2s ease;
+                            background: var(--bgtrans);
+                     }
+              }
+       }
+}
+#taskbar2 {
+       position: absolute;
+       padding: 0px 0px;
+       height: 50px;
+       z-index: 9999;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       transition: 0.5s cubic-bezier(.3,1.62,.35,.83);
+
+       &.active {
+              background: var(--bgtrans);
+              top: 5px;
+       }
+       &.inactive {
+              background: var(--bg);
+              top: -25px;
+              border-radius: 1vmax !important;
+
+              .item {
+                     opacity: 0;
+                     pointer-events: none;
+              }
+       }
+
+       span {
+              height: 100%;
+              aspect-ratio: 0.75/1;
+              display: flex;
+              color: var(--txt);
+              justify-content: center;
+              align-items: center;
+              transition: 0.2s ease 0.05s;
+              font-size: 25px;
+              cursor: pointer;
+
+              &:hover {
+                     transition: 0.2s ease;
+                     background: var(--bgtrans);
+              }
+       }
+       div {
+              position: relative;
+              height: 100%;
+              transition: 0.2s ease 0.05s;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-end;
+              padding: 0px 10px;
+              
+              h3 {
+                     font-size: 15px;
+              }
+
+              &:hover {
+                     transition: 0.2s ease;
+                     background: var(--bgtrans);
+              }
+       }
+       hr {
+              height: 50%;
+       }
+}
