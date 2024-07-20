@@ -1,0 +1,234 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <meta content="Pentrum" property="og:title" />
+    <meta content="unfinished page" property="og:description" />
+    <meta content="og-banner.png" property="og:image">
+    <meta content="#FF2E2E" data-react-helmet="true" name="theme-color"/>
+    <title>Pentrum client</title>
+    <link rel="icon" href="../../og-image.png" type="image/x.icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="../../!src/main.css">
+    <script src="https://pentrum.pages.dev/!src/java.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+</head>
+
+<script src="CThemes/new/draggable.js"></script>
+<script src="CThemes/new/clickgui.js"></script>
+<script src="CThemes/new/session.js"></script>
+<script src="CThemes/new/arraylist.js"></script>
+<link rel="stylesheet" href="CThemes/new/main.css">
+<link rel="stylesheet" href="CThemes/new/ingame.css">
+<link rel="stylesheet" href="CThemes/new/animations.css">
+
+<body>
+<img class="video" src="CThemes/branding/client.png">
+<video class="video" loop muted autoplay src="CThemes/branding/clint.mp"></video>
+
+<div class="element" id="title">
+    <h1 class="coloredboth trans title">Pentrum</h1>
+
+    <div class="session trans">
+        <h1 class="coloredtxt">Session info</h1>
+        <h2><span class="coloredtxt">IGN</span> <span>NixTheOtter</span></h2>
+        <h2><span class="coloredtxt">Kills</span> <span>8</span></h2>
+        <h2><span class="coloredtxt">K/D</span> <span>8/0</span></h2>
+        <h2><span class="coloredtxt">Session time</span> <span id="time">00:00:00</span></h2>
+    </div>
+</div>
+
+<div class="element" id="arraylist">
+    <h3 class="trans coloredtrans"><span class="coloredtxt">Kill aura</span> <span>Switch</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Sprint</span> <span>Strict</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Velocity</span> <span>Packet</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">HUD</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Packet cancel</span> <span>Co8</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Auto respawn</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Name protect</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">No rotate</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Auto armor</span> <span>HVH</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Auto pot</span> <span>H:10</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Criticals</span> <span>Jump</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Anti bot</span> <span>Vulcan</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">No slow</span> <span>Vanilla</span><div class="colored"></div></h3>
+    <h3 class="trans"><span class="coloredtxt">Crosshair</span> <span>Dot</span><div class="colored"></div></h3>
+    <h3 class="trans coloredtrans"><span class="coloredtxt">Speed</span> <span>Vulcan288</span><div class="colored"></div></h3>
+</div>
+
+<div class="element trans" id="scoreboard">
+    <h3 class="title coloredboth">Scoreboard</h3>
+    <h2>Diamond II in <span class="green">3:23</span></h2>
+    <div></div>
+    <h2><span class="red">Red</span>: <span class="green">Alive</span></h2>
+    <h2><span class="green">Green</span>: <span class="green">Alive</span></h2>
+    <h2><span class="blue">Blue</span>: <span class="green">Alive</span></h2>
+    <h2><span class="yellow">Yellow</span>: <span class="red">Dead</span></h2>
+    <div></div>
+    <h2>Kills: <span class="green">8</span></h2>
+    <h2>Final kills: <span class="green">3</span></h2>
+    <h2>Beds broken: <span class="green">3</span></h2>
+    <div></div>
+    <h3 class="ip coloredtxt">Play.norules.wtf</h3>
+</div>
+
+<div class="element" id="hotbar">
+    <div class="health">
+        <div class="abs trans"><div></div></div>
+        <div class="arm trans"><div></div></div>
+        <div class="htl trans coloredtrans"><div class="colored"></div></div>
+        <div class="hun trans"><div></div></div>
+    </div>
+    <div class="items trans">
+        <div class="coloredtrans"></div>
+    </div>
+</div>
+
+<div class="element trans" id="info">
+    <h3><span class="coloredtxt">BPS:</span> 0.0</h3>
+    <h3><span class="coloredtxt">TPS:</span> 19.9</h3>
+    <h3><span class="coloredtxt">XYZ:</span> 5 95 65</h3>
+    <h3><span class="coloredtxt">FPS:</span> 120</h3>
+    <h3><span class="coloredtxt">Ping:</span> 24ms</h3>
+</div>
+
+<div class="element" id="notification">
+    <h3 class="trans info">this is an info message ??</h3>
+    <h3 class="trans alert">This is an alert message !!</h3>
+    <h3 class="trans error">This is an error message boo!</h3>
+    <h3 class="trans success">This is a success message yippe!!</h3>
+</div>
+
+<div class="element trans" id="clickgui">
+    <div class="decor">
+        <div class="menu">
+            <div class="menuitem category">
+                <div class="bili">
+                    <span id="homesh" class="material-symbols-rounded catitem active"><div class="colored"></div><h3>Home</h3>home</span>
+                    <span id="modulesh" class="material-symbols-rounded catitem"><div class="colored"></div><h3>Modules</h3>view_module</span>
+                    <span id="marketplacesh" class="material-symbols-rounded catitem"><div class="colored"></div><h3>Marketplace</h3>store</span>
+                    <span id="chatbotsh" class="material-symbols-rounded catitem"><div class="colored"></div><h3>Chatbot</h3>smart_toy</span>
+                    <span id="dsfbsh" class="material-symbols-rounded catitem"><div class="colored"></div><h3>DSFB</h3>legend_toggle</span>
+                </div>
+                <div class="bili">
+                    <span id="personsh" class="material-symbols-rounded catitem"><div class="colored"></div><h3>Personalize</h3>stylus</span>
+                    <span id="settingsh" class="material-symbols-rounded catitem"><div class="colored"></div><h3>Settings</h3>settings</span>
+                </div>
+            </div>
+            <div class="menuitem box">
+                <div class="boxitem active" id="homeb">
+                    <div>
+                        <h3 class="coloredtxt">Server info</h3>
+                        <h2>IP: play.norules.wtf</h2>
+                        <h2>Anticheat: DNF</h2>
+                        <h2>Type: Bungeecord</h2>
+                        <h2>Port: 25565</h2>
+                        <h2>Version: 1.21</h2>
+                        <h2>Ping: 18ms</h2>
+                        <h2>Online: 2/1000</h2>
+                        <h2>TPS: 19.9</h2>
+                        <h2>Online: yes</h2>
+                        <h2>Premium: yes</h2>
+                        <h2>Supporting: yes</h2>
+                        <h2>Fun mode: nope</h2>
+                        <h2>Whitelist: nope</h2>
+                    </div>
+                    <div>
+                        <h3 class="coloredtxt">Performance</h3>
+                        <h2>FPS: 120</h2>
+                        <h2>Max FPS: 800</h2>
+                        <h2>Min FPS: 2</h2>
+                        <h2>Avarage FPS: 400</h2>
+                        <h2>FPS boost: Off</h2>
+                    </div>
+                    <div>
+                        <h3 class="coloredtxt">Player info</h3>
+                        <h2>IGN: NixTheOtter</h2>
+                        <h2>Type: Rage</h2>
+                        <h2>K/D: 8/0</h2>
+                        <h2>Matches: 1</h2>
+                        <h2>Friends: 2</h2>
+                    </div>
+                    <div>
+                        <h3 class="coloredtxt">Client info</h3>
+                        <h2>Config: norules</h2>
+                        <h2>Theme: New</h2>
+                        <h2>Version: 1.0</h2>
+                        <h2>Toggled modules: 14</h2>
+                        <h2>Toggled scripts: 3</h2>
+                    </div>
+                    <div>
+                        <h3 class="coloredtxt">DSFB</h3>
+                        <h2>Status: Online</h2>
+                        <h2>Workers: 27 connected</h2>
+                        <h2>Modifying: Speed</h2>
+                        <h2>Modified modules: 4</h2>
+                        <h2>Seeding with: localhost</h2>
+                        <h2>Collecting from: localhost</h2>
+                        <h2>Using chatbot: nope</h2>
+                        <h2>Packets sent: counting...</h2>
+                        <h2>Flags: 141</h2>
+                        <h2>Null: Null</h2>
+                        <h2>Null: Null</h2>
+                        <h2>Null: Null</h2>
+                        <h2>Null: Null</h2>
+                    </div>
+                    <div class="coloredtrans">
+                        <h3 class="coloredtxt">News</h3>
+                        <h2>Skibidi toilets have destroyed normal toilets pls fix</h2>
+                        <img src="CThemes/new/smile.png">
+                    </div>
+                    <div>
+                        <h3 class="coloredtxt">Chatbot</h3>
+                        <h2>Status: Offline</h2>
+                        <h2>Workers: 0 connected</h2>
+                        <h2>Mode: playful</h2>
+                        <h2>Personality: Click</h2>
+                        <h2>Mood: Null</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+<style>
+    :root {
+       /* Backgrounds */
+       --bg: rgba(15, 15, 15, 1);
+       --bg2: rgba(30, 30, 30, 1);
+       --bgtrans: rgba(255, 255, 255, 0.05);
+
+       /* Text */
+       --txt: rgb(236, 241, 233);
+
+       /* Colors */
+       --pri: rgb(255, 18, 58);
+       --pri2: rgba(255, 18, 58, 0.1);
+       --sec: rgb(255, 155, 61);
+       --sec2: rgba(255, 155, 61, 0.1);
+
+       /* Filters */
+       --imgfilter: brightness(0) saturate(100%) invert(22%) sepia(53%) saturate(6354%) hue-rotate(340deg) brightness(98%) contrast(108%);
+}
+
+body {
+    overflow: hidden;
+}
+* {
+    border-radius: 10px !important;
+}
+</style>
+
+<script>
+
+
+</script>

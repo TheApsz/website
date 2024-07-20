@@ -104,7 +104,7 @@
                      cursor: pointer;
 
                      &:hover {
-                            transition: 0.2s ease;
+                            transition: 0.1s ease;
                             background: var(--bgtrans);
                      }
               }
@@ -198,7 +198,7 @@
               h3 {
                      font-size: 15px;
 
-                     &.time {
+                     &#time {
                             color: var(--pri);
                      }
               }
@@ -229,13 +229,13 @@
        justify-content: center;
        align-items: center;
        gap: 10px;
-       transition: 0.5s cubic-bezier(.3,1.62,.35,.83);
+       transition: scale 0.5s cubic-bezier(.3,1.62,.35,.83), opacity 0.1s ease;;
 
        &.inactive {
               scale: 0.9;
               opacity: 0;
               pointer-events: none;
-              transition: 0.3s ease;
+              transition: 0.1s ease;
        }
 
        .titlebox {
@@ -432,5 +432,75 @@
                             }
                      }
               }
+       }
+}
+
+.application {
+       position: absolute;
+       background: rgba(0,0,0,0.5);
+       height: 600px;
+       width: 1200px;
+       display: flex;
+       flex-direction: column;
+       backdrop-filter: blur(5vmax);
+       justify-content: center;
+       align-items: center;
+       gap: 0px;
+       z-index: 1;
+       opacity: 1;
+       transition: opacity 0.2s ease, scale 0.1s ease;
+
+       &.focus {
+              z-index: 10;
+              opacity: 1;
+       }
+
+       .title {
+              position: relative;
+              width: calc(100% - 20px);
+              top: 0px;
+              background: transparent;
+              padding: 5px 0px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 5px;
+
+              h3 {
+                     display: flex;
+                     color: var(--pri);
+                     gap: 5px;
+              }
+              .draggable {
+                     background: transparent;
+                     flex-grow: 1;
+                     height: 100%;
+              }
+              .controls {
+                     position: relative;
+                     background: transparent;
+                     display: flex;
+                     gap: 5px;
+
+                     span {
+                            padding: 5px;
+                            cursor: pointer;
+                            transition: 0.2s ease;
+                            display: flex;
+                            justify-content: center;
+                            width: 40px;
+
+                            &:hover {
+                                 color: var(--pri);
+                                 background: var(--pri2);  
+                            }
+                     }
+              }
+       }
+       .canvas {
+              position: relative;
+              background: var(--bg);
+              flex-grow: 1;
+              width: 100%;
        }
 }

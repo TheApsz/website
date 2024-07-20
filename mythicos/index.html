@@ -27,7 +27,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="stylesheet" href="https://pentrum.pages.dev/!src/main.css">
     <script src="https://pentrum.pages.dev/!src/java.js"></script>
 </head>
@@ -37,7 +36,9 @@
 <script src="JS/start.js"></script>
 <script src="JS/login.js"></script>
 <script src="JS/taskbar.js"></script>
+<script src="JS/application.js"></script>
 <link rel="stylesheet" href="CSRC/main.css">
+<link rel="stylesheet" href="CSRC/explorer.css">
 
 <html lang="en">
 <img id="background" class="" src="images/wallpaper.jpg">
@@ -53,8 +54,9 @@
 
 <div id="taskbar" class="border trans loginpass">
        <div>
-              <img id="shortcut-start" src="https://pentrum.pages.dev/og-image.png">
-              <span class="material-symbols-rounded">home</span>
+              <img id="shortcut-start" class="item" src="https://pentrum.pages.dev/og-image.png">
+              <span class="material-symbols-rounded item">home</span>
+              <span class="material-symbols-rounded item">folder</span>
        </div>
 </div>
 <div id="taskbar2" class="loginpass inactive">
@@ -65,7 +67,7 @@
        <span class="material-symbols-rounded item trans border">volume_up</span>
        <div class="item trans border">
               <h3 id="date">Jan 24 2024</h3>
-              <h3 class="time">1:04pm</h3>
+              <h3 id="time">Null</h3>
        </div>
        <span class="material-symbols-rounded item trans border">notifications</span>
 </div>
@@ -118,6 +120,40 @@
        </div>
 </div>
 
+<div id="explorer" class="trans border application">
+       <div class="title">
+              <h3><span class="material-symbols-rounded item">folder</span>File explorer</h3>
+              <div class="draggable"></div>
+              <div class="controls">
+                     <span class="material-symbols-rounded">remove</span>
+                     <span class="material-symbols-rounded">close</span>
+              </div>
+       </div>
+       <div class="canvas">
+              <div class="category">
+                     <h2 class="first active"><div></div><img src="images/navigation/home.png">Home</h2>
+                     <h2><div></div><img src="images/navigation/direct-download.png">Downloads</h2>
+                     <h2><div></div><img src="images/navigation/file.png">Documents</h2>
+                     <h2><div></div><img src="images/navigation/gallery.png">Pictures</h2>
+                     <hr>
+                     <h2><div></div><img src="images/navigation/hdd.png">System disk</h2>
+                     <h2><div></div><img src="images/navigation/hdd.png">Local disk</h2>
+              </div>
+              <hr class="sep">
+              <div class="screen">
+                     <div id="explorerhome">
+                            <div class="grid">
+                                   <div class="disk">
+                                          <h3>System disk</h3>
+                                          <h2>473Gb left of 500Gb<br>
+                                          Disk health: good</h2>
+                                   </div>
+                            </div>
+                     </div>
+              </div>
+       </div>
+</div>
+
 
 <style>
 :root {
@@ -141,6 +177,9 @@
 }
 
 html {
+       overflow: hidden;
+}
+body {
        overflow: hidden;
 }
 * {

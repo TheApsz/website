@@ -120,3 +120,15 @@ $(document).ready(function() {
            }
        });
 });
+$(document).ready(function() {
+       $('#clickgpttext').keypress(function(event) {
+           if (event.which === 13) { // 13 is the keycode for Enter key
+               const inputValue = $(this).val();
+               if (inputValue.toLowerCase() === 'uwuify') {
+                   window.location.href = 'https://pentrum.pages.dev/client/preview/uwu.html';
+               } else {
+                   alert('ClickGPT is currently offline!');
+               }
+           }
+       });
+});
