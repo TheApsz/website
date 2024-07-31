@@ -3,18 +3,19 @@
 
 :root {
        /* Backgrounds */
-       --bg: rgba(15, 15, 15, 1);
-       --bg2: rgba(25, 25, 25, 1);
-       --bgtrans: rgba(255, 255, 255, 0.05);
+       --bg: rgba(11, 11, 13, 1);
+       --bg2: rgba(21, 21, 23, 1);
+       --bgtrans: rgba(0, 0, 0, 0.2);
+       --bgtrans2: rgba(255, 255, 255, 0.1);
 
        /* Text */
        --txt: rgb(236, 241, 233);
 
        /* Colors */
-       --pri: rgb(255, 18, 58);
-       --pri2: rgba(255, 18, 58, 0.2);
-       --sec: rgb(255, 61, 61);
-       --sec2: rgba(255, 61, 61, 0.5);
+       --pri: rgb(236, 39, 39);
+       --pri2: rgba(236, 39, 39, 0.2);
+       --sec: rgb(248, 145, 49);
+       --sec2: rgba(66, 248, 49, 0.2);
        --acc: rgb(255, 208, 0);
        --acc2: rgba(255, 208, 0, 0.5);
 }
@@ -26,7 +27,7 @@ html {
        margin: 0;
        min-width: 0;
        padding: 0;
-       border-radius: 20px !important;
+       border-radius: 10px;
 }
 a {
        text-decoration: none;
@@ -42,6 +43,7 @@ body {
        flex-direction: column;
        gap: 30px;
        min-height: 100svh;
+       overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -82,14 +84,18 @@ h2 {
      }
 
      ::selection {
-       color: black; /* Change the text color */
+       color: white; /* Change the text color */
        background-color: var(--pri); /* Change the background color */
      }
 
-.button:hover {
-       background: var(--pri2) !important;
-       color: var(--pri) !important;
-       scale: 1.0;
+.button {
+       opacity: 0.8;
+       transition: 0.2s ease;
+       cursor: pointer;
+
+       &:hover {
+              opacity: 1;
+       }
 }
 
 @media screen and (max-width: 1000px) {
