@@ -5,10 +5,9 @@
        background: var(--pri2);
        opacity: 1;
        border-radius: 50%;
-       filter: blur(10vmax);
+       filter: blur(2vmax);
        translate: 0% -50%;
        transform: scaleX(3);
-   
        top: 0px;
    }
    
@@ -365,7 +364,7 @@
            max-width: 1500px;
            justify-content: center;
            grid-template-columns: repeat(4, calc(25% - 20px));
-           grid-template-rows: repeat(2, 350px);
+           grid-template-rows: repeat(2, 240px);
            gap: 10px;
    
            .item {
@@ -419,10 +418,23 @@
                            opacity: 1;
                        }
                    }
-                   .second {
+                   .decoration {
                        opacity: 1;
+                       transition: opacity 0.5s ease 0s , top 0s linear, left 0s linear;
                    }
                }
+
+                .decoration {
+                    position: absolute;
+                    background:var(--pri);
+                    height: 100px;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    filter: blur(5vmax);
+                    translate: -50% -50%;
+                    opacity: 0;
+                    transition: opacity 1s ease 0s, top 0.1s cubic-bezier(0,1.72,.6,.83), left 0.1s cubic-bezier(0,1.72,.6,.83);
+                }    
    
                .first {
                    position: relative;
@@ -447,95 +459,6 @@
                        font-size: 15px;
                        max-width: 40%;
                        opacity: 0.7;
-                   }
-               }
-               .second {
-                   position: absolute;
-                   background: transparent;
-                   display: flex;
-                   flex-direction: column;
-                   justify-content: center;
-                   align-items: center;
-                   gap: 10px;
-                   opacity: 0.5;
-                   transition: 0.2s ease;
-   
-   
-                   &.scale {
-                       width: 70%;
-                       height: 100%;
-                       top: 0px;
-                       right: 0px;
-   
-                       .input {
-                           position: absolute;
-                           translate: 0% -100%;
-   
-                           input {
-                               background: transparent;
-                               color: var(--pri);
-                               width: 430px;
-                               outline: 0;
-                               border: 0;
-                               font-size: 50px;
-                               font-family: fredoka,sans-serif;
-                           }
-                           h2 {
-                               font-size: 20px;
-                               line-height: 10px;
-                           }
-                       }
-                       .toy1, .toy2 {
-                           position: absolute;
-                           height: 100px;
-                           aspect-ratio: 1;
-                           background: black;
-                       }
-                       .toy1 {
-                           bottom: 60px;
-                           background: var(--pri);
-                           translate: 100% 0%;
-                       }
-                       .toy2 {
-                           bottom: 70px;
-                           width: 300px;
-                           translate: -10% 0%;
-                           background: var(--bg);
-                       }
-                   }
-                   &.custom {
-                       width: 77%;
-                       background: transparent;
-                       height: 20%;
-                       bottom: 40px;
-                       display: flex;
-                       justify-content: space-between;
-                       align-items: center;
-                       flex-direction: row;
-   
-                       span {
-                           height: 100%;
-                           aspect-ratio: 1;
-                           display: flex;
-                           justify-content: center;
-                           align-items: center;
-                           font-size: 30px;
-                           transition: 0.2s ease;
-   
-                           &:hover {
-                               background: var(--bg);
-                           }
-   
-                           &.red {
-                               color: rgb(236, 39, 39);
-                           }
-                           &.green {
-                               color: rgb(39, 236, 82);
-                           }
-                           &.blue {
-                               color: rgb(39, 108, 236);
-                           }
-                       }
                    }
                }
            }
