@@ -37,14 +37,18 @@ to mark their presence and sell their work">
 </head>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<link rel="stylesheet" href="css/animations.css"/>
 <link rel="stylesheet" href="css/important.css"/>
+<script src="javascript/taskbar.js"></script>
+<link rel="stylesheet" href="css/startmenu.css"/>
+<script src="javascript/startmenu.js"></script>
 
 <html lang="en">
 
 <body>
-       <img id="wallpaper" src="images/wallpaper3.gif">
+        <img id="wallpaper" src="images/wallpaper3.gif">
 
-       <div id="panel">
+        <div id="panel">
             <div class="item">
                 <div class="active trans">
                     <div></div>
@@ -54,14 +58,56 @@ to mark their presence and sell their work">
                 </div>
             </div>
             <div class="item">
-                <h3 class="trans skibidi"><span class="material-symbols-rounded">home</span></h3>
-                <h3 class="trans"><span class="material-symbols-rounded">schedule</span>August 3 | 16:06</h3>
-                <h3 class="trans"><span class="material-symbols-rounded">bar_chart</span>RAM 1.4 / 16 GB</h3>
-                <h3 class="trans"><span class="material-symbols-rounded">volume_up</span>Vol: 50%</h3>
+                <h3 id="startmenush" class="trans skibidi"><span class="material-symbols-rounded">home</span></h3>
+                <h3 class="trans"><span class="material-symbols-rounded">schedule</span><span id="timeanddate">August 3 | 16:06</span></h3>
+                <h3 class="trans"><span class="material-symbols-rounded">bar_chart</span>RAM <span id="ram">1.4</span> / 16 GB</h3>
+                <h3 class="trans"><span class="material-symbols-rounded">volume_up</span>Vol: <span id="volume">50%</span></h3>
                 <h3 class="trans skibidi"><span class="material-symbols-rounded">folder</span></h3>
                 <h3 class="trans skibidi"><span class="material-symbols-rounded">terminal</span></h3>
+                <h3 class="trans skibidi"><span class="material-symbols-rounded">description</span></h3>
             </div>
-       </div>
+        </div>
+
+        <div id="startmenu" class="trans inactive">
+            <div class="controls">
+                <span class="material-symbols-rounded active">wifi</span>
+                <span class="material-symbols-rounded">bluetooth</span>
+                <span class="material-symbols-rounded">music_off</span>
+                <span class="material-symbols-rounded">screenshot_monitor</span>
+                <span class="material-symbols-rounded">do_not_disturb_on</span>
+            </div>
+            <div class="sliders">
+                <span class="material-symbols-rounded">volume_up</span>
+                <input id="slider_volume" type="range" min="0" max="100" value="50">
+            </div>
+            <div class="sliders">
+                <span class="material-symbols-rounded">brightness_high</span>
+                <input type="range" min="0" max="100" value="33">
+            </div>
+            <div class="information">
+                <div class="item">
+                    <span class="material-symbols-rounded active">battery_5_bar</span>
+                    <h3 id="battery">73%</h3>
+                </div>
+                <div class="item">
+                    <span class="material-symbols-rounded active">cloud</span>
+                    <h3>NullDeg</h3>
+                </div>
+            </div>
+            <div class="profile">
+                <h3>Apsz@Mythic</h3>
+                <span class="material-symbols-rounded active">power_settings_new</span>
+            </div>
+            <hr>
+            <div class="spotify">
+                <img class="background" src="images/Spotify_9G8yJPThCO.png">
+                <img class="image" src="images/Spotify_9G8yJPThCO.png">
+                <div class="title">
+                    <h3>Your Power (stripped)</h3>
+                    <h2>Whsprs</h2>
+                </div>
+            </div>
+        </div>
 </body>
 
 

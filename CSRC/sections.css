@@ -427,12 +427,14 @@
                 .decoration {
                     position: absolute;
                     background:var(--pri);
-                    height: 100px;
+                    height: 7vmax;
                     aspect-ratio: 1;
                     border-radius: 50%;
-                    filter: blur(5vmax);
+                    filter: blur(10vmax);
                     translate: -50% -50%;
                     opacity: 0;
+                    z-index: 0;
+                    pointer-events: none;
                     transition: opacity 1s ease 0s, top 0.1s cubic-bezier(0,1.72,.6,.83), left 0.1s cubic-bezier(0,1.72,.6,.83);
                 }    
    
@@ -443,6 +445,7 @@
                    justify-content: center;
                    align-items: flex-start;
                    gap: 10px;
+                   z-index: 1;
    
                    .icon {
                        padding: 10px;
