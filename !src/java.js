@@ -2,10 +2,10 @@ $(document).ready(function() {
   $('a[href^="#"]').on('click', function(e) {
       e.preventDefault();
       var target = $(this).attr('href');
-      var offset = $(target).offset().top - 50; // Subtract 300 pixels from the target offset
+      var offset = $(target).offset().top - 50;
       $('html, body').animate({
           scrollTop: offset
-      }, 2000, 'easeInOutExpo'); // Adjust duration and easing function as needed
+      }, 2000, 'easeInOutExpo');
   });
   function updateClasses() {
     if ($(window).width() < 1100) {
@@ -29,14 +29,7 @@ Smoothscroll.Acceleration = 2;
 
 
 //debug
-Smoothscroll.Debug = 0; //0-none, 1-some, etc.
-
-/*
-//initial fps, no need to change
-Smoothscroll.BaseRefreshrate = 60;
-Smoothscroll.MaxRefreshrate = Smoothscroll.BaseRefreshrate*3;
-Smoothscroll.MinRefreshrate = Smoothscroll.BaseRefreshrate/3;
-*/
+Smoothscroll.Debug = 0; 
 
 //automatically calculated
 Smoothscroll.Refreshrate = 60;
