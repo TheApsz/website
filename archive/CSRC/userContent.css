@@ -1,0 +1,142 @@
+html {
+       overflow: hidden;
+}
+
+#background {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       filter: blur(10vmax);
+       scale: 1.5;
+       opacity: 0.15;
+}
+
+#main {
+       position: relative;
+       background: black;
+       min-width: 1000px;
+       max-width: 90%;
+       max-height: 50%;
+       height: 50px;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       justify-content: center;
+       gap: 10px;
+
+       .image {
+              position: relative;
+              display: flex;
+              background: var(--bgtrans);
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: center;
+              gap: 10px;
+              padding-bottom: 10px;
+
+              img {
+                     position: relative;
+                     width: 100%;
+                     border-radius: 10px 10px 0px 0px;
+              }
+              #resolution {
+                     position: absolute;
+                     background: var(--bgtrans);
+                     right: 10px;
+                     font-size: 20px;
+                     padding: 5px 15px;
+                     border-radius: 10vmax;
+                     top: 10px;
+              }
+
+              h3 {
+                     font-size: 25px;
+                     z-index: 1;
+              }
+              div {
+                     position: relative;
+                     display: flex;
+                     justify-content: space-between;
+                     width: calc(100% - 40px);
+                     background: transparent;
+                     margin-left: 20px;
+
+                     h2 {
+                            opacity: 0.8;
+                            cursor: pointer;
+                            transition: 0.3s ease;
+
+                            &:hover {
+                                   opacity: 1;
+                            }
+                     }
+              }
+       }
+       .information {
+              width: calc(100% - 5px);
+              background: transparent;
+              display: grid;
+              grid-template-columns: repeat(3, 33%);
+              grid-template-rows: repeat(1, 100px);
+              gap: 10px;
+
+              .border {
+                     position: relative;
+                     background: var(--bgtrans);
+                     padding: 7px;
+                     gap: 15px;
+
+              }
+              a {
+                     display: flex;
+                     background: transparent;
+                     position: relative;
+                     width: 100%;
+              }
+              .profile {
+                     position: relative;
+                     display: flex;
+                     align-items: center;
+                     justify-content: flex-start;
+                     width: 100%;
+
+                     img {
+                            height: 100%;
+                            aspect-ratio: 1;
+                     }
+                     div {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0px;
+                            background: transparent;
+                            gap: 5px;
+
+                            h3 {
+                                   font-size: 25px;
+                            }
+                            h2 {
+                                   padding: 2px 5px;
+                                   font-size: 10px;
+                                   border-radius: 5px;
+                                   background: var(--pri);;
+                            }
+                     }
+              }
+              .description, .date {
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: center;
+                     gap: 0px;
+                     padding-left: 20px;
+
+                     h3 {
+                            color: var(--pri);
+                            font-size: 25px;
+                     }
+                     h2 {
+                            font-size: 15px;
+                     }
+              }
+       }
+}

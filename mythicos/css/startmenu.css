@@ -27,8 +27,7 @@
               color: var(--pri);
        }
        .controls {
-              padding: 5px;
-              background: var(--bgtrans);
+              background: transparent;
               display: flex;
               flex-direction: row;
               gap: 5px;
@@ -36,7 +35,7 @@
               span {
                      padding: 10px 0px;
                      width: 70px;
-                     background: transparent;
+                     background: var(--bgtrans);
                      display: flex;
                      justify-content: center;
                      align-items: center;

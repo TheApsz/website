@@ -28,4 +28,23 @@
               font-size: 13px;
               transition: 0.2s ease;
        }
+
+       .navbar_open {
+              position: absolute;
+              background: var(--bgtrans);
+              padding: 10px 10px;
+              top: calc(100% + 5px);
+              width: calc(100% - 20px);
+              scale: 1;
+              opacity: 1;
+       }
+
+       #navbar_features {
+              display: grid;
+              justify-content: center;
+              align-items: center;
+              grid-template-columns: repeat(3, 33%);
+              grid-template-rows: repeat(6, 40px);
+              gap: 5px;
+       }
 }
