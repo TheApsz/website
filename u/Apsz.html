@@ -1,0 +1,155 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+<!-- HTML Meta Tags -->
+    <title>Apsz</title>
+    <meta content="#ec2727" data-react-helmet="true" name="theme-color">
+    <meta name="description" content="youre pretty cool">
+
+<!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://polargram.pages.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Polargram">
+    <meta property="og:description" content="youre pretty cool">
+    <meta property="og:image" content="https://polargram.pages.dev/u/images/apsz.png">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="polargram.pages.dev">
+    <meta property="twitter:url" content="https://polargram.pages.dev">
+    <meta name="twitter:title" content="Polargram">
+    <meta name="twitter:description" content="youre pretty cool">
+    <meta name="twitter:image" content="https://polargram.pages.dev/u/images/apsz.png">
+
+
+    <link rel="icon" href="https://polargram.pages.dev/u/images/apsz2.png" type="image/x.icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://polargram.pages.dev/!src/main.css">
+    <script src="audio.js"></script>
+</head>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<link rel="stylesheet" href="main.css">
+
+<html lang="en">
+
+<body>
+    <img id="background" src="images/apsz.png">
+
+    <div id="main" class="border trans container flex">
+        <div class="profilepicture">
+            <img src="images/apsz2.png">
+            <div>
+                <h1>Apsz</h1>
+                <h2>youre pretty cool</h2>
+                <h3>He/him</h3>
+            </div>
+        </div>
+        <div class="socials">
+            <a href=""><img src="images/discord-icon.png"></a>
+            <a href=""><img src="images/twitter-icon.png"></a>
+            <a href="https://polargram.pages.dev/"><img src="images/link-icon.png"></a>
+        </div>
+    </div>
+    <div id="stats" class="border trans container">
+        <div>
+            <h3>1000<span>P$ Rich</span></h3>
+        </div>
+        <div>
+            <h3>July 7 <span>BD</span></h3>
+        </div>
+        <div>
+            <h3>Level 1 <span>Coolness</span></h3>
+        </div>
+    </div>
+    <div id="player" class="border trans container flex">
+        <audio id="audio" src="audio/interstellar.mp3" autoplay preload="auto"></audio>
+        <img class="background" src="images/interstellar-video.png">
+        <div class="information">
+            <img class="cover" src="images/interstellar-video.png">
+            <div>
+                <h1>Interstellar - Main theme</h1>
+                <h2>Hans Zimmer</h2>
+            </div>
+        </div>
+        <div class="control">
+            <span id="pause" aria-label="pause" class="material-symbols-rounded">pause</span>
+            <h3 id="min">Min</h3>
+            <div class="sigma">
+                <div class="progress"></div>
+            </div>
+            <h3 id="max">Max</h3>
+        </div>
+    </div>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root {
+       /* Backgrounds */
+       --bg: rgba(11, 11, 13, 1);
+       --bg2: rgba(21, 21, 23, 1);
+       --bgtrans: rgba(0, 0, 0, 0.2);
+       --bgtrans2: rgba(255, 255, 255, 0.1);
+
+       /* Text */
+       --txt: rgb(236, 241, 233);
+
+       /* Colors */
+       --pri: rgb(39, 196, 236);
+       --pri2: rgba(236, 39, 39, 0.2);
+       --sec: rgb(248, 122, 49);
+       --sec2: rgba(66, 248, 49, 0.2);
+       --acc: rgb(255, 208, 0);
+       --acc2: rgba(255, 208, 0, 0.5);
+}
+h1, h2, h3 {
+       font-family: fredoka,sans-serif;
+       color: var(--txt);
+       font-weight: 500;
+}
+h2 {
+       font-family: fredoka,sans-serif;
+       font-weight: 400;
+       line-height: 1.5;
+}
+
+
+    .flex {
+        display: flex;
+    }
+    body {
+        gap: 10px;
+        overflow: hidden;
+    }
+    html {
+        overflow: hidden;
+    }
+    .container {
+        padding: 20px;
+    }
+    .socials {
+        a {
+            border-radius: 15px;
+        }
+    }
+    #background {
+        filter: blur(0.1vmax);
+        animation: background 120s linear infinite;
+        scale: 3;
+    }
+    @keyframes background {
+        from {
+            rotate: 0deg;
+        }
+        to {
+            rotate: 360deg;
+        }
+    }
+
+
+</style>
