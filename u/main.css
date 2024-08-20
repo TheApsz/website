@@ -27,6 +27,7 @@
        border-radius: 50%;
        translate: 0% 50%;
        transition: 0s ease-in-out;
+       pointer-events: none;
 }
 
 #main {
