@@ -30,20 +30,60 @@ $(document).ready(function() {
        $('#pause').click(function() {
            if (audio.paused) {
                audio.play();
-               $(this).text('Pause'); // Change button text to "Pause"
+               $(this).text('Pause');
            } else {
                audio.pause();
-               $(this).text('play_arrow'); // Change button text to "Play"
+               $(this).text('play_arrow');
            }
        });
    
-       // Format time in minutes:seconds
        function formatTime(seconds) {
            var min = Math.floor(seconds / 60);
            var sec = Math.floor(seconds % 60);
            return min + ':' + (sec < 10 ? '0' + sec : sec);
-       }
-   });
+       } 
+});
+$(document).ready(function() {
+    var audio = $('#audio')[0];
+
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    var source = audioContext.createMediaElementSource(audio);
+    var analyser = audioContext.createAnalyser();
+
+    source.connect(analyser);
+    analyser.connect(audioContext.destination);
+
+    analyser.fftSize = 256;
+    var bufferLength = analyser.frequencyBinCount;
+    var dataArray = new Uint8Array(bufferLength);
+
+    var maxHeight = 700;
+
+    function renderFrame() {
+        requestAnimationFrame(renderFrame);
+        analyser.getByteFrequencyData(dataArray);
+
+        var bassAverage = 0;
+        for (var i = 0; i < bufferLength / 2; i++) {
+            bassAverage += dataArray[i];
+        }
+        bassAverage = bassAverage / (bufferLength / 2);
+
+        var sensitivity = 2;
+        bassAverage *= sensitivity;
+
+        var visualHeight = (bassAverage / 255) * maxHeight;
+        $('#visual').css('height', visualHeight + 'px');
+
+        var visualOpacity = (bassAverage / 255) * 1;
+        $('#visual').css('opacity', visualOpacity);
+    }
+
+    audio.onplay = function() {
+        audioContext.resume();
+        renderFrame();
+    };
+});
    
    
    

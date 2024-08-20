@@ -18,6 +18,17 @@
        gap: 30px;
 }
 
+#visual {
+       position: fixed;
+       bottom: 0px;
+       background: radial-gradient(var(--pri), transparent 50%);
+       width: 150%;
+       opacity: 0.2;
+       border-radius: 50%;
+       translate: 0% 50%;
+       transition: 0s ease-in-out;
+}
+
 #main {
        .profilepicture {
               display: flex;
