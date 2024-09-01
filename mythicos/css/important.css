@@ -6,6 +6,33 @@
        border-radius: 0px;
 }
 
+#joe_biden, #trump {
+       position: fixed;
+       width: 800px;
+       aspect-ratio: 1;
+       opacity: 0;
+       pointer-events: none;
+
+       img {
+              height: 100%;
+              width: 100%;
+       }
+
+       &.biden {
+              animation: biden 2s linear 0.3s;
+       }
+}
+@keyframes biden {
+       from {
+              scale: 1;
+              opacity: 1;
+       }
+       to {
+              scale: 0.7;
+              opacity: 0;
+       }
+}
+
 #quick_menu {
        position: absolute;
        z-index: 999;
@@ -156,5 +183,75 @@
                             }
                      }
               }
+       }
+}
+
+.application {
+       position: absolute;
+       background: var(--bgtrans);
+       width: 900px;
+       height: 500px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       z-index: 10;
+
+       &:focus {
+              box-shadow: 0px 10px 10px 0px black;
+              z-index: 11;
+       }
+       &.inactive {
+              scale: 0.9;
+              opacity: 0;
+              filter: blur(0.3vmax);
+              pointer-events: none;
+              transition: scale 0.2s ease, opacity 0.2s ease 0s, filter 0.1s ease;
+       }
+       &.active {
+              scale: 1;
+              opacity: 1;
+              filter: blur(0vmax);
+              transition: scale 0.2s ease, opacity 0.2s ease 0s, filter 0.1s ease;
+       }
+
+       .title {
+              width: calc(100% - 10px);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px 10px;
+              height: 30px;
+              padding: 3px;
+
+              h3 {
+                     margin-left: 10px;
+              }
+              .draggable {
+                     height: 100%;
+                     flex-grow: 1;
+                     background: transparent;
+              }
+       }
+       .control {
+              display: flex;
+              gap: 0px;
+
+              span {
+                     padding: 3px 9px;
+                     background: transparent;
+                     cursor: pointer;
+                     transition: 0.2s ease;
+
+                     &:hover {
+                            background: var(--bgtrans2);
+                     }
+              }
+       }
+       .main {
+              position: relative;
+              background: var(--bg);
+              width: 100%;
+              flex-grow: 1;
        }
 }

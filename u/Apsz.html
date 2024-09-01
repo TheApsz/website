@@ -4,7 +4,7 @@
     <meta name="viewport">
 <!-- HTML Meta Tags -->
     <title>Apsz</title>
-    <meta content="27c4ec" data-react-helmet="true" name="theme-color">
+    <meta content="#27c4ec" data-react-helmet="true" name="theme-color">
     <meta name="description" content="youre pretty cool">
 
 <!-- Facebook Meta Tags -->
@@ -41,7 +41,7 @@
 
     <div id="main" class="border trans container flex">
         <div class="profilepicture">
-            <img src="images/apsz2.png">
+            <img src="https://cdn.discordapp.com/avatars/686479657444311041/2b9954fb8f2725de65c38c76807df353?size=1024">
             <div>
                 <h1>Apsz</h1>
                 <h2>youre pretty cool</h2>
@@ -76,8 +76,8 @@
             </div>
         </div>
         <div class="control">
-            <span id="pause" aria-label="pause" class="material-symbols-rounded">pause</span>
-            <h3 id="min">Min</h3>
+            <span id="pause" aria-label="pause" class="material-symbols-rounded">play_arrow</span>
+            <h3 id="min">0:00</h3>
             <div class="sigma">
                 <div class="progress"></div>
             </div>
@@ -140,9 +140,8 @@ h2 {
         }
     }
     #background {
-        filter: blur(0.1vmax);
-        animation: background 120s linear infinite;
-        scale: 3;
+        filter: blur(0vmax);
+        scale: 1;
     }
     @keyframes background {
         from {

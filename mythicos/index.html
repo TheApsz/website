@@ -37,6 +37,7 @@ to mark their presence and sell their work">
 </head>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<script src="javascript/application.js"></script>
 <link rel="stylesheet" href="css/animations.css"/>
 <link rel="stylesheet" href="css/important.css"/>
 <script src="javascript/taskbar.js"></script>
@@ -44,12 +45,22 @@ to mark their presence and sell their work">
 <link rel="stylesheet" href="css/startmenu.css"/>
 <script src="javascript/startmenu.js"></script>
 
+<script src="javascript/notepad.js"></script>
+<link rel="stylesheet" href="css/notepad.css"/>
+
 <html lang="en">
 
 <body>
-        <img id="wallpaper" src="images/peakpx.jpg">
+        <img id="wallpaper" src="images/wallpaper3.gif">
 
-        <div id="quick_menu" class="trans show">
+        <div id="joe_biden" class="top">
+            <img src="images/vivaldi_VicJoRZVSt.png">
+        </div>
+        <div id="trump" class="top">
+            <img src="images/firefox_6tbumDlAyD.png">
+        </div>
+
+        <div id="quick_menu" class="trans top">
             <h2><span class="material-symbols-rounded">restart_alt</span>Refresh</h2>
             <h2><span class="material-symbols-rounded">search</span>Search</h2>
             <hr>
@@ -61,7 +72,7 @@ to mark their presence and sell their work">
             <h2><span class="material-symbols-rounded">edit</span>Personalize</h2>
         </div>
 
-        <div id="panel">
+        <div id="panel" class="top">
             <div class="item">
                 <div class="active trans">
                     <div></div>
@@ -77,11 +88,11 @@ to mark their presence and sell their work">
                 <h3 class="trans"><span class="material-symbols-rounded">volume_up</span>Vol: <span id="volume">50%</span></h3>
                 <h3 class="trans skibidi"><span class="material-symbols-rounded">folder</span></h3>
                 <h3 class="trans skibidi"><span class="material-symbols-rounded">terminal</span></h3>
-                <h3 class="trans skibidi"><span class="material-symbols-rounded">description</span></h3>
+                <h3 id="notepad_sh" class="trans skibidi"><span class="material-symbols-rounded">description</span></h3>
             </div>
         </div>
 
-        <div id="startmenu" class="trans inactive">
+        <div id="startmenu" class="trans inactive top">
             <div class="profile">
                 <h3>Apsz@Mythic</h3>
                 <span class="material-symbols-rounded active">power_settings_new</span>
@@ -114,17 +125,29 @@ to mark their presence and sell their work">
 
             <hr>
             <div class="spotify">
-                <img class="background" src="images/Spotify_9G8yJPThCO.png">
-                <img class="image" src="images/Spotify_9G8yJPThCO.png">
+                <img class="background" src="images/Spotify_uipdIQUKQc.png">
+                <img class="image" src="images/Spotify_uipdIQUKQc.png">
                 <div class="title">
-                    <h3>Your Power (stripped)</h3>
-                    <h2>Whsprs</h2>
+                    <h3>odoriko</h3>
+                    <h2>Vaundy</h2>
                 </div>
             </div>
         </div>
 
-        <div id="notepad" class="application trans">
-            <div class="title"></div>
+        <div id="notepad" class="application trans inactive">
+            <div class="title">
+                <h3>Notepad</h3>
+                <div class="draggable"></div>
+                <div class="control">
+                    <span class="material-symbols-rounded close_button">remove</span>
+                    <span class="material-symbols-rounded close_button">close</span>
+                </div>
+            </div>
+            <div class="main">
+                <textarea id="notepad_textelement">
+                    this is pretty cool right?
+                </textarea>
+            </div>
         </div>
 </body>
 
@@ -162,5 +185,14 @@ h1, h2, h3 {
 }
 h2 {
        font-weight: 400;
+}
+.trans {
+    &::before {
+        display: none;
+    }
+}
+
+.top {
+    z-index: 10000;
 }
 </style>

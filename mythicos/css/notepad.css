@@ -1,0 +1,15 @@
+#notepad {
+       textarea {
+              resize: none;
+              background: transparent;
+              color: var(--txt);
+              width: calc(100% - 10px);
+              outline: 0;
+              border: 0;
+              height: calc(100% - 10px);
+              margin-left: 5px;
+              margin-top: 5px;
+              font-family: fredoka,sans-serif;
+              font-weight: 300;
+       }
+}
