@@ -49,6 +49,10 @@ $(function() {
         var $parentApp = $(this).closest('.application');
         $parentApp.removeClass('active').addClass('inactive');
     });
+    $(document).on('click', '.application', function() {
+        $(".application").removeClass('focus');
+        $(this).addClass('focus');
+    });
 });
 
 

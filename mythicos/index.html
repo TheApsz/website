@@ -30,6 +30,7 @@ to mark their presence and sell their work">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
     <link rel="stylesheet" href="https://polargram.pages.dev/!src/main.css">
     <script src="https://polargram.pages.dev/!src/java.js"></script>
     <link rel="stylesheet" href="https://polargram.pages.dev/!src/header.css">
@@ -47,6 +48,8 @@ to mark their presence and sell their work">
 
 <script src="javascript/notepad.js"></script>
 <link rel="stylesheet" href="css/notepad.css"/>
+<script src="javascript/terminal.js"></script>
+<link rel="stylesheet" href="css/terminal.css"/>
 
 <html lang="en">
 
@@ -87,7 +90,7 @@ to mark their presence and sell their work">
                 <h3 class="trans"><span class="material-symbols-rounded">bar_chart</span>RAM <span id="ram">1.4</span> / 16 GB</h3>
                 <h3 class="trans"><span class="material-symbols-rounded">volume_up</span>Vol: <span id="volume">50%</span></h3>
                 <h3 class="trans skibidi"><span class="material-symbols-rounded">folder</span></h3>
-                <h3 class="trans skibidi"><span class="material-symbols-rounded">terminal</span></h3>
+                <h3 id="terminal_sh" class="trans skibidi"><span class="material-symbols-rounded">terminal</span></h3>
                 <h3 id="notepad_sh" class="trans skibidi"><span class="material-symbols-rounded">description</span></h3>
             </div>
         </div>
@@ -144,9 +147,20 @@ to mark their presence and sell their work">
                 </div>
             </div>
             <div class="main">
-                <textarea id="notepad_textelement">
-                    this is pretty cool right?
-                </textarea>
+                <textarea id="notepad_textelement"></textarea>
+            </div>
+        </div>
+
+        <div id="terminal" class="application trans inactive">
+            <div class="title">
+                <h3>Terminal</h3>
+                <div class="draggable"></div>
+                <div class="control">
+                    <span class="material-symbols-rounded close_button">remove</span>
+                    <span class="material-symbols-rounded close_button">close</span>
+                </div>
+            </div>
+            <div class="main">
             </div>
         </div>
 </body>
