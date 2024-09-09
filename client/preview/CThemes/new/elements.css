@@ -1,0 +1,29 @@
+#title {
+       position: absolute;
+       background: transparent;
+       top: 10px;
+       left: 10px;
+       min-width: 220px;
+
+       .title {
+              position: relative;
+              width: calc(100% - 20px);
+              background: transparent;
+              padding-left: 10px;
+              padding: 3px 10px;
+       }
+       .version {
+              position: absolute;
+              top: 50%;
+              translate: 0% -50%;
+              background: transparent;
+              left: calc(100% + 5px);
+              padding: 0px 10px;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 15px;
+       }
+
+}

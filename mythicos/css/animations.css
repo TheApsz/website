@@ -17,11 +17,3 @@
               scale: 1;
        }
 }
-@keyframes focus_application2 {
-       from {
-              z-index: 10;
-       }
-       to {
-              z-index: 11;
-       }
-}

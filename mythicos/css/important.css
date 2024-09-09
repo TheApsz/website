@@ -199,8 +199,8 @@
        z-index: 10;
 
        &.focus {
-              animation: focus_application 0.5s ease-in-out,
-                     focus_application2 0.20s linear forwards;
+              animation: focus_application 0.5s ease-in-out;
+              z-index: 11;
        }
        &.inactive {
               scale: 1.05;
