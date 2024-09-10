@@ -117,3 +117,83 @@
               color: rgb(32, 253, 43);
        }
 }
+
+#hotbar {
+       position: absolute;
+       bottom: 20px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap: 10px;
+
+       .health {
+              position: relative;
+              display: grid;
+              background: transparent;
+              grid-template-columns: repeat(2, 220px);
+              grid-template-rows: repeat(1, 20px);
+              gap: 5px;
+
+              .item {
+                     background: black;
+                     position: relative;
+                     height: 100%;
+                     width: 100%;
+
+                     &.health {
+                            background: rgb(53, 4, 4);
+
+                            .health-fill {
+                                   background:rgb(253, 32, 32);
+                                   width: 90%;
+                                   display: flex;
+                                   justify-content: flex-start;
+                                   align-items: center;
+
+                                   span {
+                                          font-size: 15px;
+                                          margin-left: 5px;
+                                   }
+                            }
+
+                            .armor {
+                                   position: absolute;
+                                   bottom: calc(100% + 3px);
+                                   height: 10px;
+                                   background:rgb(59, 59, 59);
+
+                                   .armor-fill {
+                                          background:rgb(182, 182, 182);
+                                          width: 72%;
+                                          height: 100%;
+                                   }
+                            }
+                     }
+                     &.food {
+                            background: rgb(73, 44, 20);
+
+                            .food-fill {
+                                   background:rgb(252, 152, 70);
+                                   height: 100%;
+                                   width: 50%;
+                                   display: flex;
+                                   justify-content: flex-start;
+                                   align-items: center;
+
+                                   span {
+                                          font-size: 15px;
+                                          margin-left: 5px;
+                                   }
+                            }
+                     }
+              }
+       }
+       .bar {
+              position: relative;
+              display: grid;
+              background: var(--bgtrans);
+              grid-template-columns: repeat(9, 50px);
+              grid-template-rows: repeat(1, 50px);
+       }
+}
