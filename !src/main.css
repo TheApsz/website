@@ -57,6 +57,8 @@ h2 {
 }
 
 .trans {
+       backdrop-filter: blur(1vmax);
+       
        &:before {
               content: '';
               position: absolute;
