@@ -16,4 +16,7 @@ $(document).ready(function() {
               }
        );
 });
-   
+$(document).ready(function() {
+    const headerWidth = $('#navbar').outerWidth();
+    $(':root').css('--header-width', headerWidth + 'px');
+});

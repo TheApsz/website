@@ -17,6 +17,9 @@
        --sec2: rgba(66, 248, 49, 0.2);
        --acc: rgb(255, 208, 0);
        --acc2: rgba(255, 208, 0, 0.5);
+
+       /* Some important stuff */
+       --header-width: auto;
 }
 html {
        touch-action: manipulation;
