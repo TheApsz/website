@@ -27,12 +27,8 @@ $(document).ready(function() {
          } else {
            $("#time").text(currentTimeString);
            $("#playtime").text(playTimeString);
-         }
-<<<<<<< HEAD
+         } HEAD
        }, 100);
-=======
-       }, 1);
->>>>>>> 3a2b33c (client preview updated and apsz profile)
 });
      
      
