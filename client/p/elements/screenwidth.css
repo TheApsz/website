@@ -1,0 +1,22 @@
+#screen {
+       position: absolute;
+       width: calc(100% - var(--screen));
+       height: calc(100% - var(--screen));
+       background: transparent;
+       display: flex;
+}
+
+#cursor {
+       position: absolute;
+       aspect-ratio: 1;
+       border-radius: 50%;
+       height: 20px;
+       background: rgba(255,255,255, 0.5);
+       z-index: 10000;
+       translate: -50% -50%;
+       pointer-events: none;
+       opacity: 0;
+       transition: background 0.2s ease, transform 0.3s cubic-bezier(.26,1.61,0.2,2), scale 0.3s cubic-bezier(.26,1.61,0.2,2), opacity 0.3s ease 0.2s;
+
+       backdrop-filter: blur(0.2vmax);
+}

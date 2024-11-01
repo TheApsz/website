@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root {
+       /* Backgrounds */
+       --bg: rgba(11, 11, 13, 0.8);
+       --bg2: rgba(21, 21, 23, 0.8);
+       --bgtrans: rgba(0, 0, 0, 0.2);
+       --bgtrans2: rgba(255, 255, 255, 0.1);
+
+       /* Text */
+       --txt: rgb(236, 241, 233);
+
+       /* Colors */
+       --pri: rgb(236, 39, 39);
+       --pri2: rgba(236, 39, 39, 0.2);
+       --sec: rgb(248, 122, 49);
+       --sec2: rgba(248, 122, 49, 0.2);
+       --acc: rgb(255, 208, 0);
+       --acc2: rgba(255, 208, 0, 0.5);
+
+       /* Some important stuff */
+       --header-width: auto;
+       --screen: 50px;
+}
+html {
+       touch-action: manipulation;
+       background: var(--bg);
+       cursor: none;
+}
+* {
+       margin: 0;
+       min-width: 0;
+       padding: 0;
+       border-radius: 10px;
+       cursor: none !important;
+}
+a {
+       text-decoration: none;
+       color: inherit;
+}
+
+body {
+       color: var(--txt);
+       background: var(--bg);
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       gap: 30px;
+       min-height: 100svh;
+       overflow-x: hidden;
+       overflow: hidden;
+
+       &:hover {
+              #cursor {
+                     opacity: 1;
+              }
+       }
+}
+
+h1, h2, h3 {
+       font-family: fredoka,sans-serif;
+       color: var(--txt);
+       font-weight: 500;
+}
+h2 {
+       font-family: fredoka,sans-serif;
+       font-weight: 400;
+       line-height: 1.5;
+}
+
+.trans {
+       backdrop-filter: blur(1vmax);
+       
+       &:before {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0px;
+              left: 0px;
+              backdrop-filter: blur(1vmax);
+              -webkit-backdrop-filter: blur(1vmax);
+              border-radius: 10px;
+              z-index: -1;
+              justify-self: center;
+              align-self: center;
+              scale: 1;
+       }
+}
+.border {
+       box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.1);
+}
+
+/* Target WebKit browsers (Chrome, Safari, etc.) */
+*::-webkit-scrollbar {
+       width: 10px; /* Adjust width as desired */
+}
+     
+     *::-webkit-scrollbar-track {
+       background: transparent; /* Customize track background color */
+       border-radius: 10px; /* Add rounded corners */
+     }
+     
+     *::-webkit-scrollbar-thumb {
+       background: var(--pri2); /* Customize thumb color */
+       border-radius: 10px; /* Add rounded corners */
+       transition: all 0.25s ease;
+     }
+     *::-webkit-scrollbar-thumb:hover {
+       background: var(--pri); /* Customize thumb color */
+       border-radius: 10px; /* Add rounded corners */
+     }
+
+     ::selection {
+       color: white; /* Change the text color */
+       background-color: var(--pri); /* Change the background color */
+     }
+
+.button {
+       opacity: 0.8;
+       transition: 0.2s ease;
+       cursor: pointer;
+
+       &:hover {
+              opacity: 1;
+       }
+}
+
+@media screen and (max-width: 1000px) {
+       .desktop {
+              display: none;
+       }
+       .mobile {
+              display: auto;
+       }
+}
+
+@media screen and (min-width: 1001px) {
+       .desktop {
+              display: auto;
+       }
+       .mobile {
+              display: none;
+       }
+}
+img {
+       pointer-events: none;
+}
+
+.clr-bg {
+       animation: clr-bg 3s ease-in-out infinite;
+}
+.clr-bg-trs {
+       animation: clr-bg-trs 3s ease-in-out infinite;
+}
+.clr-txt {
+       animation: clr-txt 3s ease-in-out infinite;
+}
+.clr-txt-trs {
+       animation: clr-txt-trs 3s ease-in-out infinite;
+}
+@keyframes clr-bg {
+       from {
+              background: var(--pri);
+       }
+       50% {
+              background: var(--sec);
+       }
+       to {
+              background: var(--pri);
+       }
+}
+@keyframes clr-bg-trs {
+       from {
+              background: var(--pri2);
+       }
+       50% {
+              background: var(--sec2);
+       }
+       to {
+              background: var(--pri2);
+       }
+}
+@keyframes clr-txt {
+       from {
+              color: var(--pri);
+       }
+       50% {
+              color: var(--sec);
+       }
+       to {
+              color: var(--pri);
+       }
+}
+@keyframes clr-txt-trs {
+       from {
+              background: var(--pri2);
+              color: var(--pri);
+       }
+       50% {
+              background: var(--sec2);
+              color: var(--sec);
+       }
+       to {
+              background: var(--pri2);
+              color: var(--pri);
+       }
+}

@@ -1,0 +1,352 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+<!-- HTML Meta Tags -->
+    <title>Polargram client</title>
+    <meta content="#ec2727" data-react-helmet="true" name="theme-color">
+    <meta name="description" content="Aint this an awesome description?">
+
+<!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://polargram.pages.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Polargram">
+    <meta property="og:description" content="Aint this an awesome description?">
+    <meta property="og:image" content="https://polargram.pages.dev/og-banner.png">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="polargram.pages.dev">
+    <meta property="twitter:url" content="https://polargram.pages.dev">
+    <meta name="twitter:title" content="Polargram">
+    <meta name="twitter:description" content="Aint this an awesome description?">
+    <meta name="twitter:image" content="https://polargram.pages.dev/og-banner.png">
+
+
+    <link rel="icon" href="https://polargram.pages.dev/og-image.png" type="image/x.icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="!src/main.css">
+    <script src="https://polargram.pages.dev/!src/java.js"></script>
+</head>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<script src="elements/js/cursor.js"></script>
+
+<link rel="stylesheet" href="elements/background.css">
+<link rel="stylesheet" href="elements/screenwidth.css">
+<link rel="stylesheet" href="elements/title.css">
+<script src="elements/js/title.js"></script>
+<link rel="stylesheet" href="elements/hotbar.css">
+<script src="elements/js/hotbar.js"></script>
+<link rel="stylesheet" href="elements/chat.css">
+<script src="elements/js/chat.js"></script>
+<link rel="stylesheet" href="elements/music-player.css">
+<script src="elements/js/visualizer.js"></script>
+<link rel="stylesheet" href="elements/array.css">
+<link rel="stylesheet" href="elements/inventory.css">
+<script src="elements/js/inventory.js"></script>
+<link rel="stylesheet" href="elements/clickgui.css">
+<script src="elements/js/clickgui.js"></script>
+
+
+
+<body>
+<<<<<<< HEAD
+<img class="background" src="images/javaw_UQHTPruS1Z.jpg">
+=======
+>>>>>>> 3a2b33c (client preview updated and apsz profile)
+<video class="background" src="images/background.mp4" autoplay muted loop></video>
+
+<div id="cursor"></div>
+<div id="screen">
+       <div id="title">
+              <h1 class="clr-txt-trs trans">Polargram</h1>
+
+              <div id="session-info" class="trans">
+                     <h3 class="clr-txt item-txt">Session info</h3>
+                     <div class="item"><h3>Server</h3><h2>play.norules.wtf</h2></div>
+                     <div class="item"><h3>Kills</h3><h2>2</h2></div>
+                     <div class="item"><h3>K/D</h3><h2>2</h2></div>
+              </div>
+
+              <div id="doodle" class="trans hoverable">
+                     <img src="https://polargram.pages.dev/!src/character/cool.webp">
+              </div>
+       </div>
+
+       <div id="hotbar">
+              <div class="bar trans">
+                     <div class="active">
+                            <div class="clr-bg"></div>
+                            <img src="https://minecraftprintables.com/wp-content/uploads/2017/02/minecraft-diamond-sword-template.png">
+                     </div>
+                     <div><div class="clr-bg"></div></div>
+                     <div><div class="clr-bg"></div></div>
+                     <div><div class="clr-bg"></div>
+                            <img src="https://images3.wikia.nocookie.net/__cb20111001070117/minecraft/images/6/67/Cobblestone.png">
+                            <h2>28</h2>
+                     </div>
+                     <div>
+                            <div class="clr-bg"></div>
+                     </div>
+                     <div><div class="clr-bg"></div></div>
+                     <div><div class="clr-bg"></div></div>
+                     <div><div class="clr-bg"></div></div>
+                     <div><div class="clr-bg"></div>
+                            <img src="https://images1.wikia.nocookie.net/__cb20121003204425/minecraft/images/6/66/Steak.png">
+                            <h2>9</h2>
+                     </div>
+              </div>
+              <div class="health">
+                     <div class="item hearts">
+                            <div></div>
+                     </div>
+                     <div class="item food">
+                            <div></div>
+                     </div>
+              </div>
+       </div>
+
+       <div id="chat" class="trans">
+              <input id="chat-input" class="hoverable">
+              <div id="messages" class="chat">
+                     <h3>Apsz<span>did you know we have our own colors on text?</span></h3>
+                     <h3>UnCUT<span>we can?</span></h3>
+                     <h3>Apsz<span class="green hoverable">yes we can<h2>(green.*)</h2></span></h3>
+                     <h3>UnCUT<span>This is pretty <span class="orange hoverable">cool<h2>(orange.*)</h2></span></span></h3>
+                     <h3>Apsz<span>Youre pretty cool</span></h3>
+              </div>
+       </div>
+
+       <div id="array">
+              <div class="trans item"><h3 class="clr-txt">HUD</h3><h2>New</h2></div>
+              <div class="trans item"><h3 class="clr-txt">Session info</h3></div>
+              <div class="trans item"><h3 class="clr-txt">Doodle</h3></div>
+              <div class="trans item"><h3 class="clr-txt">Music player</h3><h2>Pixelated</h2></div>
+       </div>
+
+       <div id="inventory" class="trans">
+              <div class="container2">
+                     <div class="item hoverable">
+                            <div class="clr-bg-trs"></div>
+                            <img src="https://vignette.wikia.nocookie.net/minecraftpocketedition/images/f/f6/Iron_Helmet_Icon.png/revision/latest?cb=20170628005646">
+                     </div>
+                     <div class="item hoverable">
+                            <div class="clr-bg-trs"></div>
+                            <img src="https://art.pixilart.com/thumb/15c5e0d7081265f.png">
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+              </div>
+              <div class="container">
+                     <!-- 1 -->
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+
+                     <!-- 2 -->
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+
+                     <!-- 3 -->
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+
+                     <!-- hotbar -->
+                     <div class="item hoverable">
+                            <div class="clr-bg-trs"></div>
+                            <img src="https://minecraftprintables.com/wp-content/uploads/2017/02/minecraft-diamond-sword-template.png">
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item hoverable">
+                            <div class="clr-bg-trs"></div>
+                            <img src="https://images3.wikia.nocookie.net/__cb20111001070117/minecraft/images/6/67/Cobblestone.png">
+                            <h2>28</h2>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item">
+                            <div class="clr-bg-trs"></div>
+                     </div>
+                     <div class="item hoverable">
+                            <div class="clr-bg-trs"></div>
+                            <img src="https://images1.wikia.nocookie.net/__cb20121003204425/minecraft/images/6/66/Steak.png">
+                            <h2>9</h2>
+                     </div>
+              </div>
+       </div>
+       
+       <div id="clickgui" class="trans active">
+              <div class="main">
+                     <div class="categories">
+                            <div class="item hoverable active">
+                                   <span class="material-symbols-rounded white">home</span>
+                                   <span class="material-symbols-rounded clr-txt">home</span>
+                                   <div class="clr-bg"></div>
+                            </div>
+                            <div class="item hoverable">
+                                   <span class="material-symbols-rounded white">tune</span>
+                                   <span class="material-symbols-rounded clr-txt">tune</span>
+                                   <div class="clr-bg"></div>
+                            </div>
+                            <div class="item hoverable">
+                                   <span class="material-symbols-rounded white">smart_toy</span>
+                                   <span class="material-symbols-rounded clr-txt">smart_toy</span>
+                                   <div class="clr-bg"></div>
+                            </div>
+                            <div class="item hoverable last">
+                                   <span class="material-symbols-rounded white">code</span>
+                                   <span class="material-symbols-rounded clr-txt">code</span>
+                                   <div class="clr-bg"></div>
+                            </div>
+
+                            <div class="item hoverable">
+                                   <span class="material-symbols-rounded white">download</span>
+                                   <span class="material-symbols-rounded clr-txt">download</span>
+                                   <div class="clr-bg"></div>
+                            </div>
+                            <div class="item hoverable">
+                                   <span class="material-symbols-rounded white">store</span>
+                                   <span class="material-symbols-rounded clr-txt">store</span>
+                                   <div class="clr-bg"></div>
+                            </div>
+                            <div class="item hoverable">
+                                   <span class="material-symbols-rounded white">settings</span>
+                                   <span class="material-symbols-rounded clr-txt">settings</span>
+                                   <div class="clr-bg"></div>
+                            </div>
+                     </div>
+                     <div class="block">
+                            <div id="clickgui-home" class="item">
+                                   <div class="element profile hoverable">
+                                          <img src="images/4319764.jpg">
+                                          <h1 class="clr-txt">PLAYER</h1>
+                                          <h2 class="smol">Guest</h2>
+                                          <h2>Thanks for testing out Polargram beta<br>
+                                                 we hope you enjoy our work. happy halloween</h2>
+                                   </div>
+                                   <div class="element party">
+                                          <h1 class="clr-txt">Party</h1>
+                                          <h2 class="clr-txt">PLAYER <span>(host)</span></h2>
+                                          <h2 class="">UnCutError <span>(ready)</span></h2>
+                                          <h2 class="">Apsz <span>(not ready)</span></h2>
+
+                                          <div class="info"><h3>3/5 Players</h3><h3>J4EK9-T1RS</h3></div>
+                                   </div>
+                                   <div class="element smol">
+                                          <h1 class="clr-txt">Stats</h1>
+                                          <h2>Idle</h2>
+                                          <div><span class="material-symbols-rounded white">schedule</span><h2 id="time">Time</h2></div>
+                                          <div><span class="material-symbols-rounded white">timer</span><h2 id="playtime">Duration</h2></div>
+                                   </div>
+                                   <div class="element smol">
+                                          <h1 class="clr-txt">Server</h1>
+                                          <h2><span>play.</span>norules.wtf</h2>
+                                          <div><h2>TPS: 20</h2></div>
+                                          <div><h2>PING: 32ms</h2></div>
+                                   </div>
+                                   <div class="element smol">
+                                          <h1 class="clr-txt">DSFB</h1>
+                                          <h2>Online</h2>
+                                          <div><h2>Seeding</h2></div>
+                                          <h2>localhost<span>:5000</span></h2>
+                                   </div>
+                            </div>
+                     </div>
+              </div>
+
+       </div>
+</div>
+</body>
