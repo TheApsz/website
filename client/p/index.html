@@ -42,8 +42,6 @@
 <script src="elements/js/hotbar.js"></script>
 <link rel="stylesheet" href="elements/chat.css">
 <script src="elements/js/chat.js"></script>
-<link rel="stylesheet" href="elements/music-player.css">
-<script src="elements/js/visualizer.js"></script>
 <link rel="stylesheet" href="elements/array.css">
 <link rel="stylesheet" href="elements/inventory.css">
 <script src="elements/js/inventory.js"></script>
@@ -53,10 +51,7 @@
 
 
 <body>
-<<<<<<< HEAD
 <img class="background" src="images/javaw_UQHTPruS1Z.jpg">
-=======
->>>>>>> 3a2b33c (client preview updated and apsz profile)
 <video class="background" src="images/background.mp4" autoplay muted loop></video>
 
 <div id="cursor"></div>
@@ -271,45 +266,45 @@
        <div id="clickgui" class="trans active">
               <div class="main">
                      <div class="categories">
-                            <div class="item hoverable active">
+                            <div id="clickgui-home-sh" class="category-item item hoverable active">
                                    <span class="material-symbols-rounded white">home</span>
                                    <span class="material-symbols-rounded clr-txt">home</span>
                                    <div class="clr-bg"></div>
                             </div>
-                            <div class="item hoverable">
+                            <div id="clickgui-modules-sh" class="category-item item hoverable">
                                    <span class="material-symbols-rounded white">tune</span>
                                    <span class="material-symbols-rounded clr-txt">tune</span>
                                    <div class="clr-bg"></div>
                             </div>
-                            <div class="item hoverable">
+                            <div id="clickgui-gpt-sh" class="category-item item hoverable">
                                    <span class="material-symbols-rounded white">smart_toy</span>
                                    <span class="material-symbols-rounded clr-txt">smart_toy</span>
                                    <div class="clr-bg"></div>
                             </div>
-                            <div class="item hoverable last">
+                            <div class="category-item item hoverable last">
                                    <span class="material-symbols-rounded white">code</span>
                                    <span class="material-symbols-rounded clr-txt">code</span>
                                    <div class="clr-bg"></div>
                             </div>
 
-                            <div class="item hoverable">
+                            <div id="clickgui-update-sh" class="category-item item hoverable">
                                    <span class="material-symbols-rounded white">download</span>
                                    <span class="material-symbols-rounded clr-txt">download</span>
                                    <div class="clr-bg"></div>
                             </div>
-                            <div class="item hoverable">
+                            <div class="category-item item hoverable">
                                    <span class="material-symbols-rounded white">store</span>
                                    <span class="material-symbols-rounded clr-txt">store</span>
                                    <div class="clr-bg"></div>
                             </div>
-                            <div class="item hoverable">
+                            <div class="category-item item hoverable">
                                    <span class="material-symbols-rounded white">settings</span>
                                    <span class="material-symbols-rounded clr-txt">settings</span>
                                    <div class="clr-bg"></div>
                             </div>
                      </div>
                      <div class="block">
-                            <div id="clickgui-home" class="item">
+                            <div id="clickgui-home" class="category-block item active">
                                    <div class="element profile hoverable">
                                           <img src="images/4319764.jpg">
                                           <h1 class="clr-txt">PLAYER</h1>
@@ -342,6 +337,30 @@
                                           <h2>Online</h2>
                                           <div><h2>Seeding</h2></div>
                                           <h2>localhost<span>:5000</span></h2>
+                                   </div>
+                            </div>
+                            <div id="clickgui-gpt" class="category-block item">
+                                   <div class="title"><h1 class="clr-txt">ClickGPT 0.47</h1><h2>Offline</h2></div>
+                                   <div class="text">
+                                          <div><input class="hoverable"><span class="material-symbols-rounded hoverable">send</span><span class="material-symbols-rounded hoverable">mood</span></div>
+
+                                          <div class="messages">
+                                                 <h2 class="clr-txt-trs">Huh? What did I say? <img src="https://polargram.pages.dev/!src/character/bruh.webp"></h2>
+                                                 <h2 class="you">son of a bitch...</h2>
+                                                 <h2 class="clr-txt-trs">Polargram Client? That sounds like some sort of Instagram client to me, I'm not really familiar with it though. Why do you ask? <img src="https://polargram.pages.dev/!src/character/wink.webp"></h2>
+                                                 <h2 class="you">whats your opinion on polargram client</h2>
+                                          </div>
+                                   </div>
+                            </div>
+                            <div id="clickgui-update" class="category-block item">
+                                   <div class="title"><h1 class="clr-txt">Dev update</h1><h2>a-11</h2><h3 class="hoverable">All updates</h3></div>
+                                   <div class="text">
+                                          <div class="change plus"><div></div><h2>Added a new tab: updates</h2></div>
+                                          <div class="change plus"><div></div><h2>Added a new tab: ClickGPT</h2></div>
+                                          <div class="change plus"><div></div><h2>Added color coded indicators to updates</h2></div>
+                                          <div class="change plus"><div></div><h2>Added an animation when switching to different tabs on the clickgui</h2></div>
+                                          <div class="change fix"><div></div><h2>Fixed colors being wrong on firefox</h2></div>
+                                          <div class="change fix"><div></div><h2>Changed updates button (install > all updates)</h2></div>
                                    </div>
                             </div>
                      </div>

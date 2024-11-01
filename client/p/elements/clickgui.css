@@ -103,6 +103,13 @@
                             position: absolute;
                             height: 100%;
                             width: 100%;
+                            opacity: 0;
+                            pointer-events: none;
+                            animation: block-off 0.3s ease-in-out;
+
+                            &.active {
+                                   animation: block-on 0.4s ease-in-out forwards 0.2s;
+                            }
                      }
 
                      #clickgui-home {
@@ -215,6 +222,190 @@
                                    }
                             }
                      }
+                     #clickgui-update {
+                            background: transparent;
+                            box-sizing: border-box;
+                            padding: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            .title {
+                                   display: flex;
+                                   flex-direction: row;
+                                   align-items: center;
+                                   gap: 10px;
+
+                                   h2 {
+                                          opacity: 0.5;
+                                          font-size: 20px;
+                                   }
+                                   h3 {
+                                          position: absolute;
+                                          right: 20px;
+                                          background: transparent;
+                                          padding: 3px 10px;
+                                          opacity: 0.8;
+                                          transition: 0.3s ease;
+
+                                          &:hover {
+                                                 background: var(--bgtrans2);
+                                                 opacity: 1;
+                                          }
+                                   }
+                            }
+                            .text {
+                                   .change {
+                                          position: relative;
+                                          display: flex;
+                                          flex-direction: row;
+                                          align-items: center;
+                                          gap: 10px;
+
+                                          &.plus {
+                                                 div {
+                                                        background: rgb(55, 255, 37);
+                                                 }
+                                          }
+                                          &.fix {
+                                                 div {
+                                                        background: rgb(255, 222, 37);
+                                                 }
+                                          }
+                                          &.minus {
+                                                 div {
+                                                        background: rgb(255, 37, 37);
+                                                 }
+                                          }
+
+                                          div {
+                                                 background: white;
+                                                 height: 5px;
+                                                 aspect-ratio: 1;
+                                          }
+                                          h2 {
+                                                 font-size: 15px;
+                                          }
+                                   }
+                            }
+                     }
+                     #clickgui-gpt {
+                            background: transparent;
+                            box-sizing: border-box;
+                            padding: 0px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            .title {
+                                   display: flex;
+                                   flex-direction: row;
+                                   align-items: center;
+                                   gap: 10px;
+                                   padding-top: 20px;
+
+                                   h1 {
+                                          font-size: 20px;
+                                   }
+                                   h2 {
+                                          opacity: 0.5;
+                                          font-size: 15px;
+                                   }
+                            }
+                            .text {
+                                   background: transparent;
+                                   flex-grow: 1;
+                                   display: flex;
+                                   flex-direction: column-reverse;
+                                   width: 100%;
+                                   gap: 5px;
+
+                                   div {
+                                          display: flex;
+                                          flex-direction: row;
+                                          gap: 5px;
+
+                                          input {
+                                                 height: 100%;
+                                                 flex-grow: 1;
+                                                 background: var(--bg2);
+                                                 outline: 0;
+                                                 border: 0;
+                                                 box-sizing: border-box;
+                                                 padding-left: 10px;
+                                                 color: var(--txt);
+                                                 font-family: fredoka,sans-serif;
+                                          }
+                                          span {
+                                                 padding: 5px;
+                                                 background: var(--bg2);
+                                          }
+                                   }
+
+                                   .messages {
+                                          display: flex;
+                                          flex-direction: column-reverse;
+
+                                          h2 {
+                                                 background: transparent;
+                                                 position: relative;
+                                                 font-size: 20px;
+                                                 padding: 3px 10px;
+                                                 max-width: 50%;
+       
+                                                 &.him {
+                                                        text-align: left;
+
+                                                        img {
+                                                               left: 10px;
+                                                        }
+                                                 }
+                                                 &.you {
+                                                        align-self: flex-end;
+                                                 }
+
+                                                 img {
+                                                        position: absolute;
+                                                        aspect-ratio: 1;
+                                                        height: 60px;
+                                                        bottom: calc(100% - 5px);
+                                                        left: 10px;
+                                                 }
+                                          }
+                                   }
+                            }
+                     }
               }
+       }
+}
+
+@keyframes block-on {
+       from {
+              opacity: 0;
+              scale: 1;
+              translate: -5% 0%;
+       }
+       50% {
+              scale: 1;
+              translate: 0% 0%;
+       }
+       to {
+              opacity: 1;
+              scale: 1;
+              pointer-events: auto;
+       }
+}
+@keyframes block-off {
+       from {
+              opacity: 1;
+              scale: 1;
+       }
+       50% {
+              translate: 0% 0%;
+       }
+       to {
+              opacity: 0;
+              scale: 1;
+              translate: 5% 0%;
        }
 }

@@ -27,8 +27,26 @@ $(document).ready(function() {
          } else {
            $("#time").text(currentTimeString);
            $("#playtime").text(playTimeString);
-         } HEAD
+         }
        }, 100);
+});
+
+$(document).ready(function() {
+  $('.category-item').click(function() {
+    $('.category-item').removeClass('active');
+    $(this).addClass('active');
+    $('.category-block').removeClass('active');
+  });
+
+  $('#clickgui-home-sh').click(function() {
+    $('#clickgui-home').addClass('active');
+  });
+  $('#clickgui-gpt-sh').click(function() {
+    $('#clickgui-gpt').addClass('active');
+  });
+  $('#clickgui-update-sh').click(function() {
+    $('#clickgui-update').addClass('active');
+  });
 });
      
      
