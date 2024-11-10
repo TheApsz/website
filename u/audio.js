@@ -43,6 +43,8 @@ $(document).ready(function() {
            return min + ':' + (sec < 10 ? '0' + sec : sec);
        } 
 });
+
+
 $(document).ready(function() {
     var audio = $('#audio')[0];
 
