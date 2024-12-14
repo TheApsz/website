@@ -1,0 +1,57 @@
+#login {
+       position: absolute;
+       background: transparent;
+       width: 100%;
+       height: 100%;
+
+       .box {
+              position: absolute;
+              bottom: 15px;
+              left: 15px;
+              display: flex;
+              flex-direction: row;
+              gap: 15px;
+
+              .login-input {
+                     background: var(--bgtrans);
+                     color: white;
+                     outline: 0;
+                     border: 0;
+                     font-family: "fredoka",sans-serif;
+                     font-size: 20px;
+                     padding: 10px 25px;
+                     width: 250px;
+              }
+              .login-button {
+                     background: var(--bgtrans);
+                     aspect-ratio: 1;
+                     height: 50px;
+              }
+       }
+       .login-question {
+              left: 15px;
+              top: 15px;
+              position: absolute;
+              background: var(--bgtrans);
+              aspect-ratio: 1;
+              height: 50px;
+       }
+       .login-quests {
+              left: 15px;
+              top: 75px;
+              position: absolute;
+              background: var(--bgtrans);
+              padding: 15px;
+              padding-bottom: 0;
+              max-width: 500px;
+
+              h1 {
+                     font-size: 20px;
+              }
+              h2 {
+                     margin-top: 10px;
+                     font-size: 15px;
+                     margin-bottom: 20px;
+              }
+       }
+}

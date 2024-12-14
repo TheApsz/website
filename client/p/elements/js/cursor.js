@@ -1,7 +1,7 @@
 $(document).ready(function(){
        let mouseX = 0, mouseY = 0;
        let cursorX = 0, cursorY = 0;
-       const delay = 8; // Higher value means slower delay
+       const delay = 1; // Higher value means slower delay
 
        // Update mouse coordinates on mousemove
        $(document).mousemove(function(e) {
