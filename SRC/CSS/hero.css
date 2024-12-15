@@ -89,19 +89,23 @@
                             animation: hero-title-launch 1s ease forwards,
                                    hero-title-shine 5s linear infinite;
                             opacity: 0;
-                            cursor: grab;
+                            pointer-events: none;
                             transform: 0;
                             transition: all 0.3s ease;
                      }
               }
               h2 {
                     margin-top: 30px; 
+                    animation: hero-title-launch3 1s ease forwards 0.5s;
+                    opacity: 0;
               }
               .selection {
                      background: transparent;
                      margin-top: 20px;
                      display: flex;
                      gap: 5px;
+                     opacity: 0;
+                     animation: hero-title-launch3 1s ease forwards 1s;
 
                      .button {
                             &.full {
@@ -184,11 +188,11 @@
               opacity: 1;
        }
 }
-@keyframes hero-title-launch2 {
+@keyframes hero-title-launch3 {
        from {
               opacity: 0;
-              filter: blur(0.5vmax);
-              translate: 0% -50%;
+              filter: blur(0.1vmax);
+              translate: 0% 50%;
        }
        to {
               opacity: 1;
