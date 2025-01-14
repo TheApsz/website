@@ -21,56 +21,58 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-       const shinyElement = $('.shiny');
-       const numberOfSparkles = 25;
-       const minDistance = 50;
-       const checkDistance = false;
+    const shinyElement = $('.shiny');
+    const numberOfSparkles = 25;
+    const minDistance = 50;
+    const checkDistance = false;
+       
+    const sparkles = [];
+       
+    for (let i = 0; i < numberOfSparkles; i++) {
+        let sparkle;
+        let positionValid = false;
+           
+        while (!positionValid) {
+            sparkle = $('<div class="sparkle"></div>');
+            const randomTop = (Math.random() * 100).toFixed(1); // Random top position (0% to 100%) rounded to 1 decimal place  
+            const randomLeft = (Math.random() * 100).toFixed(1); // Random left position (0% to 100%) rounded to 1 decimal place
+            const randomDelay = (Math.random() * 3.62).toFixed(2) + 's'; // Random delay (0s to 3.62s)
    
-       const sparkles = [];
+            sparkle.css({
+                top: randomTop + '%',
+                left: randomLeft + '%',
+                'animation-delay': randomDelay
+            });
    
-       for (let i = 0; i < numberOfSparkles; i++) {
-           let sparkle;
-           let positionValid = false;
+            // Convert percentage to pixels for distance calculation
+            const sparkleTop = shinyElement.height() * (randomTop / 100);
+            const sparkleLeft = shinyElement.width() * (randomLeft / 100);
    
-           while (!positionValid) {
-               sparkle = $('<div class="sparkle"></div>');
-               const randomTop = (Math.random() * 100).toFixed(1); // Random top position (0% to 100%) rounded to 1 decimal place
-               const randomLeft = (Math.random() * 100).toFixed(1); // Random left position (0% to 100%) rounded to 1 decimal place
-               const randomDelay = (Math.random() * 3.62).toFixed(2) + 's'; // Random delay (0s to 3.62s)
+            // checks the distance between the sparkles
+            positionValid = true;
+            if (checkDistance) {
+                for (const existingSparkle of sparkles) {
+                    const existingTop = existingSparkle.top;
+                    const existingLeft = existingSparkle.left;
+                    const distance = Math.sqrt(Math.pow(sparkleTop - existingTop, 2) + Math.pow(sparkleLeft - existingLeft, 2));
    
-               sparkle.css({
-                   top: randomTop + '%',
-                   left: randomLeft + '%',
-                   'animation-delay': randomDelay
-               });
+                    if (distance < minDistance) {
+                        positionValid = false;
+                        // cancels current event
+                        // FIX - softlocks the whole website and crashes the browser
+                        break;
+                    }
+                }
+            }
    
-               // Convert percentage to pixels for distance calculation
-               const sparkleTop = shinyElement.height() * (randomTop / 100);
-               const sparkleLeft = shinyElement.width() * (randomLeft / 100);
-   
-               // Check distance from existing sparkles if checkDistance is true
-               positionValid = true;
-               if (checkDistance) {
-                   for (const existingSparkle of sparkles) {
-                       const existingTop = existingSparkle.top;
-                       const existingLeft = existingSparkle.left;
-                       const distance = Math.sqrt(Math.pow(sparkleTop - existingTop, 2) + Math.pow(sparkleLeft - existingLeft, 2));
-   
-                       if (distance < minDistance) {
-                           positionValid = false;
-                           break; // Break out of the loop if the distance is too small
-                       }
-                   }
-               }
-   
-               // If valid, store the position
-               if (positionValid) {
-                   sparkles.push({ top: sparkleTop, left: sparkleLeft });
-                   shinyElement.append(sparkle);
-               }
-           }
-       }
-   });
+            // If valid, store the position
+            if (positionValid) {
+                sparkles.push({ top: sparkleTop, left: sparkleLeft });
+                shinyElement.append(sparkle);
+            }
+        }
+    }
+});
    
    
    

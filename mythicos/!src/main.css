@@ -1,4 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@font-face {
+       font-family: 'JetBrains Mono';
+       src: url('fonts/JetBrainsMono-Bold.ttf') format('truetype');
+       font-weight: bold;
+       font-style: normal;
+}
+   
+   @font-face {
+       font-family: 'JetBrains Mono';
+       src: url('fonts/JetBrainsMono-ExtraLight.ttf') format('truetype');
+       font-weight: 200; /* Extra Light */
+       font-style: normal;
+}
+   
+   @font-face {
+       font-family: 'JetBrains Mono';
+       src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+       font-weight: normal;
+       font-style: normal;
+}
+   
 
 :root {
        /* Backgrounds */
@@ -42,13 +63,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, p, div {
-       font-family: fredoka,sans-serif;
+       font-family: 'JetBrains Mono',sans-serif;
        color: var(--txt);
        font-weight: 500;
 }
+h1 {
+       font-weight: 600;
+}
 h2 {
-       font-family: fredoka,sans-serif;
-       font-weight: 400;
+       font-weight: 300;
        line-height: 1.5;
 }
 
@@ -98,20 +121,6 @@ h2 {
        background-color: var(--pri); /* Change the background color */
 }
 
-.screen {
-       transition: all 0.3s ease, scale 0.3s cubic-bezier(.26,1.61,0.2,2);
-       pointer-events: none !important;
-
-       &.active {
-              pointer-events: auto;
-              scale: 1;   
-       }
-       &.inactive {
-              pointer-events: none !important;
-              opacity: 0;
-              scale: 1.1;    
-       }
-}
 
 .button {
        display: flex;
@@ -154,7 +163,21 @@ h2 {
        scale: 1;
 }
 .window-inactive {
-       pointer-events: none !important;
+       pointer-events: none;
        opacity: 0;
        scale: 1.05;
+}
+
+.screen {
+       transition: all 0.3s ease, scale 0.3s cubic-bezier(.26,1.61,0.2,2);
+
+       &.active {
+              pointer-events: auto;
+              scale: 1;   
+       }
+       &.inactive {
+              pointer-events: none !important;
+              opacity: 0;
+              scale: 1.1;    
+       }
 }

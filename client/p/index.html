@@ -1,371 +1,364 @@
 <!doctype html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- HTML Meta Tags -->
-    <title>Polargram client</title>
+    <title>Polargram Client</title>
     <meta content="#ec2727" data-react-helmet="true" name="theme-color">
-    <meta name="description" content="Aint this an awesome description?">
+    <meta name="description" content="A place for artists, developers and gamers to mark their presence and sell their work">
+    <meta property="og:description" content="A place for artists, developers and gamers to mark their presence and sell their work">
+    <meta name="twitter:description" content="A place for artists, developers and gamers to mark their presence and sell their work">
 
-<!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://polargram.pages.dev">
-    <meta property="og:type" content="website">
     <meta property="og:title" content="Polargram">
-    <meta property="og:description" content="Aint this an awesome description?">
-    <meta property="og:image" content="https://polargram.pages.dev/og-banner.png">
-
-<!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="polargram.pages.dev">
-    <meta property="twitter:url" content="https://polargram.pages.dev">
     <meta name="twitter:title" content="Polargram">
-    <meta name="twitter:description" content="Aint this an awesome description?">
+    <meta property="og:url" content="https://polargram.pages.dev">
+    <meta property="twitter:url" content="https://polargram.pages.dev">
+    <meta property="og:image" content="https://polargram.pages.dev/og-banner.png">
     <meta name="twitter:image" content="https://polargram.pages.dev/og-banner.png">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta property="twitter:domain" content="polargram.pages.dev">
 
-    <link rel="icon" href="https://polargram.pages.dev/og-image.png" type="image/x.icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="og-image.png" type="image/x.icon">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <link rel="stylesheet" href="!src/main.css">
-    <script src="https://polargram.pages.dev/!src/java.js"></script>
+    <script type="module" src="https://polargram.pages.dev/API/import.js" defer></script>
+    <link rel="stylesheet" href="https://polargram.pages.dev/API/import.css">
 </head>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
-<script src="elements/js/cursor.js"></script>
-
-<link rel="stylesheet" href="elements/background.css">
-<link rel="stylesheet" href="elements/screenwidth.css">
-<link rel="stylesheet" href="elements/title.css">
-<script src="elements/js/title.js"></script>
-<link rel="stylesheet" href="elements/hotbar.css">
-<script src="elements/js/hotbar.js"></script>
-<link rel="stylesheet" href="elements/chat.css">
-<script src="elements/js/chat.js"></script>
-<link rel="stylesheet" href="elements/array.css">
-<link rel="stylesheet" href="elements/inventory.css">
-<script src="elements/js/inventory.js"></script>
-<link rel="stylesheet" href="elements/clickgui.css">
-<script src="elements/js/clickgui.js"></script>
-
-
+<link rel="stylesheet" href="SRC/inject.css">
+<script type="module" src="SRC/inject.js"></script>
+<html lang="en">
 
 <body>
-<img class="background" src="images/javaw_UQHTPruS1Z.jpg">
-<video class="background" src="images/background.mp4" autoplay muted loop></video>
+       <div id="mainmenu" class="christmas-decor">
+              <h1 class="title inactive menu-title-heightcheck txt-gr">Polargram</h1>
 
-<div id="cursor"></div>
-<div id="screen">
-       <div id="title">
-              <h1 class="clr-txt-trs trans">Polargram</h1>
-
-              <div id="session-info" class="trans">
-                     <h3 class="clr-txt item-txt">Session info</h3>
-                     <div class="item"><h3>Server</h3><h2>play.norules.wtf</h2></div>
-                     <div class="item"><h3>Kills</h3><h2>2</h2></div>
-                     <div class="item"><h3>K/D</h3><h2>2</h2></div>
-              </div>
-
-              <div id="doodle" class="trans hoverable">
-                     <img src="https://polargram.pages.dev/!src/character/cool.webp">
-              </div>
-       </div>
-
-       <div id="hotbar">
-              <div class="bar trans">
-                     <div class="active">
-                            <div class="clr-bg"></div>
-                            <img src="https://minecraftprintables.com/wp-content/uploads/2017/02/minecraft-diamond-sword-template.png">
+              <div class="menu inactive menu-heightcheck border trans">
+                     <div class="action m-singleplayer">
+                            <h2>Singleplayer</h2>
                      </div>
-                     <div><div class="clr-bg"></div></div>
-                     <div><div class="clr-bg"></div></div>
-                     <div><div class="clr-bg"></div>
-                            <img src="https://images3.wikia.nocookie.net/__cb20111001070117/minecraft/images/6/67/Cobblestone.png">
-                            <h2>28</h2>
+                     <div class="action m-multiplayer">
+                            <h2>Multiplayer</h2>
                      </div>
-                     <div>
-                            <div class="clr-bg"></div>
+                     <div class="action m-realms">
+                            <h2>Realms</h2>
                      </div>
-                     <div><div class="clr-bg"></div></div>
-                     <div><div class="clr-bg"></div></div>
-                     <div><div class="clr-bg"></div></div>
-                     <div><div class="clr-bg"></div>
-                            <img src="https://images1.wikia.nocookie.net/__cb20121003204425/minecraft/images/6/66/Steak.png">
-                            <h2>9</h2>
+                     <hr>
+                     <div class="action m-settings">
+                            <h2>Settings</h2>
+                     </div>
+                     <div class="action m-pref">
+                            <h2>Preferances</h2>
+                     </div>
+                     <hr>
+                     <div class="action m-log">
+                            <h2>Log out</h2>
+                     </div>
+                     <div class="action m-exit">
+                            <h2>Exit</h2>
                      </div>
               </div>
-              <div class="health">
-                     <div class="item hearts">
-                            <div></div>
+              <div class="menu-big inactive border trans">
+                     <div class="controls">
+                            <h3 id="bigmenu-title" class="txt-gr">%BigMenu-Title%</h3>
+                            <span class="material-symbols-rounded bigmenu-close">close</span>
                      </div>
-                     <div class="item food">
-                            <div></div>
-                     </div>
-              </div>
-       </div>
-
-       <div id="chat" class="trans">
-              <input id="chat-input" class="hoverable">
-              <div id="messages" class="chat">
-                     <h3>Apsz<span>did you know we have our own colors on text?</span></h3>
-                     <h3>UnCUT<span>we can?</span></h3>
-                     <h3>Apsz<span class="green hoverable">yes we can<h2>(green.*)</h2></span></h3>
-                     <h3>UnCUT<span>This is pretty <span class="orange hoverable">cool<h2>(orange.*)</h2></span></span></h3>
-                     <h3>Apsz<span>Youre pretty cool</span></h3>
-              </div>
-       </div>
-
-       <div id="array">
-              <div class="trans item"><h3 class="clr-txt">HUD</h3><h2>New</h2></div>
-              <div class="trans item"><h3 class="clr-txt">Session info</h3></div>
-              <div class="trans item"><h3 class="clr-txt">Doodle</h3></div>
-              <div class="trans item"><h3 class="clr-txt">Music player</h3><h2>Pixelated</h2></div>
-       </div>
-
-       <div id="inventory" class="trans">
-              <div class="container2">
-                     <div class="item hoverable">
-                            <div class="clr-bg-trs"></div>
-                            <img src="https://vignette.wikia.nocookie.net/minecraftpocketedition/images/f/f6/Iron_Helmet_Icon.png/revision/latest?cb=20170628005646">
-                     </div>
-                     <div class="item hoverable">
-                            <div class="clr-bg-trs"></div>
-                            <img src="https://art.pixilart.com/thumb/15c5e0d7081265f.png">
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-              </div>
-              <div class="container">
-                     <!-- 1 -->
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-
-                     <!-- 2 -->
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-
-                     <!-- 3 -->
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-
-                     <!-- hotbar -->
-                     <div class="item hoverable">
-                            <div class="clr-bg-trs"></div>
-                            <img src="https://minecraftprintables.com/wp-content/uploads/2017/02/minecraft-diamond-sword-template.png">
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item hoverable">
-                            <div class="clr-bg-trs"></div>
-                            <img src="https://images3.wikia.nocookie.net/__cb20111001070117/minecraft/images/6/67/Cobblestone.png">
-                            <h2>28</h2>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item">
-                            <div class="clr-bg-trs"></div>
-                     </div>
-                     <div class="item hoverable">
-                            <div class="clr-bg-trs"></div>
-                            <img src="https://images1.wikia.nocookie.net/__cb20121003204425/minecraft/images/6/66/Steak.png">
-                            <h2>9</h2>
-                     </div>
-              </div>
-       </div>
-       
-       <div id="clickgui" class="trans active">
-              <div class="main">
-                     <div class="categories">
-                            <div id="clickgui-home-sh" class="category-item item hoverable active">
-                                   <span class="material-symbols-rounded white">home</span>
-                                   <span class="material-symbols-rounded clr-txt">home</span>
-                                   <div class="clr-bg"></div>
-                            </div>
-                            <div id="clickgui-modules-sh" class="category-item item hoverable">
-                                   <span class="material-symbols-rounded white">tune</span>
-                                   <span class="material-symbols-rounded clr-txt">tune</span>
-                                   <div class="clr-bg"></div>
-                            </div>
-                            <div id="clickgui-gpt-sh" class="category-item item hoverable">
-                                   <span class="material-symbols-rounded white">smart_toy</span>
-                                   <span class="material-symbols-rounded clr-txt">smart_toy</span>
-                                   <div class="clr-bg"></div>
-                            </div>
-                            <div class="category-item item hoverable last">
-                                   <span class="material-symbols-rounded white">code</span>
-                                   <span class="material-symbols-rounded clr-txt">code</span>
-                                   <div class="clr-bg"></div>
-                            </div>
-
-                            <div id="clickgui-update-sh" class="category-item item hoverable">
-                                   <span class="material-symbols-rounded white">download</span>
-                                   <span class="material-symbols-rounded clr-txt">download</span>
-                                   <div class="clr-bg"></div>
-                            </div>
-                            <div class="category-item item hoverable">
-                                   <span class="material-symbols-rounded white">store</span>
-                                   <span class="material-symbols-rounded clr-txt">store</span>
-                                   <div class="clr-bg"></div>
-                            </div>
-                            <div class="category-item item hoverable">
-                                   <span class="material-symbols-rounded white">settings</span>
-                                   <span class="material-symbols-rounded clr-txt">settings</span>
-                                   <div class="clr-bg"></div>
-                            </div>
-                     </div>
-                     <div class="block">
-                            <div id="clickgui-home" class="category-block item active">
-                                   <div class="element profile hoverable">
-                                          <img src="images/4319764.jpg">
-                                          <h1 class="clr-txt">PLAYER</h1>
-                                          <h2 class="smol">Guest</h2>
-                                          <h2>Thanks for testing out Polargram beta<br>
-                                                 we hope you enjoy our work. happy halloween</h2>
+                     <div class="main">
+                            <div class="bm singleplayer">
+                                   <div class="list">
+                                          <div class="card">
+                                                 <h3 class="txt-gr">New world</h3>
+                                                 <h2>Creative, 1.8.8, 32.6mb, 2024-12-27</h2>
+                                          </div>
+                                          <div class="card">
+                                                 <h3 class="txt-gr">hardcore world or something</h3>
+                                                 <h2>Hardcore, 1.21, 182.2mb, 2023-05-11</h2>
+                                          </div>
                                    </div>
-                                   <div class="element party">
-                                          <h1 class="clr-txt">Party</h1>
-                                          <h2 class="clr-txt">PLAYER <span>(host)</span></h2>
-                                          <h2 class="">UnCutError <span>(ready)</span></h2>
-                                          <h2 class="">Apsz <span>(not ready)</span></h2>
-
-                                          <div class="info"><h3>3/5 Players</h3><h3>J4EK9-T1RS</h3></div>
-                                   </div>
-                                   <div class="element smol">
-                                          <h1 class="clr-txt">Stats</h1>
-                                          <h2>Idle</h2>
-                                          <div><span class="material-symbols-rounded white">schedule</span><h2 id="time">Time</h2></div>
-                                          <div><span class="material-symbols-rounded white">timer</span><h2 id="playtime">Duration</h2></div>
-                                   </div>
-                                   <div class="element smol">
-                                          <h1 class="clr-txt">Server</h1>
-                                          <h2><span>play.</span>norules.wtf</h2>
-                                          <div><h2>TPS: 20</h2></div>
-                                          <div><h2>PING: 32ms</h2></div>
-                                   </div>
-                                   <div class="element smol">
-                                          <h1 class="clr-txt">DSFB</h1>
-                                          <h2>Online</h2>
-                                          <div><h2>Seeding</h2></div>
-                                          <h2>localhost<span>:5000</span></h2>
+                                   <div class="buttons">
+                                          <h2>Create new</h2>
+                                          <h2>Load</h2>
+                                          <h2>Edit</h2>
+                                          <h2 class="red">Delete</h2>
                                    </div>
                             </div>
-                            <div id="clickgui-gpt" class="category-block item">
-                                   <div class="title"><h1 class="clr-txt">ClickGPT 0.47</h1><h2>Offline</h2></div>
-                                   <div class="text">
-                                          <div><input class="hoverable"><span class="material-symbols-rounded hoverable">send</span><span class="material-symbols-rounded hoverable">mood</span></div>
+                            <div class="bm multiplayer">
+                                   <div class="list">
+                                          <div class="card">
+                                                 <h3 class="txt-gr">Polargram</h3>
+                                                 <h2>polargram.pages.dev, 1.21, Survival</h2>
+                                          </div>
+                                          <div class="card">
+                                                 <h3 class="txt-gr">Norules</h3>
+                                                 <h2>play.norules.wtf, 1.8 > 1.21, Minigames</h2>
+                                          </div>
+                                          <div class="card">
+                                                 <h3 class="txt-gr">Wynncraft</h3>
+                                                 <h2>play.wynncraft.com, 1.21, MMORPG</h2>
+                                          </div>
+                                   </div>
+                                   <div class="buttons">
+                                          <h2>Add</h2>
+                                          <h2>Join</h2>
+                                          <h2>Edit</h2>
+                                          <h2 class="red">Delete</h2>
+                                   </div>
+                            </div>
+                            <div class="bm realms">
+                                   <h2>Realms are not supported on this version</h2>
+                            </div>
+                            <div class="bm settings">
+                                   <div class="wrapper">
+                                          <h3 class="wrapper-title txt-gr">Graphics</h3>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Preset</h3>
+                                                        <h2>Instant settings for whatever youre feeling like</h2>
+                                                 </div>
+                                                 <div class="select">Quality</div>
+                                          </div>
+                                          <hr>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Antialiasing</h3>
+                                                        <h2>Smoothes the pixelated edges</h2>
+                                                 </div>
+                                                 <div class="select">SMAA</div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Render distance</h3>
+                                                        <h2>How far do you want to see stuff</h2>
+                                                 </div>
+                                                 <div class="select">32</div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Shadows</h3>
+                                                        <h2>Quality of shadows</h2>
+                                                 </div>
+                                                 <div class="select">Ultra</div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Water</h3>
+                                                        <h2>Quality of water</h2>
+                                                 </div>
+                                                 <div class="select">Ultra</div>
+                                          </div>
+                                   </div>
 
-                                          <div class="messages">
-                                                 <h2 class="clr-txt-trs">Huh? What did I say? <img src="https://polargram.pages.dev/!src/character/bruh.webp"></h2>
-                                                 <h2 class="you">son of a bitch...</h2>
-                                                 <h2 class="clr-txt-trs">Polargram Client? That sounds like some sort of Instagram client to me, I'm not really familiar with it though. Why do you ask? <img src="https://polargram.pages.dev/!src/character/wink.webp"></h2>
-                                                 <h2 class="you">whats your opinion on polargram client</h2>
+                                   <div class="wrapper">
+                                          <h3 class="wrapper-title txt-gr">Gameplay</h3>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Modify packets</h3>
+                                                        <h2>Changes or adds more packets</h2>
+                                                 </div>
+                                                 <div class="toggle box-gr"></div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Subtitles</h3>
+                                                        <h2>Tells you what is happening around you</h2>
+                                                 </div>
+                                                 <div class="toggle box-gr"></div>
+                                          </div>
+                                   </div>
+
+                                   <div class="wrapper">
+                                          <h3 class="wrapper-title-experimental">EXPERIMENTAL</h3>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Vulkan</h3>
+                                                        <h2>use Vulkan graphics api for better performance</h2>
+                                                 </div>
+                                                 <div class="toggle box-gr"></div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Ray tracing</h3>
+                                                        <h2>Accurately simulated light and reflections (requires Vulkan)</h2>
+                                                 </div>
+                                                 <div class="toggle box-gr"></div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Kotlin frontend</h3>
+                                                        <h2>Use kotlin instead of HTML for visuals (Work in progress)</h2>
+                                                 </div>
+                                                 <div class="toggle box-gr"></div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Full DSFB control</h3>
+                                                        <h2>Allows DSFB to edit the client itself instead of creating new code (might break)</h2>
+                                                 </div>
+                                                 <div class="toggle box-gr"></div>
                                           </div>
                                    </div>
                             </div>
-                            <div id="clickgui-update" class="category-block item">
-                                   <div class="title"><h1 class="clr-txt">Dev update</h1><h2>a-11</h2><h3 class="hoverable">All updates</h3></div>
-                                   <div class="text">
-                                          <div class="change plus"><div></div><h2>Added a new tab: updates</h2></div>
-                                          <div class="change plus"><div></div><h2>Added a new tab: ClickGPT</h2></div>
-                                          <div class="change plus"><div></div><h2>Added color coded indicators to updates</h2></div>
-                                          <div class="change plus"><div></div><h2>Added an animation when switching to different tabs on the clickgui</h2></div>
-                                          <div class="change fix"><div></div><h2>Fixed colors being wrong on firefox</h2></div>
-                                          <div class="change fix"><div></div><h2>Changed updates button (install > all updates)</h2></div>
+                            <div class="bm pref">
+                                   <div class="wrapper">
+                                          <h3 class="wrapper-title txt-gr">Colors</h3>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Primary</h3>
+                                                        <h2>The main color for everything</h2>
+                                                 </div>
+                                                 <div class="input"><h2>RGBA(</h2><input id="primary-color-setting" type="text" placeholder="255,255,255,1" maxlength="15" spellcheck="false"><h2>)</h2></div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Secondary</h3>
+                                                        <h2>only used when you have gradient toggled on</h2>
+                                                 </div>
+                                                 <div class="input"><h2>RGBA(</h2><input type="text" placeholder="255,255,255,1" maxlength="15" spellcheck="false"><h2>)</h2></div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Gradient</h3>
+                                                        <h2>Give the client a little more glare</h2>
+                                                 </div>
+                                                 <div id="gradient-toggle" class="toggle inactive box-gr"></div>
+                                          </div>
+                                   </div>
+
+                                   <div class="wrapper">
+                                          <h3 class="wrapper-title txt-gr">Font</h3>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Font family</h3>
+                                                        <h2>Dont like how letters look? change it</h2>
+                                                 </div>
+                                                 <div class="input"><h2>Font family:</h2><input id="font-family-setting" type="text" placeholder="Fredoka" maxlength="15" spellcheck="false"><h2></h2></div>
+                                          </div>
+                                   </div>
+
+                                   <div class="wrapper">
+                                          <h3 class="wrapper-title txt-gr">Borders</h3>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Border</h3>
+                                                        <h2>Shows or hides the outlines of stuff</h2>
+                                                 </div>
+                                                 <div id="border-on-setting" class="toggle active box-gr"></div>
+                                          </div>
+                                          <div class="card">
+                                                 <div class="text">
+                                                        <h3>Smooth borders</h3>
+                                                        <h2>that rounding around the buttons and boxes</h2>
+                                                 </div>
+                                                 <div class="input"><h2></h2><input id="border-radius-setting" type="text" placeholder="10" maxlength="15" spellcheck="false"><h2>pixels</h2></div>
+                                          </div>
                                    </div>
                             </div>
                      </div>
               </div>
-
        </div>
-</div>
+
 </body>
+
+<style>
+       body {
+              overflow: hidden;
+       }
+:root {
+       /* Backgrounds */
+       --bg: rgba(11, 11, 13, 1);
+       --bg2: rgba(16, 16, 18, 1);
+       --bgtrans: rgba(0, 0, 0, 0.2);
+       --bgtrans2: rgba(255, 255, 255, 0.05);
+       --bgtrans3: rgba(0, 0, 0, 0.3);
+
+       /* Text */
+       --txt: rgb(236, 241, 233);
+
+       /* Colors */
+       --pri: rgba(var(--primary-manual));
+       --sec: rgba(114, 202, 253,1);
+
+       /* Some important stuff */
+       --mainmenu-big: 50px;
+       --font: 'fredoka';
+       --primary-manual: 255,255,255;
+       --border-setting: 0px 0px 0px 1px rgba(255,255,255,0.1);
+       --border-radius: 10px;
+}
+
+.trans {
+       -webkit-backdrop-filter: blur(1vmax);
+       backdrop-filter: blur(1vmax);
+       
+       &:before {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0px;
+              left: 0px;
+              -webkit-backdrop-filter: blur(1vmax);
+              backdrop-filter: blur(1vmax);
+              border-radius: 10px;
+              z-index: -1;
+              justify-self: center;
+              align-self: center;
+              scale: 1;
+       }
+}
+h1, h2, h3, h4, h5, p, div, input {
+       font-family: var(--font),sans-serif;
+}
+.txt-gr {
+       animation-name: 0;
+       animation-duration: 1s;
+       animation-timing-function: ease-in-out;
+       animation-iteration-count: infinite;
+
+       &.animate {
+              animation-name: txt-gr;
+       }
+}
+.box-gr {
+       animation-name: 0;
+       animation-duration: 1s;
+       animation-timing-function: ease-in-out;
+       animation-iteration-count: infinite;
+
+       &.animate {
+              animation-name: box-gr;
+       }
+}
+@keyframes txt-gr {
+       from {
+              color: var(--pri) !important;
+       }
+       50% {
+              color: var(--sec) !important;
+       }
+       to {
+              color: var(--pri) !important;
+       }
+}
+@keyframes box-gr {
+       from {
+              background: var(--pri) !important;
+       }
+       50% {
+              background: var(--sec) !important;
+       }
+       to {
+              background: var(--pri) !important;
+       }
+}
+.border {
+       box-shadow: var(--border-setting);
+}
+* {
+       border-radius: var(--border-radius);
+}
+</style>

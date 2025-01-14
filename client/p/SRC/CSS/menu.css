@@ -1,0 +1,376 @@
+#mainmenu {
+       background: var(--bg);
+       width: 100%;
+       height: 100svh;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+
+       .title {
+              margin-bottom: 20px;
+              color: var(--pri);
+              letter-spacing: -1.4px;
+              font-size: 50px;
+              transition: all 0.2s;
+
+              &.active {
+                     margin-left: 650px;
+              }
+       }
+       .menu {
+              position: relative;
+              background: var(--bgtrans);
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              width: 300px;
+              padding: 10px;
+              z-index: 2;
+              transition: all 0.2s ease;
+              pointer-events: auto !important;
+
+              hr {
+                     opacity: 0.1;
+              }
+              &.active {
+                     margin-left: 650px;
+              }
+
+              .action {
+                     position: relative;
+                     background: transparent;
+                     line-height: 1;
+                     width: 100%;
+                     text-align: center;
+                     cursor: pointer;
+                     transition: 0.2s ease;
+                     padding: 3px 0px;
+
+                     &:hover {
+                            background: var(--bgtrans2);
+                            h2 {
+                                   opacity: 1
+                            }
+                     }
+                     h2 {
+                            opacity: 0.9;
+                            font-size: 16px;
+                     }
+              }
+       }
+       .menu-big {
+              position: absolute;
+              background: var(--bgtrans);
+              display: flex;
+              flex-direction: column;
+              height: var(--mainmenu-big);
+              width: 700px;
+              z-index: 1;
+              padding: 10px;
+              margin-right: 400px;
+              box-sizing: border-box;
+              gap: 5px;
+              scale: 1.1;
+              opacity: 0;
+              transition: opacity 0.2s ease, scale 0.4s cubic-bezier(.17,1.59,.56,.81);
+              transition-delay: 0s;
+              pointer-events: none;
+
+              &.active {
+                     scale: 1;
+                     opacity: 1;
+                     transition-delay: 0.1s;
+                     pointer-events: auto;
+              }
+
+              .controls {
+                     position: relative;
+                     display: flex;
+                     background: transparent;
+                     justify-content: space-between;
+                     align-items: center;
+
+                     h3 {
+                            padding-left: 5px;
+                            color: var(--pri);
+                     }
+
+                     span {
+                            padding: 5px;
+                            font-size: 16px;
+                            transition: 0.2s ease;
+                            cursor: pointer;
+
+                            &:hover {
+                                   background: var(--bgtrans2);
+                            }
+                     }
+              }
+              .main {
+                     position: relative;
+                     flex-grow: 1;
+                     background: transparent;
+                     overflow: hidden;
+
+                     .bm {
+                            position: absolute;
+                            width: calc(100% + 10px);
+                            height: 100%;
+                            background: transparent;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+                            opacity: 0;
+                            scale: 1;
+                            transition: 0.3s ease-in-out 0s;
+                            pointer-events: none;
+                            margin-left: -30px;
+                            filter: blur(0.2vmax);
+                            
+
+                            &.active {
+                                   pointer-events: auto;
+                                   margin-left: 0px;
+                                   transition-delay: 0s;
+                                   opacity: 1;
+                                   scale: 1;
+                                   filter: blur(0vmax);
+                            }
+                     }
+                     .singleplayer, .multiplayer {
+                            display: flex;
+                            background: transparent;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 5px;
+
+                            .list {
+                                   position: relative; 
+                                   overflow-y: scroll;
+                                   overflow-x: hidden;
+                                   display: flex;
+                                   flex-direction: column;
+                                   background: transparent;
+                                   flex-grow: 1;
+                                   gap: 5px;
+                                   width: calc(100% + 10px);
+
+                                   .card {
+                                          box-sizing: border-box;
+                                          padding: 10px;
+                                          transition: 0.2s ease;
+                                          cursor: pointer;
+                                          background: var(--bgtrans3);
+
+                                          &:hover {
+                                                 background: var(--bgtrans2);
+                                          }
+
+                                          h3 {
+                                                 color: var(--pri);
+                                                 font-size: 20px;
+                                          }
+                                          h2 {
+                                                 font-size: 14px;
+                                                 opacity: 0.7;
+                                          }
+                                   }
+                            }
+                            .buttons {
+                                   position: relative; 
+                                   overflow-y: scroll;
+                                   overflow-x: hidden;
+                                   display: flex;
+                                   background: transparent;
+                                   width: calc(100% + 10px);
+                                   gap: 5px;
+
+                                   h2 {
+                                          background: transparent;
+                                          font-size: 16px;
+                                          flex-grow: 1;
+                                          text-align: center;
+                                          padding: 3px 0px;
+                                          cursor: pointer;
+                                          transition: 0.2s ease;
+
+                                          &:hover {
+                                                 background: var(--bgtrans2);
+                                          }
+
+                                          &.red {
+                                                 color: rgb(128, 4, 4);
+
+                                                 &:hover {
+                                                        color: rgb(248, 42, 42);
+                                                        background: rgba(248, 42, 42, 0.05);
+                                                 }
+                                          }
+                                   }
+                            }
+                     }
+                     .realms {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            h2 {
+                                   color: rgb(128, 4, 4);
+                                   font-size: 18px;
+                            }
+                     }
+                     .settings, .pref {
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+                            display: flex;
+                            flex-direction: column;
+                            background: transparent;
+                            width: calc(100% + 10px);
+                            gap: 5px;
+
+                            .wrapper {
+                                   background: var(--bgtrans3);
+                                   box-sizing: border-box;
+                                   padding: 10px;
+
+                                   .wrapper-title {
+                                          color: var(--pri);
+                                   }
+                                   .wrapper-title-experimental {
+                                          padding: 3px 10px;
+                                          color: white;
+                                          background: rgb(179, 75, 16);
+                                   }
+                                   hr {
+                                          opacity: 0.1;
+                                   }
+
+                                   .card {
+                                          position: relative;
+                                          display: flex;
+                                          flex-direction: row;
+                                          justify-content: space-between;
+                                          align-items: center;
+                                          padding: 10px;
+                                          background: transparent;
+
+                                          h3 {
+                                                 font-size: 20px;
+                                          }
+                                          h2 {
+                                                 font-size: 16px;
+                                                 opacity: 0.7;
+
+                                          }
+                                          .select {
+                                                 cursor: pointer;
+                                                 padding: 3px 10px;
+                                                 transition: 0.2s ease;
+
+                                                 &:hover {
+                                                        background: var(--bgtrans2);
+                                                 }
+                                          }
+                                          .input {
+                                                 display: flex;
+
+                                                 h2 {
+                                                        opacity: 0.2;
+                                                 }
+                                                 
+                                                 input {
+                                                        background: transparent;
+                                                        outline: 0;
+                                                        border: 0;
+                                                        color: white;
+                                                        font-size: 16px;
+                                                        width: 120px;
+                                                        text-align: center;
+                                                        transition: 0.2s ease;
+
+                                                        &:hover {
+                                                               background: var(--bg);
+                                                        }
+                                                 }
+                                          }
+                                          .toggle {
+                                                 position: relative;
+                                                 height: 20px;
+                                                 padding: 2px;
+                                                 aspect-ratio: 2/1;
+                                                 background: black;
+                                                 border-radius: 20px;
+                                                 cursor: pointer;
+                                                 transition: 0.2s ease;
+
+                                                 &:before {
+                                                        position: absolute;
+                                                        z-index: 1;
+                                                        pointer-events: none;
+                                                        aspect-ratio: 1;
+                                                        height: calc(100% - 8px);
+                                                        background: white;
+                                                        content: '';
+                                                        border-radius: 50%;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        translate: -100% -50%;
+                                                 }
+
+                                                 &.active {
+                                                        background: var(--pri);
+
+                                                        &:before {
+                                                               translate: 0% -50%;
+                                                               background: black;
+                                                        }
+                                                 }
+                                          }
+                                          #gradient-toggle {
+                                                 opacity: 0.5;
+                                                 cursor: not-allowed;
+                                                 pointer-events: none;
+                                          }
+                                   }
+                            }
+                     }
+              }
+       }
+}
+
+@keyframes bigmenu-appear {
+       from {
+              scale: 1.1;
+       }
+       top {
+              scale: 1;
+       }
+}
+@keyframes bigmenu-item-disapear {
+       from {
+              translate: 0% 0%;
+              opacity: 1;
+       }
+       50% {
+              opacity: 0;
+              scale: 1;
+       }
+       to {
+              translate: 0% 0%;
+              scale: 0.95;
+       }
+}
+@keyframes bigmenu-item-appear {
+       from {
+              translate: -0% 0%;
+              opacity: 0;
+              scale: 0.95;
+       }
+       50% {
+              opacity: 1;
+       }
+       to {
+              translate: 0% 0%;
+              opacity: 1;
+       }
+}
