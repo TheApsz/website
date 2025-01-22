@@ -59,5 +59,20 @@ $(document).ready(function() {
            }
        }
    });
+
+
+   $(document).ready(function() {
+    // Add .active to #game when .begin is clicked
+    $('.begin').on('click', function() {
+      $('#game').addClass('active');
+    });
+
+    // Remove .active from #game when Escape key is pressed
+    $(document).on('keydown', function(event) {
+      if (event.key === 'Escape') {
+        $('#game').removeClass('active');
+      }
+    });
+  });
    
    

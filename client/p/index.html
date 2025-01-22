@@ -70,11 +70,11 @@
                      <div class="main">
                             <div class="bm singleplayer">
                                    <div class="list">
-                                          <div class="card">
+                                          <div class="card begin">
                                                  <h3 class="txt-gr">New world</h3>
                                                  <h2>Creative, 1.8.8, 32.6mb, 2024-12-27</h2>
                                           </div>
-                                          <div class="card">
+                                          <div class="card begin">
                                                  <h3 class="txt-gr">hardcore world or something</h3>
                                                  <h2>Hardcore, 1.21, 182.2mb, 2023-05-11</h2>
                                           </div>
@@ -88,15 +88,15 @@
                             </div>
                             <div class="bm multiplayer">
                                    <div class="list">
-                                          <div class="card">
+                                          <div class="card begin">
                                                  <h3 class="txt-gr">Polargram</h3>
                                                  <h2>polargram.pages.dev, 1.21, Survival</h2>
                                           </div>
-                                          <div class="card">
+                                          <div class="card begin">
                                                  <h3 class="txt-gr">Norules</h3>
                                                  <h2>play.norules.wtf, 1.8 > 1.21, Minigames</h2>
                                           </div>
-                                          <div class="card">
+                                          <div class="card begin">
                                                  <h3 class="txt-gr">Wynncraft</h3>
                                                  <h2>play.wynncraft.com, 1.21, MMORPG</h2>
                                           </div>
@@ -261,6 +261,65 @@
               </div>
        </div>
 
+       <div id="game">
+              <img id="game-background" src="SRC/IMG/javaw_t8HMHAR9qg.png" alt="game-background">
+              <div id="deadzone">
+                     <div id="title">
+                            <h1 class="title trans">Polargram</h1>
+
+                            <div class="session trans border">
+                                   <h3>Information</h3>
+                                   <div class="item">
+                                          <h2>Server</h2><h2><span>play.</span>example.com</h2>
+                                   </div>
+                                   <div class="item">
+                                          <h2>Kills</h2><h2>2</h2>
+                                   </div>
+                            </div>
+                            <div class="tabgui trans border">
+                                   <h2>Combat</h2>
+                                   <h2>Movement</h2>
+                                   <h2>Player</h2>
+                                   <h2>Exploit</h2>
+                                   <h2>Misc</h2>
+                            </div>
+                            <div class="trainer trans border">
+                            </div>
+                     </div>
+
+                     <div id="compass" class="trans border">
+                            <div class="line">
+                                   <div></div>
+                                   <div class="long"></div>
+                                   <div></div>
+                            </div>
+                            <div class="text">
+                                   <h2>03</h2><h2>13</h2><h3>23</h3><h2>33</h2><h2>43</h2>
+                            </div>
+                     </div>
+
+                     <div id="targethud">
+                            <div class="crosshair">
+                                   <div></div>
+                                   <div></div>
+                            </div>
+                            <div id="targethud-main" class="trans border">
+                                   <div class="info">
+                                          <img alt="profile" src="SRC/IMG/600.png">
+                                          <div class="name">
+                                                 <h3>Apsz</h3>
+                                                 <h2>pretty cool description</h2>
+                                          </div>
+                                   </div>
+                                   <div class="health">
+                                          <div id="targethud-main-full"></div>
+                                          <div id="targethud-main-full-delay"></div>
+                                   </div>
+                            </div>
+                     </div>
+              </div>
+       </div>
+
 </body>
 
 <style>
@@ -271,7 +330,7 @@
        /* Backgrounds */
        --bg: rgba(11, 11, 13, 1);
        --bg2: rgba(16, 16, 18, 1);
-       --bgtrans: rgba(0, 0, 0, 0.2);
+       --bgtrans: rgba(0, 0, 0, 0.15);
        --bgtrans2: rgba(255, 255, 255, 0.05);
        --bgtrans3: rgba(0, 0, 0, 0.3);
 
@@ -280,6 +339,7 @@
 
        /* Colors */
        --pri: rgba(var(--primary-manual));
+       --pri2: rgba(var(--primary-manual),0.1);
        --sec: rgba(114, 202, 253,1);
 
        /* Some important stuff */
@@ -288,6 +348,7 @@
        --primary-manual: 255,255,255;
        --border-setting: 0px 0px 0px 1px rgba(255,255,255,0.1);
        --border-radius: 10px;
+       --deadzone: 25px;
 }
 
 .trans {
@@ -303,7 +364,7 @@
               left: 0px;
               -webkit-backdrop-filter: blur(1vmax);
               backdrop-filter: blur(1vmax);
-              border-radius: 10px;
+              border-radius: var(--border-radius);
               z-index: -1;
               justify-self: center;
               align-self: center;
