@@ -1,24 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-@font-face {
-       font-family: 'JetBrains Mono';
-       src: url('fonts/JetBrainsMono-Bold.ttf') format('truetype');
-       font-weight: bold;
-       font-style: normal;
-}
-   
-   @font-face {
-       font-family: 'JetBrains Mono';
-       src: url('fonts/JetBrainsMono-ExtraLight.ttf') format('truetype');
-       font-weight: 200; /* Extra Light */
-       font-style: normal;
-}
-   
-   @font-face {
-       font-family: 'JetBrains Mono';
-       src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
-       font-weight: normal;
-       font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 @font-face {
        font-family: 'bmmini';
        src: url('fonts/BMmini.TTF') format('truetype');
