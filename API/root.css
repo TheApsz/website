@@ -36,6 +36,7 @@ html {
        padding: 0;
        border-radius: 10px;
        box-sizing: border-box;
+       font-family: 'fredoka',sans-serif;
 }
 a {
        text-decoration: none;
