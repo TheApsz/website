@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    console.log("Checking for elements");
+window.onload = function() {
+    console.log("Window loaded, checking for elements");
 
     // Declare the interval variable
     var checkInterval;
@@ -8,18 +8,24 @@ $(document).ready(function() {
         var allLoaded = true;
         console.log("Checking load status...");
 
-        // Check if all elements with the class 'loadCheck' have been loaded
+        // Check if all elements with the class 'loadCheck' and their children have been loaded
         $('.loadCheck').each(function() {
-            if (!$(this).hasClass('loaded')) { // If the element doesn't have 'loaded' class
+            if (!$(this).hasClass('loaded') || $(this).find('.loadCheck:not(.loaded)').length > 0) { // If the element or its children don't have 'loaded' class
                 allLoaded = false;
-                console.log("Element not loaded: ", this);
+                console.log("Element or its children not loaded: ", this);
             }
         });
 
         // If all elements are loaded, remove the #loading element and stop the loop
         if (allLoaded) {
             console.log("All elements loaded. Removing #loading.");
-            $('#loading').remove();
+            $('#loading').css({
+                'transform': 'translate(0%, -110%)'
+            });
+
+            setTimeout(function() {
+                $('#loading').remove();
+            }, 500);
 
             // Stop the interval loop
             clearInterval(checkInterval);
@@ -29,18 +35,15 @@ $(document).ready(function() {
         }
     }
 
-    checkInterval = setInterval(checkLoadStatus, 100);
-});
+    checkInterval = setInterval(checkLoadStatus, 1000);
 
-
-$('.loadCheck').each(function() {
-    if ($(this).hasClass('loaded')) {
-        console.log('Element is already loaded');
-    } else {
-        // Manually adds 'loaded' class when the div or any element is ready
-        $(this).addClass('loaded');
-        console.log('Loaded element: ', this);
-    }
-});
-
-
+    // Manually add 'loaded' class when the div or any element is ready
+    $('.loadCheck').each(function() {
+        if (!$(this).hasClass('loaded')) {
+            $(this).addClass('loaded');
+            console.log(`Loaded element: ${this.id ? this.id : 'No ID'}`);
+        } else {
+            console.log('Element is already loaded');
+        }
+    });
+};
