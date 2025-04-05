@@ -48,7 +48,35 @@
             <h1>Generic aim trainer game or something</h1>
         </div>
         <div id="menuBox">
-            <span class="material-symbols-rounded button">play_arrow <h3>Play!</h3></span>
+            <span id="sh-play" class="material-symbols-rounded button important">play_arrow<h3>Play!</h3></span>
+            <span id="sh-settings" class="material-symbols-rounded button">settings<h3>Settings</h3></span>
+            <span id="sh-pref" class="material-symbols-rounded button">settings_account_box<h3>Preferances</h3></span>
+            <span id="sh-shop" class="material-symbols-rounded button">shopping_bag<h3>Store</h3></span>
+            <span id="sh-help" class="material-symbols-rounded button">help<h3>Guide</h3></span>
+
+            <div id="menuBoxBig" class="trans border">
+                <div id="playSelect" class="item">
+                    <div id="playSelect1" class="playitem">
+                        <h3>Easy</h3><span class="material-symbols-rounded">play_arrow</span>
+                    </div>
+                    <div id="playSelect2" class="playitem">
+                        <h3>Medium</h3><span class="material-symbols-rounded">play_arrow</span>
+                    </div>
+                    <div id="playSelect3" class="playitem">
+                        <h3>Hard</h3><span class="material-symbols-rounded">play_arrow</span>
+                    </div>
+                </div>
+                <div id="settingsSelect" class="item">
+                    <h1>Debug</h1>
+                    <div class="card">
+                        <div class="title">
+                            <h3>Hitboxes</h3>
+                            <h2>Shows hitboxes of everything</h2>
+                        </div>
+                        <div id="debugBorder" class="buttonSetting"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -59,7 +87,7 @@
        --bg: rgba(11, 11, 13, 1);
        --bg2: rgba(16, 16, 18, 1);
        --bgtrans: rgba(0, 0, 0, 0.2);
-       --bgtrans2: rgba(255, 255, 255, 0.05);
+       --bgtrans2: rgba(255, 255, 255, 0.01);
 
        /* Text */
        --txt: rgb(236, 241, 233);
@@ -71,13 +99,22 @@
        /* Some important stuff */
        --primary: 255,255,255;
        --play-width: auto;
+       --radius: 10px;
+
+       /* Debug stuff */
+       --Debug-border: 0;
     }
 
     * {
-        border-radius: 0;
+        border-radius: var(--radius);
+        outline: var(--Debug-border);
     }
     body {
         overflow: hidden;
+    }
+    ::selection {
+       color: inherit; /* Change the text color */
+       background-color: inherit; /* Change the background color */
     }
 
     #loading {
