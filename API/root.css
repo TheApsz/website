@@ -71,29 +71,6 @@ h2 {
        letter-spacing: 0;
 }
 
-.trans {
-       -webkit-backdrop-filter: blur(1vmax);
-       backdrop-filter: blur(1vmax);
-       
-       &:before {
-              content: '';
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              top: 0px;
-              left: 0px;
-              -webkit-backdrop-filter: blur(1vmax);
-              backdrop-filter: blur(1vmax);
-              border-radius: 10px;
-              z-index: -1;
-              justify-self: center;
-              align-self: center;
-              scale: 1;
-       }
-}
-.border {
-       box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.1);
-}
 
 /* Target WebKit browsers (Chrome, Safari, etc.) */
 *::-webkit-scrollbar {
@@ -118,4 +95,33 @@ h2 {
 ::selection {
        color: white; /* Change the text color */
        background-color: var(--bgtrans); /* Change the background color */
+}
+
+.trans {
+       -webkit-backdrop-filter: blur(1vmax);
+       backdrop-filter: blur(1vmax);
+       
+       &:before {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0px;
+              left: 0px;
+              -webkit-backdrop-filter: blur(1vmax);
+              backdrop-filter: blur(1vmax);
+              border-radius: 10px;
+              z-index: -1;
+              justify-self: center;
+              align-self: center;
+              scale: 1;
+       }
+}
+.border {
+       box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.1);
+}
+.button {
+       &:active {
+              transform: scale(0.9);
+       }
 }

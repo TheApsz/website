@@ -222,6 +222,10 @@
 
                 h1 {
                     color: var(--pri);
+
+                    &.skip {
+                        margin-top: 15px;
+                    }
                 }
 
                 .card {
@@ -274,6 +278,29 @@
                             border-radius: 5vmax;
                             opacity: 1;
                         }
+                    }
+                }
+            }
+            #helpSelect {
+                background: transparent;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 10px;
+
+                h1 {
+                    color: var(--pri);
+
+                    &.skip {
+                        margin-top: 15px;
+                    }
+                }
+                h2 {
+                    line-height: 1.2;
+                    font-size: 20px;
+
+                    &.muted {
+                        opacity: 0.5;
                     }
                 }
             }

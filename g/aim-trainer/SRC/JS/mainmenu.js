@@ -29,19 +29,42 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#debugBorder').click(function() {
-      // Toggle active class on the button
-      $(this).toggleClass('active');
+        // Toggle active class on the button
+        $(this).toggleClass('active');
       
-      // Toggle the CSS variable globally
-      if ($(this).hasClass('active')) {
-        $('html').css('--Debug-border', 'solid 1px purple');
-        console.log('DebugBorder ON');
-      } else {
-        $('html').css('--Debug-border', '0');
-        console.log('DebugBorder OFF');
-      }
+        if ($(this).hasClass('active')) {
+            $('html').css('--Debug-border', 'solid 1px purple');
+            console.log('DebugBorder ON');
+        } else {
+            $('html').css('--Debug-border', '0');
+            console.log('DebugBorder OFF');
+        }
     });
-  });
+    $('#graphicAmoled').click(function() {
+        // Toggle active class on the button
+        $(this).toggleClass('active');
+      
+        if ($(this).hasClass('active')) {
+            $('html').css('--bg', 'rgba(0,0,0,1)');
+            console.log('Amoled ON');
+        } else {
+            $('html').css('--bg', '');
+            console.log('Amoled OFF');
+        }
+    });
+    $('#graphicSMFont').click(function() {
+        // Toggle active class on the button
+        $(this).toggleClass('active');
+      
+        if ($(this).hasClass('active')) {
+            $('html').css('--fontRender', 'geometricPrecision');
+            console.log('SmoothFont ON');
+        } else {
+            $('html').css('--fontRender', '');
+            console.log('SmoothFont OFF');
+        }
+    });
+});
 
   $(document).ready(function() {
     // When any button starting with #sh- is clicked

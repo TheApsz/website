@@ -50,7 +50,7 @@
         <div id="menuBox">
             <span id="sh-play" class="material-symbols-rounded button important">play_arrow<h3>Play!</h3></span>
             <span id="sh-settings" class="material-symbols-rounded button">settings<h3>Settings</h3></span>
-            <span id="sh-pref" class="material-symbols-rounded button">settings_account_box<h3>Preferances</h3></span>
+            <span id="sh-pref" class="material-symbols-rounded button">settings_account_box<h3>Preferences</h3></span>
             <span id="sh-shop" class="material-symbols-rounded button">shopping_bag<h3>Store</h3></span>
             <span id="sh-help" class="material-symbols-rounded button">help<h3>Guide</h3></span>
 
@@ -67,7 +67,22 @@
                     </div>
                 </div>
                 <div id="settingsSelect" class="item">
-                    <h1>Debug</h1>
+                    <h1>graphics</h1>
+                    <div class="card">
+                        <div class="title">
+                            <h3>Smooth font</h3>
+                            <h2>Smoothes out the text</h2>
+                        </div>
+                        <div id="graphicSMFont" data-setting="graphicSMFont" class="buttonSetting"></div>
+                    </div>
+                    <div class="card">
+                        <div class="title">
+                            <h3>Amoled</h3>
+                            <h2>Saves energy and prevents screen burn-in</h2>
+                        </div>
+                        <div id="graphicAmoled" data-setting="graphicAmoled" class="buttonSetting"></div>
+                    </div>
+                    <h1 class="skip">Debug</h1>
                     <div class="card">
                         <div class="title">
                             <h3>Hitboxes</h3>
@@ -76,38 +91,50 @@
                         <div id="debugBorder" class="buttonSetting"></div>
                     </div>
                 </div>
+                <div id="helpSelect" class="item">
+                    <h1>How to play</h1>
+                    <h2>when in game:<br> ESC to exit</h2>
+                    <h2 class="muted">Otherwise just click the targets</h2>
+                    <h1 class="skip">Where can i use the points?</h1>
+                    <h2>You can use the points to buy customisation options</h2>
+                </div>
             </div>
         </div>
+    </div>
+    <div id="scoreboard" class="loadCheck">
+        <div class="item important"><h3><span id="Points">0</span> Points</h3></div>
     </div>
 </body>
 
 <style>
     :root {
-       /* Backgrounds */
-       --bg: rgba(11, 11, 13, 1);
-       --bg2: rgba(16, 16, 18, 1);
-       --bgtrans: rgba(0, 0, 0, 0.2);
-       --bgtrans2: rgba(255, 255, 255, 0.01);
+        /* Backgrounds */
+        --bg: rgba(11, 11, 13, 1);
+        --bg2: rgba(16, 16, 18, 1);
+        --bgtrans: rgba(0, 0, 0, 0.2);
+        --bgtrans2: rgba(255, 255, 255, 0.01);
 
-       /* Text */
-       --txt: rgb(236, 241, 233);
+        /* Text */
+        --txt: rgb(236, 241, 233);
 
-       /* Colors */
-       --pri: rgb(var(--primary));
-       --pri2: rgba(var(--primary), 0.2);
+        /* Colors */
+        --pri: rgb(var(--primary));
+        --pri2: rgba(var(--primary), 0.2);
 
-       /* Some important stuff */
-       --primary: 255,255,255;
-       --play-width: auto;
-       --radius: 10px;
+        /* Some important stuff */
+        --primary: 255,255,255;
+        --play-width: auto;
+        --radius: 10px;
+        --fontRender: optimizeSpeed;
 
-       /* Debug stuff */
-       --Debug-border: 0;
+        /* Debug stuff */
+        --Debug-border: 0;
     }
 
     * {
         border-radius: var(--radius);
         outline: var(--Debug-border);
+        text-rendering: var(--fontRender);
     }
     body {
         overflow: hidden;
