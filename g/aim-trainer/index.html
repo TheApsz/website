@@ -43,50 +43,12 @@
     <div id="background" class="loadCheck">
     </div>
 
-    <div id="mainmenu" class="loadCheck">
-        <h1>Generic aim training video game clicker thing</h1>
-        <div id="play-sh" class="mainmenu-button">
-            <span class="material-symbols-rounded">play_arrow</span>
-            <h3>Play!</h3>
+    <div id="menu" class="loadCheck">
+        <div id="menuDecoration">
+            <h1>Generic aim trainer game or something</h1>
         </div>
-        <div id="store-sh" class="mainmenu-button">
-            <span class="material-symbols-rounded">store</span>
-            <h3>Store</h3>
-        </div>
-        <div id="settings-sh" class="mainmenu-button">
-            <span class="material-symbols-rounded">Settings</span>
-            <h3>Settings</h3>
-        </div>
-        <div id="guide-sh" class="mainmenu-button">
-            <span class="material-symbols-rounded">question_mark</span>
-            <h3>Guide</h3>
-        </div>
-    </div>
-
-    <div id="selection" class="loadCheck">
-        <div id="play-select" class="selection-generic">
-            <h1>Select difficulty</h1>
-            <div id="start-game-1" class="selection-button">
-                <h3>Easy</h3>
-            </div>
-            <div id="start-game-2" class="selection-button">
-                <h3>Median</h3>
-            </div>
-            <div id="start-game-3" class="selection-button">
-                <h3>Hard</h3>
-            </div>
-        </div>
-        <div id="store-select" class="selection-generic">
-            <h1>Store</h1>
-            <h2>Wow such empty...</h2>
-        </div>
-        <div id="settings-select" class="selection-generic">
-            <h1>Settings</h1>
-            <h2>Wow such empty...</h2>
-        </div>
-        <div id="guide-select" class="selection-generic">
-            <h1>Guide</h1>
-            <h2>You just click stuff thats it</h2>
+        <div id="menuBox">
+            <span class="material-symbols-rounded button">play_arrow <h3>Play!</h3></span>
         </div>
     </div>
 </body>
@@ -103,16 +65,19 @@
        --txt: rgb(236, 241, 233);
 
        /* Colors */
-       --pri: white;
-       --pri2: rgba(236, 39, 39, 0.2);
-       --sec: rgb(253, 114, 114);
+       --pri: rgb(var(--primary));
+       --pri2: rgba(var(--primary), 0.2);
 
        /* Some important stuff */
+       --primary: 255,255,255;
        --play-width: auto;
     }
 
     * {
         border-radius: 0;
+    }
+    body {
+        overflow: hidden;
     }
 
     #loading {
