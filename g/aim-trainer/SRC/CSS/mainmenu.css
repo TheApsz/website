@@ -7,6 +7,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: 0.2s ease;
+    z-index: 2;
+    pointer-events: none;
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
     #menuDecoration {
         position: absolute;

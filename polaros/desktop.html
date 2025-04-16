@@ -29,10 +29,76 @@
 </head>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
-<link rel="stylesheet" href="SRC/inject.css">
-<script type="module" src="SRC/inject.js"></script>
+<link rel="stylesheet" href="desktop/inject.css">
 <html lang="en">
 
 <body>
-
+    <div id="loading" class="loadCheck">
+        <h1>Loading Polar</h1>
+        <div class="loading">
+            <div class="bar"></div>
+        </div>
+    </div>
 </body>
+
+<style>
+    :root {
+        /* Backgrounds */
+        --bg: rgba(11, 11, 13, 1);
+        --bg2: rgba(16, 16, 18, 1);
+        --bgtrans: rgba(0, 0, 0, 0.2);
+        --bgtrans2: rgba(255, 255, 255, 0.01);
+
+        /* Text */
+        --txt: rgb(236, 241, 233);
+
+        /* Colors */
+        --pri: rgb(var(--primary));
+        --pri2: rgba(var(--primary), 0.2);
+
+        /* Some important stuff */
+        --primary: 255,255,255;
+        --play-width: auto;
+        --radius: 10px;
+        --fontRender: optimizeSpeed;
+
+        /* Debug stuff */
+        --Debug-border: 0;
+    }
+    body {
+        overflow: hidden;
+    }
+    #loading {
+        position: absolute;
+        background: black;
+        border-radius: 0 !important;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        h1 {
+            color: var(--pri);
+            font-size: 32px;
+        }
+        .loading {
+            position: relative;
+            background: var(--bg);
+            width: 250px;
+            height: 10px;
+            overflow: hidden;
+
+            .bar {
+                position: absolute;
+                background: var(--pri);
+                left: -50px;
+                width: 50px;
+                height: 100%;
+                animation: loading 2s linear infinite;
+            }
+        }
+    }
+</style>

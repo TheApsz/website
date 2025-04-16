@@ -1,0 +1,11 @@
+@keyframes loading {
+    20% {
+        margin-left: 0;
+    }
+    80% {
+        margin-left: calc(100% + 50px);
+    }
+    to {
+        margin-left: calc(100% + 50px);
+    }
+}
