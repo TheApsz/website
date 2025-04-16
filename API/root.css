@@ -98,8 +98,7 @@ h2 {
 }
 
 .trans {
-       -webkit-backdrop-filter: blur(1vmax);
-       backdrop-filter: blur(1vmax);
+       backdrop-filter: url(#trans);
        
        &:before {
               content: '';
@@ -108,8 +107,7 @@ h2 {
               height: 100%;
               top: 0px;
               left: 0px;
-              -webkit-backdrop-filter: blur(1vmax);
-              backdrop-filter: blur(1vmax);
+              backdrop-filter: url(#trans);
               border-radius: 10px;
               z-index: -1;
               justify-self: center;

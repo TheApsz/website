@@ -33,20 +33,39 @@
 <html lang="en">
 
 <body>
-    <div id="loading" class="loadCheck">
+    <div id="background" class="loadCheck">
+        <img src="desktop/images/wallpaper1.jpg">
+    </div>
+
+    <div id="loading" class="loadCheck active">
         <h1>Loading Polar</h1>
         <div class="loading">
             <div class="bar"></div>
         </div>
     </div>
+
+    <div id="login" class="loadCheck">
+        <div class="box" style="backdrop-filter: url(#f1);"></div>
+        <a href="https://github.com/TheApsz/website/tree/master/polaros" target="_blank"><h2 class="version">
+            PolarOS <span class="muted">|</span> a0.0.01
+            <br><span class="muted">Concept operating system, everything here is saved localy</span>
+        </h2></a>
+    </div>
+
+
+<svg>
+    <filter id="trans" x="0" y="0">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+    </filter>
+</svg>
 </body>
 
 <style>
     :root {
         /* Backgrounds */
-        --bg: rgba(11, 11, 13, 1);
-        --bg2: rgba(16, 16, 18, 1);
-        --bgtrans: rgba(0, 0, 0, 0.2);
+        --bg: rgb(241, 241, 241);
+        --bg2: rgb(223, 223, 223);
+        --bgtrans: rgba(255, 255, 255, 0.2);
         --bgtrans2: rgba(255, 255, 255, 0.01);
 
         /* Text */
@@ -68,17 +87,30 @@
     body {
         overflow: hidden;
     }
+    * {
+        border-radius: var(--radius) !important;
+    }
     #loading {
         position: absolute;
-        background: black;
+        background: transparent;
         border-radius: 0 !important;
-        width: 100vw;
-        height: 100vh;
+        width: 120vw;
+        height: 120vh;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         gap: 20px;
+        opacity: 0;
+        transition: 0.3s ease;
+        opacity: 0;
+        scale: 0.8;
+        z-index: 1001;
+
+        &.active {
+            opacity: 1;
+            scale: 1;
+        }
 
         h1 {
             color: var(--pri);
@@ -86,7 +118,7 @@
         }
         .loading {
             position: relative;
-            background: var(--bg);
+            background: var(--bgtrans);
             width: 250px;
             height: 10px;
             overflow: hidden;
