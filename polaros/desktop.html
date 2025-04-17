@@ -32,12 +32,12 @@
 <link rel="stylesheet" href="desktop/inject.css">
 <html lang="en">
 
-<body>
+<body class="thm-light">
     <div id="background" class="loadCheck">
-        <img src="desktop/images/wallpaper1.jpg">
+        <img alt="wallpaper" src="desktop/images/wallpaper1.jpg">
     </div>
 
-    <div id="loading" class="loadCheck active">
+    <div id="loading" class="loadCheck active trans">
         <h1>Loading Polar</h1>
         <div class="loading">
             <div class="bar"></div>
@@ -45,7 +45,13 @@
     </div>
 
     <div id="login" class="loadCheck">
-        <div class="box" style="backdrop-filter: url(#f1);"></div>
+        <div class="box trans">
+            <img class="icon" alt="icon" src="desktop/images/OS/profile.png">
+            <h3>Guest</h3>
+            <input class="border" type="text" placeholder="Password" maxlength="24">
+            <div class="sep"></div>
+            <h2 class="button">Forgot password?</h2>
+        </div>
         <a href="https://github.com/TheApsz/website/tree/master/polaros" target="_blank"><h2 class="version">
             PolarOS <span class="muted">|</span> a0.0.01
             <br><span class="muted">Concept operating system, everything here is saved localy</span>
@@ -69,7 +75,7 @@
         --bgtrans2: rgba(255, 255, 255, 0.01);
 
         /* Text */
-        --txt: rgb(236, 241, 233);
+        --txt: rgb(19, 19, 19);
 
         /* Colors */
         --pri: rgb(var(--primary));
