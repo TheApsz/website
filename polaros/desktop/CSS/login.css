@@ -4,6 +4,15 @@
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: 0.3s ease;
+    pointer-events: none;
+
+    &.loaded {
+        opacity: 1;
+        transition-delay: 1s;
+        pointer-events: auto;
+    }
 
     .box {
         position: absolute;
@@ -24,7 +33,7 @@
             height: 150px;
             border-radius: 50% !important;
             object-fit: cover;
-            border: solid 2px var(--pri);
+            border: solid 2px var(--pri)
         }
 
         h3 {
@@ -35,16 +44,24 @@
         input {
             width: 300px;
             height: 40px;
-            padding: 0 10px;
+            padding: 0 15px;
             border: 0;
             background: var(--bgtrans);
             color: var(--pri);
             font-size: 18px;
             outline: none;
             transition: all 0.3s ease-in-out;
+            border-radius: 5vmax !important;
+            font-family: wavefont,sans-serif;
+            font-weight: 900;
 
             &::placeholder {
                 color: rgba(255, 255, 255, 0.473);
+                font-family: lexend,sans-serif;
+                font-weight: 400;
+            }
+            &.wrong {
+                border: 2px solid var(--red);
             }
         }
         .button {
@@ -55,6 +72,16 @@
             &:hover {
                 color: var(--pri);
                 background: var(--bgtrans);
+            }
+        }
+        #hint {
+            scale: 0.8;
+            opacity: 0;
+            transition: all 0.3s ease, scale 0.4s cubic-bezier(.17,1.67,.61,.81);
+
+            &.active {
+                scale: 1;
+                opacity: 1;
             }
         }
     }

@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://polargram.pages.dev/API/import.css">
 </head>
 
+<link href="https://fonts.googleapis.com/css2?family=Wavefont:wght@4..1000&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
 <link rel="stylesheet" href="desktop/inject.css">
 <script src="desktop/inject.js" type="module"></script>
@@ -45,16 +46,17 @@
         </div>
     </div>
 
-    <div id="login" class="loadCheck">
+    <div id="login" class="loadCheck active">
         <div class="box trans">
             <img class="icon" alt="icon" src="desktop/images/OS/profile.png">
             <h3>Guest</h3>
-            <input class="border" type="text" placeholder="Password" maxlength="24">
+            <input spellcheck="false" id="login-input" class="border" type="text" placeholder="Password" maxlength="24">
             <div class="sep"></div>
-            <h2 class="button">Forgot password?</h2>
+            <h2 id="login-forgot" class="button">Forgot password?</h2>
+            <h2 id="hint">You know what? just for you. the password is password :3</h2>
         </div>
         <a href="https://github.com/TheApsz/website/tree/master/polaros" target="_blank"><h2 class="version">
-            PolarOS <span class="muted">|</span> a0.0.01
+            PolarOS <span class="muted">|</span> a0.0.2
             <br><span class="muted">Concept operating system, everything here is saved localy</span>
         </h2></a>
     </div>
@@ -85,7 +87,7 @@
         /* Some important stuff */
         --primary: 255,255,255;
         --play-width: auto;
-        --radius: 20px;
+        --radius: 15px;
         --fontRender: optimizeSpeed;
 
         /* Debug stuff */
