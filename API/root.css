@@ -120,7 +120,6 @@ h2 {
 }
 .button {
        cursor: pointer;
-       
        &:active {
               transform: scale(0.9);
        }
