@@ -2,12 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-@font-face {
-       font-family: 'bmmini';
-       src: url('fonts/BMmini.TTF') format('truetype');
-       font-weight: bold;
-       font-style: normal;
-}
 
 :root {
        /* Backgrounds */
