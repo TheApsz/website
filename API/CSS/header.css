@@ -138,4 +138,32 @@
                      font-size: 17px;
               }
        }
+
+       #loading {
+              position: absolute;
+              top: calc(100% - 25px);
+              display: flex;
+              flex-direction: raw;
+              gap: 10px;
+              align-items: center;
+              justify-content: center;
+              padding: 10px 20px;
+              opacity: 0;
+              transition: var(--S1);
+
+              &.active {
+                     top: calc(100% + 10px);
+                     opacity: 1;
+              }
+
+              .dec {
+                     aspect-ratio: 1;
+                     height: 5px;
+                     background: var(--pri);
+              }
+              h3 {
+                     translate: 0% -2.25%;
+              }
+       }
 }
+

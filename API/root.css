@@ -92,7 +92,7 @@ h2 {
 }
 
 .trans {
-       backdrop-filter: url(#trans);
+       backdrop-filter: blur(2vmax);
        
        &:before {
               content: '';
@@ -101,7 +101,7 @@ h2 {
               height: 100%;
               top: 0px;
               left: 0px;
-              backdrop-filter: url(#trans);
+              backdrop-filter: blur(2vmax);
               border-radius: inherit;
               z-index: -1;
               justify-self: center;
@@ -114,7 +114,9 @@ h2 {
 }
 .button {
        cursor: pointer;
+       transition: transform var(--S1);
+
        &:active {
-              transform: scale(0.9);
+              transform: scale(0.95);
        }
 }

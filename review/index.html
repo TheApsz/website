@@ -1,0 +1,194 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- HTML Meta Tags -->
+    <title>Polargram | Review</title>
+    <meta content="#ec2727" data-react-helmet="true" name="theme-color">
+    <meta name="description" content="A place where community can rate video games or movies">
+    <meta property="og:description" content="A place where community can rate video games or movies">
+    <meta name="twitter:description" content="A place where community can rate video games or movies">
+
+    <meta property="og:title" content="Polargram | Review">
+    <meta name="twitter:title" content="Polargram | Review">
+    <meta property="og:url" content="https://polargram.pages.dev">
+    <meta property="twitter:url" content="https://polargram.pages.dev">
+    <meta property="og:image" content="https://polargram.pages.dev/og-banner.png">
+    <meta name="twitter:image" content="https://polargram.pages.dev/og-banner.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta property="twitter:domain" content="polargram.pages.dev">
+
+
+    <link rel="icon" href="https://polargram.pages.dev/og-image.png" type="image/x.icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="module" src="https://polargram.pages.dev/API/import.js" defer></script>
+    <link rel="stylesheet" href="https://polargram.pages.dev/API/import.css">
+</head>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+<link rel="stylesheet" href="SRC/inject.css">
+<script type="module" src="SRC/inject.js"></script>
+<html lang="en">
+
+<body>
+    <div id="header" class="trans border loadCheck">
+        <div class="header-image">
+            <img alt="logo" src="https://polargram.pages.dev/og-image2.png">
+        </div>
+
+        <a><div class="header-button toggle">
+            <h3>Projects</h3>
+        </div></a>
+        <a href="#"><div class="header-button">
+            <h3>Changelog</h3>
+        </div></a>
+        <a><div class="header-button toggle">
+            <h3>Company</h3>
+        </div></a>
+
+        <div id="signin" class="">
+            <h3>Sign up</h3>
+        </div>
+        <div id="account" class="deactive">
+            <img alt="" src="u/images/apsz2.jpg">
+            <h3>Username</h3>
+        </div>
+
+        <div id="loading" class="trans border active">
+            <div class="dec"></div>
+            <h3>Loading</h3>
+        </div>
+    </div>
+
+
+    <div id="hero" class="section loadCheck">
+        <h1>Polargram reviews</h1>
+        <h2>Completely honest reviews of games, apps or movies</h2>
+    </div>
+
+    <div id="filters" class="section loadCheck">
+        <div class="stuffs">
+            <div class="card">
+                <h3>Sort by</h3>
+                <div class="cex">
+                    <h2 id="sort-recent" class="button active">Most Recent</h2>
+                    <h2 id="sort-oldest" class="button">Oldest</h2>
+                    <hr>
+                    <h2 id="sort-price-high" class="button">Price high to low</h2>
+                    <h2 id="sort-price-low" class="button">Price low to high</h2>
+                    <hr>
+                    <h2 id="sort-rank-best" class="button">Best</h2>
+                    <h2 id="sort-rank-worst" class="button">Worst</h2>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Type</h3>
+                <div class="cex">
+                    <h2 id="type-game" class="button">Games</h2>
+                    <h2 id="type-movie" class="button">Movies</h2>
+                    <h2 id="type-app" class="button">Apps</h2>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Genre</h3>
+                <div class="cex genre">
+
+                </div>
+            </div>
+            <div class="card">
+                <h3>Gameplay</h3>
+                <div class="cex gameplay">
+                    <h2 class="button">PvP</h2>
+                    <h2 class="button">PvE</h2>
+                    <h2 class="button">PvPvE</h2>
+                    <hr>
+                    <h2 class="button-m">Online</h2>
+                    <h2 class="button-m">Offline</h2>
+                </div>
+            </div>
+        </div>
+        <input type="text" id="search" class="border" placeholder="Search reviews...">
+    </div>
+
+    <div id="reviews" class="section loadCheck">
+        <a href="p/tarkov.html"
+        data-name="Escape from Tarkov"
+        data-time="20170415"
+        data-rating="7"
+        data-price="53"
+        data-genre="milsim, shooter, action, extraction"
+        data-type="game"
+        data-gameplay="pvpve, online"
+            >
+            <div class="card">
+            <img src="https://rare-gallery.com/livewalls/imgpreview/95922-Escape-From-Tarkov.jpg" alt="Thumbnail" class="thumbnail">
+            <div class="card-content trans">
+                <h1 class="card-title">Escape from Tarkov</h1>
+                <h3 class="rating"><span class="rating-value">7</span>/10</h3>
+            </div>
+        </div></a>
+        <a href="p/gzw.html"
+        data-name="Gray Zone Warfare"
+        data-time="20240430"
+        data-rating="6"
+        data-price="40"
+        data-genre="milsim, shooter, action"
+        data-type="game"
+        data-gameplay="pvpve, pve, online"
+            >
+            <div class="card">
+            <img src="SRC/IMG/gzw.jpg" alt="Thumbnail" class="thumbnail">
+            <div class="card-content trans">
+                <h1 class="card-title">Gray Zone Warfare</h1>
+                <h3 class="rating"><span class="rating-value">6</span>/10</h3>
+            </div>
+        </div></a>
+        <a href="p/minecraft.html"
+        data-name="Minecraft"
+        data-time="20111118"
+        data-rating="8"
+        data-price="30"
+        data-genre="survival, sandbox, action"
+        data-type="game"
+        data-gameplay="pvpve, pve, online, offline"
+            >
+            <div class="card">
+            <img src="https://wallpaper.dog/large/20351568.jpg" alt="Thumbnail" class="thumbnail">
+            <div class="card-content trans">
+                <h1 class="card-title">Minecraft</h1>
+                <h3 class="rating"><span class="rating-value">8</span>/10</h3>
+            </div>
+        </div></a>
+    </div>
+</body>
+
+<script>
+$(document).ready(function () {
+    $('.rating').each(function () {
+        const $valueElem = $(this).find('.rating-value');
+        const value = parseFloat($valueElem.text());
+
+        if (!isNaN(value)) {
+            const clamped = Math.max(1, Math.min(10, value));
+            const percent = (clamped - 1) / 9;
+
+            // Interpolate each RGB channel between red and green
+            const r = Math.round(255 * (1 - percent) + 77 * percent);
+            const g = Math.round(35 * (1 - percent) + 255 * percent);
+            const b = Math.round(35 * (1 - percent) + 80 * percent);
+
+        $(this).css({
+            backgroundColor: `rgb(${r}, ${g}, ${b})`,
+        });
+        }
+    });
+});
+
+
+</script>
+
+

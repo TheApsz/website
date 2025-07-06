@@ -1,0 +1,10 @@
+#hero {
+       text-align: center;
+       background: transparent;
+       margin-top: 10svh;
+
+       h1 {
+              color: var(--pri);
+       }
+
+}

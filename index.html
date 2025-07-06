@@ -24,6 +24,7 @@
     <link rel="icon" href="og-image.png" type="image/x.icon">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script type="module" src="API/import.js" defer></script>
     <link rel="stylesheet" href="API/import.css">
 </head>
@@ -34,7 +35,7 @@
 <html lang="en">
 
 <body>
-    <div id="header" class="trans border">
+    <div id="header" class="trans border loadCheck">
         <div class="header-image">
             <img alt="logo" src="https://polargram.pages.dev/og-image2.png">
         </div>
@@ -56,10 +57,15 @@
             <img alt="" src="u/images/apsz2.jpg">
             <h3>Username</h3>
         </div>
+
+        <div id="loading" class="trans border active">
+            <div class="dec"></div>
+            <h3>Loading</h3>
+        </div>
     </div>
 
 
-    <div id="hero" class="section">
+    <div id="hero" class="section loadCheck">
         <div class="title">
             <h1 class="prefix">Meet</h1>
             <div class="text shiny"><h1 id="text">Polargram</h1></div>
@@ -81,7 +87,7 @@
 
 
 
-    <div id="about" class="section-sec">
+    <div id="about" class="section-sec loadCheck">
         <h1 class="title">What do we do</h1>
         <div class="grid">
             <a href="#websites"><div class="about-card card border">
@@ -100,7 +106,7 @@
     </div>
 
 
-    <div id="websites" class="section-sec">
+    <div id="websites" class="section-sec loadCheck">
         <h1 class="title">Websites</h1>
     </div>
 </body>
