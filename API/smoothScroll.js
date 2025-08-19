@@ -1,12 +1,18 @@
-$(document).ready(function() {
-       $('a[href^="#"]').on('click', function(e) {
-              e.preventDefault();
-              var target = $(this).attr('href');
-              var offset = $(target).offset().top - 50;
-              $('html, body').animate({
-                     scrollTop: offset
-              }, 2000, 'easeInOutExpo');
-       });
+$(function() {
+  $('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    const target = $(this).attr('href');
+    const targetEl = document.querySelector(target);
+
+    if (targetEl) {
+      const offset = targetEl.getBoundingClientRect().top + window.pageYOffset - 50;
+
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+      });
+    }
+  });
 });
      
      var Smoothscroll = {};
