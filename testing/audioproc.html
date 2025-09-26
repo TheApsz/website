@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Post-Processor with Playlist & YouTube</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #6b8cbc;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --success: #2ecc71;
+            --warning: #e74c3c;
+            --playlist-bg: rgba(30, 40, 60, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--light);
+            font-weight: 300;
+            letter-spacing: 1px;
+            grid-column: 1 / -1;
+        }
+        
+        h2 {
+            margin-bottom: 15px;
+            font-weight: 400;
+            color: #bdc3c7;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+        
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        label {
+            font-weight: 500;
+            color: #bdc3c7;
+        }
+        
+        input[type="text"], input[type="file"] {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 14px;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+        }
+        
+        .btn-warning {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .playlist {
+            max-height: 300px;
+            overflow-y: auto;
+            background: var(--playlist-bg);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        
+        .playlist-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .playlist-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .playlist-item.active {
+            background: rgba(74, 111, 165, 0.3);
+            border-left: 3px solid var(--primary);
+        }
+        
+        .playlist-item-info {
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .playlist-item-title {
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .playlist-item-duration {
+            font-size: 12px;
+            color: #95a5a6;
+        }
+        
+        .playlist-item-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .playlist-btn {
+            background: none;
+            border: none;
+            color: #bdc3c7;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .playlist-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .controls-section {
+            margin: 20px 0;
+        }
+        
+        .control-group {
+            margin-bottom: 20px;
+        }
+        
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .slider-container {
+            position: relative;
+            height: 30px;
+        }
+        
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .slider::-webkit-slider-thumb:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+        
+        .slider-value {
+            position: absolute;
+            top: -25px;
+            right: 0;
+            background: var(--dark);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .player-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .player-controls .btn {
+            flex: 1;
+        }
+        
+        .visualizer {
+            height: 150px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .status.ready {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+        
+        .status.processing {
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+        }
+        
+        .status.error {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+        
+        .empty-playlist {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .youtube-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .youtube-thumbnail {
+            width: 60px;
+            height: 45px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Post-Processor with Playlist & YouTube</h1>
+        
+        <div class="panel">
+            <h2>Playlist Management</h2>
+            
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="youtubeUrl">YouTube URL</label>
+                    <input type="text" id="youtubeUrl" placeholder="Paste YouTube URL here">
+                    <button class="btn btn-primary" id="addYoutubeBtn">Add to Playlist</button>
+                </div>
+                
+                <div class="input-group">
+                    <label for="audioUpload">Upload Audio File</label>
+                    <input type="file" id="audioUpload" accept="audio/*">
+                </div>
+            </div>
+            
+            <h3>Playlist <span id="playlistCount">(0 items)</span></h3>
+            <div class="playlist" id="playlist">
+                <div class="empty-playlist">Your playlist is empty. Add YouTube URLs or upload audio files.</div>
+            </div>
+            
+            <div class="player-controls">
+                <button class="btn btn-success" id="playBtn">Play</button>
+                <button class="btn btn-warning" id="pauseBtn">Pause</button>
+                <button class="btn" id="prevBtn">Previous</button>
+                <button class="btn" id="nextBtn">Next</button>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <h2>Audio Processing</h2>
+            
+            <div class="controls-section">
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Muffle Effect</span>
+                        <span class="slider-value" id="muffleValue">0%</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="muffleSlider">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Bass Reduction</span>
+                        <span class="slider-value" id="bassValue">0%</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="bassSlider">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visualizer">
+                <canvas id="visualizerCanvas"></canvas>
+            </div>
+            
+            <div class="status ready" id="status">Ready to process audio</div>
+            
+            <div class="player-controls">
+                <button class="btn btn-primary" id="downloadBtn">Download Processed Audio</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const youtubeUrlInput = document.getElementById('youtubeUrl');
+        const addYoutubeBtn = document.getElementById('addYoutubeBtn');
+        const audioUpload = document.getElementById('audioUpload');
+        const playlist = document.getElementById('playlist');
+        const playlistCount = document.getElementById('playlistCount');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const muffleSlider = document.getElementById('muffleSlider');
+        const bassSlider = document.getElementById('bassSlider');
+        const muffleValue = document.getElementById('muffleValue');
+        const bassValue = document.getElementById('bassValue');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const status = document.getElementById('status');
+        const canvas = document.getElementById('visualizerCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Audio context and nodes
+        let audioContext;
+        let sourceNode;
+        let gainNode;
+        let lowPassFilter;
+        let highPassFilter;
+        let analyser;
+        let isPlaying = false;
+        let currentAudioBuffer;
+        
+        // Playlist data
+        let playlistItems = [];
+        let currentTrackIndex = -1;
+        
+        // YouTube player (will be initialized when needed)
+        let youtubePlayer;
+        
+        // Initialize audio context on user interaction
+        function initAudioContext() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Create audio nodes
+                gainNode = audioContext.createGain();
+                lowPassFilter = audioContext.createBiquadFilter();
+                highPassFilter = audioContext.createBiquadFilter();
+                analyser = audioContext.createAnalyser();
+                
+                // Set up filter types
+                lowPassFilter.type = 'lowpass';
+                highPassFilter.type = 'highpass';
+                
+                // Connect nodes: source -> filters -> gain -> analyser -> destination
+                lowPassFilter.connect(highPassFilter);
+                highPassFilter.connect(gainNode);
+                gainNode.connect(analyser);
+                analyser.connect(audioContext.destination);
+                
+                // Set up analyser for visualization
+                analyser.fftSize = 256;
+            }
+        }
+        
+        // Extract YouTube video ID from URL
+        function getYouTubeVideoId(url) {
+            const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[7].length === 11) ? match[7] : null;
+        }
+        
+        // Add YouTube video to playlist
+        addYoutubeBtn.addEventListener('click', function() {
+            const url = youtubeUrlInput.value.trim();
+            if (!url) {
+                status.textContent = 'Please enter a YouTube URL';
+                status.className = 'status error';
+                return;
+            }
+            
+            const videoId = getYouTubeVideoId(url);
+            if (!videoId) {
+                status.textContent = 'Invalid YouTube URL';
+                status.className = 'status error';
+                return;
+            }
+            
+            // Create playlist item
+            const item = {
+                id: 'yt_' + videoId,
+                title: 'YouTube Video (' + videoId + ')',
+                type: 'youtube',
+                videoId: videoId,
+                url: url,
+                thumbnail: `https://img.youtube.com/vi/${videoId}/default.jpg`
+            };
+            
+            addToPlaylist(item);
+            youtubeUrlInput.value = '';
+            
+            // In a real implementation, you would fetch video title and duration
+            // from YouTube API here
+        });
+        
+        // Handle file upload
+        audioUpload.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const item = {
+                id: 'file_' + Date.now(),
+                title: file.name,
+                type: 'file',
+                file: file
+            };
+            
+            addToPlaylist(item);
+            audioUpload.value = '';
+        });
+        
+        // Add item to playlist
+        function addToPlaylist(item) {
+            playlistItems.push(item);
+            renderPlaylist();
+            status.textContent = 'Item added to playlist';
+            status.className = 'status ready';
+            
+            // If this is the first item, set it as current
+            if (playlistItems.length === 1) {
+                currentTrackIndex = 0;
+                highlightCurrentTrack();
+            }
+        }
+        
+        // Remove item from playlist
+        function removeFromPlaylist(index) {
+            playlistItems.splice(index, 1);
+            
+            // Adjust current track index if needed
+            if (currentTrackIndex === index) {
+                currentTrackIndex = -1;
+                stopPlayback();
+            } else if (currentTrackIndex > index) {
+                currentTrackIndex--;
+            }
+            
+            renderPlaylist();
+        }
+        
+        // Render playlist
+        function renderPlaylist() {
+            playlist.innerHTML = '';
+            playlistCount.textContent = `(${playlistItems.length} items)`;
+            
+            if (playlistItems.length === 0) {
+                playlist.innerHTML = '<div class="empty-playlist">Your playlist is empty. Add YouTube URLs or upload audio files.</div>';
+                return;
+            }
+            
+            playlistItems.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = `playlist-item ${index === currentTrackIndex ? 'active' : ''}`;
+                
+                let durationHtml = '';
+                if (item.duration) {
+                    durationHtml = `<div class="playlist-item-duration">${formatTime(item.duration)}</div>`;
+                }
+                
+                let thumbnailHtml = '';
+                if (item.thumbnail) {
+                    thumbnailHtml = `<img src="${item.thumbnail}" class="youtube-thumbnail" alt="Thumbnail">`;
+                }
+                
+                itemElement.innerHTML = `
+                    ${thumbnailHtml}
+                    <div class="playlist-item-info">
+                        <div class="playlist-item-title">${item.title}</div>
+                        ${durationHtml}
+                    </div>
+                    <div class="playlist-item-actions">
+                        <button class="playlist-btn play-item" data-index="${index}">▶</button>
+                        <button class="playlist-btn remove-item" data-index="${index}">✕</button>
+                    </div>
+                `;
+                
+                playlist.appendChild(itemElement);
+            });
+            
+            // Add event listeners to playlist buttons
+            document.querySelectorAll('.play-item').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    playTrack(index);
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    removeFromPlaylist(index);
+                });
+            });
+        }
+        
+        // Format time in seconds to MM:SS
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+        
+        // Highlight current track in playlist
+        function highlightCurrentTrack() {
+            document.querySelectorAll('.playlist-item').forEach((item, index) => {
+                if (index === currentTrackIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+        
+        // Play a specific track
+        function playTrack(index) {
+            if (index < 0 || index >= playlistItems.length) return;
+            
+            currentTrackIndex = index;
+            highlightCurrentTrack();
+            
+            const item = playlistItems[index];
+            
+            if (item.type === 'file') {
+                playAudioFile(item.file);
+            } else if (item.type === 'youtube') {
+                playYouTubeVideo(item.videoId);
+            }
+        }
+        
+        // Play audio file
+        function playAudioFile(file) {
+            status.textContent = 'Loading audio file...';
+            status.className = 'status processing';
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                initAudioContext();
+                
+                // Resume audio context if suspended
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
+                }
+                
+                // Decode audio data
+                audioContext.decodeAudioData(e.target.result, function(buffer) {
+                    currentAudioBuffer = buffer;
+                    playAudioBuffer(buffer);
+                }, function(err) {
+                    status.textContent = 'Error decoding audio file: ' + err;
+                    status.className = 'status error';
+                });
+            };
+            reader.readAsArrayBuffer(file);
+        }
+        
+        // Play audio buffer
+        function playAudioBuffer(buffer) {
+            if (isPlaying) {
+                stopPlayback();
+            }
+            
+            initAudioContext();
+            
+            // Create and configure source
+            sourceNode = audioContext.createBufferSource();
+            sourceNode.buffer = buffer;
+            sourceNode.connect(lowPassFilter);
+            
+            // Update filters with current slider values
+            updateFilters();
+            
+            // Start playback
+            sourceNode.start(0);
+            isPlaying = true;
+            status.textContent = 'Playing: ' + playlistItems[currentTrackIndex].title;
+            status.className = 'status processing';
+            
+            // Set up visualization
+            drawVisualizer();
+            
+            // Handle end of playback
+            sourceNode.onended = function() {
+                isPlaying = false;
+                status.textContent = 'Playback finished';
+                status.className = 'status ready';
+                
+                // Auto-play next track if available
+                if (currentTrackIndex < playlistItems.length - 1) {
+                    setTimeout(() => {
+                        playTrack(currentTrackIndex + 1);
+                    }, 1000);
+                }
+            };
+        }
+        
+        // Play YouTube video (simulated - in a real app, you'd use YouTube IFrame API)
+        function playYouTubeVideo(videoId) {
+            status.textContent = 'Playing YouTube video (simulated)';
+            status.className = 'status processing';
+            
+            // In a real implementation, you would:
+            // 1. Load YouTube IFrame API if not already loaded
+            // 2. Create a YouTube player
+            // 3. Extract audio from the video (which requires additional processing)
+            
+            // For this demo, we'll simulate the behavior with a timeout
+            isPlaying = true;
+            setTimeout(() => {
+                status.textContent = 'YouTube playback finished';
+                status.className = 'status ready';
+                isPlaying = false;
+                
+                // Auto-play next track if available
+                if (currentTrackIndex < playlistItems.length - 1) {
+                    setTimeout(() => {
+                        playTrack(currentTrackIndex + 1);
+                    }, 1000);
+                }
+            }, 10000); // Simulate 10 seconds of playback
+        }
+        
+        // Stop playback
+        function stopPlayback() {
+            if (sourceNode && isPlaying) {
+                sourceNode.stop();
+                isPlaying = false;
+            }
+            
+            // For YouTube, you would stop the YouTube player here
+            
+            status.textContent = 'Playback stopped';
+            status.className = 'status ready';
+        }
+        
+        // Pause playback
+        function pausePlayback() {
+            if (audioContext) {
+                audioContext.suspend().then(() => {
+                    status.textContent = 'Playback paused';
+                    status.className = 'status ready';
+                });
+            }
+            
+            // For YouTube, you would pause the YouTube player here
+        }
+        
+        // Resume playback
+        function resumePlayback() {
+            if (audioContext) {
+                audioContext.resume().then(() => {
+                    status.textContent = 'Playback resumed';
+                    status.className = 'status processing';
+                });
+            }
+            
+            // For YouTube, you would play the YouTube player here
+        }
+        
+        // Play button event
+        playBtn.addEventListener('click', function() {
+            if (currentTrackIndex === -1 && playlistItems.length > 0) {
+                playTrack(0);
+            } else if (isPlaying) {
+                resumePlayback();
+            } else if (currentTrackIndex !== -1) {
+                playTrack(currentTrackIndex);
+            }
+        });
+        
+        // Pause button event
+        pauseBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                pausePlayback();
+            }
+        });
+        
+        // Previous button event
+        prevBtn.addEventListener('click', function() {
+            if (playlistItems.length === 0) return;
+            
+            let newIndex = currentTrackIndex - 1;
+            if (newIndex < 0) newIndex = playlistItems.length - 1;
+            
+            playTrack(newIndex);
+        });
+        
+        // Next button event
+        nextBtn.addEventListener('click', function() {
+            if (playlistItems.length === 0) return;
+            
+            let newIndex = currentTrackIndex + 1;
+            if (newIndex >= playlistItems.length) newIndex = 0;
+            
+            playTrack(newIndex);
+        });
+        
+        // Update slider values display
+        muffleSlider.addEventListener('input', function() {
+            muffleValue.textContent = this.value + '%';
+            updateFilters();
+        });
+        
+        bassSlider.addEventListener('input', function() {
+            bassValue.textContent = this.value + '%';
+            updateFilters();
+        });
+        
+        // Update filter parameters based on slider values
+        function updateFilters() {
+            if (!audioContext) return;
+            
+            // Muffle effect: lower the cutoff frequency of the low-pass filter
+            const muffleAmount = parseInt(muffleSlider.value);
+            const lowPassCutoff = 20000 - (muffleAmount / 100) * 19500;
+            lowPassFilter.frequency.value = Math.max(500, lowPassCutoff);
+            
+            // Bass reduction: raise the cutoff frequency of the high-pass filter
+            const bassReduction = parseInt(bassSlider.value);
+            const highPassCutoff = 20 + (bassReduction / 100) * 480;
+            highPassFilter.frequency.value = Math.min(500, highPassCutoff);
+        }
+        
+        // Download processed audio
+        downloadBtn.addEventListener('click', function() {
+            if (!currentAudioBuffer) {
+                status.textContent = 'No audio file loaded';
+                status.className = 'status error';
+                return;
+            }
+            
+            status.textContent = 'Processing and exporting audio...';
+            status.className = 'status processing';
+            
+            // Create offline audio context for rendering
+            const offlineContext = new OfflineAudioContext(
+                currentAudioBuffer.numberOfChannels,
+                currentAudioBuffer.length,
+                currentAudioBuffer.sampleRate
+            );
+            
+            // Create source and filters for offline processing
+            const source = offlineContext.createBufferSource();
+            source.buffer = currentAudioBuffer;
+            
+            const offlineLowPass = offlineContext.createBiquadFilter();
+            const offlineHighPass = offlineContext.createBiquadFilter();
+            const offlineGain = offlineContext.createGain();
+            
+            offlineLowPass.type = 'lowpass';
+            offlineHighPass.type = 'highpass';
+            
+            // Apply current filter settings
+            const muffleAmount = parseInt(muffleSlider.value);
+            const lowPassCutoff = 20000 - (muffleAmount / 100) * 19500;
+            offlineLowPass.frequency.value = Math.max(500, lowPassCutoff);
+            
+            const bassReduction = parseInt(bassSlider.value);
+            const highPassCutoff = 20 + (bassReduction / 100) * 480;
+            offlineHighPass.frequency.value = Math.min(500, highPassCutoff);
+            
+            // Connect nodes
+            source.connect(offlineLowPass);
+            offlineLowPass.connect(offlineHighPass);
+            offlineHighPass.connect(offlineGain);
+            offlineGain.connect(offlineContext.destination);
+            
+            // Start rendering
+            source.start(0);
+            offlineContext.startRendering().then(function(renderedBuffer) {
+                // Convert to WAV format
+                const wavBuffer = bufferToWav(renderedBuffer);
+                
+                // Create download link
+                const blob = new Blob([wavBuffer], { type: 'audio/wav' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'processed_audio.wav';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                status.textContent = 'Audio exported successfully';
+                status.className = 'status ready';
+            }).catch(function(err) {
+                status.textContent = 'Error exporting audio: ' + err;
+                status.className = 'status error';
+            });
+        });
+        
+        // Audio visualization
+        function drawVisualizer() {
+            if (!isPlaying || !analyser) {
+                // Clear canvas if not playing
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                return;
+            }
+            
+            requestAnimationFrame(drawVisualizer);
+            
+            const bufferLength = analyser.frequencyBinCount;
+            const dataArray = new Uint8Array(bufferLength);
+            analyser.getByteFrequencyData(dataArray);
+            
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const barWidth = (canvas.width / bufferLength) * 2.5;
+            let barHeight;
+            let x = 0;
+            
+            for (let i = 0; i < bufferLength; i++) {
+                barHeight = dataArray[i] / 2;
+                
+                // Create gradient based on frequency
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, '#3498db');
+                gradient.addColorStop(0.7, '#2ecc71');
+                gradient.addColorStop(1, '#e74c3c');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+                
+                x += barWidth + 1;
+            }
+        }
+        
+        // Convert AudioBuffer to WAV format
+        function bufferToWav(buffer) {
+            const numOfChannels = buffer.numberOfChannels;
+            const length = buffer.length * numOfChannels * 2;
+            const bufferArray = new ArrayBuffer(44 + length);
+            const view = new DataView(bufferArray);
+            
+            // WAV header
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + length, true);
+            writeString(view, 8, 'WAVE');
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, numOfChannels, true);
+            view.setUint32(24, buffer.sampleRate, true);
+            view.setUint32(28, buffer.sampleRate * numOfChannels * 2, true);
+            view.setUint16(32, numOfChannels * 2, true);
+            view.setUint16(34, 16, true);
+            writeString(view, 36, 'data');
+            view.setUint32(40, length, true);
+            
+            // Interleave and write audio data
+            const channels = [];
+            for (let i = 0; i < numOfChannels; i++) {
+                channels.push(buffer.getChannelData(i));
+            }
+            
+            let offset = 44;
+            for (let i = 0; i < buffer.length; i++) {
+                for (let channel = 0; channel < numOfChannels; channel++) {
+                    const sample = Math.max(-1, Math.min(1, channels[channel][i]));
+                    view.setInt16(offset, sample < 0 ? sample * 0x8000 : sample * 0x7FFF, true);
+                    offset += 2;
+                }
+            }
+            
+            return bufferArray;
+        }
+        
+        // Helper function to write string to DataView
+        function writeString(view, offset, string) {
+            for (let i = 0; i < string.length; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i));
+            }
+        }
+        
+        // Initialize canvas size
+        function initCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        
+        // Initial playlist render
+        renderPlaylist();
+    </script>
+</body>
+</html>
